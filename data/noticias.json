@@ -1,0 +1,55 @@
+{
+  "atualizado_em": "2026-07-27T19:20:00+00:00",
+  "_nota": "Seed manual gerado ao configurar o site, com itens reais verificados em 27/07/2026. Será sobrescrito automaticamente na primeira execução do workflow do GitHub Actions.",
+  "itens": [
+    {
+      "fonte": "ConJur",
+      "titulo": "XXXIII Jornadas Latinoamericanas de Direito Tributário acontecerão de 13 a 17/9, em Brasília",
+      "link": "https://www.conjur.com.br/2026-jul-27/xxxiii-jornadas-latinoamericanas-de-direito-tributario-acontecerao-de-13-a-17-9-em-brasilia/",
+      "data": "2026-07-27T19:00:45+00:00",
+      "resumo": "As XXXIII Jornadas Latinoamericanas de Derecho Tributario do Iladt marcam o retorno desse tradicional encontro científico ao Brasil. O evento será realizado em Brasília, entre os dias 13 e 17 de setembro de 2026."
+    },
+    {
+      "fonte": "ConJur",
+      "titulo": "Reforma tributária: por que esperar a alíquota da CBS para revisar contratos é um erro jurídico",
+      "link": "https://www.conjur.com.br/2026-jul-27/reforma-tributaria-por-que-esperar-a-aliquota-da-cbs-para-revisar-contratos-e-um-erro-juridico/",
+      "data": "2026-07-27T18:20:59+00:00",
+      "resumo": "Há uma tentação compreensível entre os contribuintes diante da reforma tributária do consumo: esperar que o Senado fixe a alíquota de referência da CBS antes de revisar contratos. A tentação é compreensível, mas equivocada."
+    },
+    {
+      "fonte": "JOTA",
+      "titulo": "ABDF realiza a 9ª edição de seu congresso internacional entre 12 e 14 de agosto",
+      "link": "https://www.jota.info/tributos/abdf-realiza-a-9a-edicao-de-seu-congresso-internacional-entre-12-e-14-de-agosto",
+      "data": "2026-07-27T18:14:04+00:00",
+      "resumo": "A Associação Brasileira de Direito Financeiro realizará, entre 12 e 14 de agosto, o IX Congresso Internacional de Direito Tributário do Rio de Janeiro, com foco na reforma tributária em implementação."
+    },
+    {
+      "fonte": "ConJur",
+      "titulo": "CNJ libera alienação fiduciária em contrato sem escritura pública",
+      "link": "https://www.conjur.com.br/2026-jul-27/cnj-libera-alienacao-fiduciaria-em-contrato-sem-escritura-publica/",
+      "data": "2026-07-27T15:46:11+00:00",
+      "resumo": "O CNJ decidiu eliminar a exigência de escritura pública para formalizar a cláusula de alienação fiduciária em contratos de compra e venda de imóveis firmados fora dos sistemas de financiamento imobiliário."
+    },
+    {
+      "fonte": "JOTA",
+      "titulo": "Minerais críticos: Brasil poderia usar antidumping para se proteger da hegemonia chinesa?",
+      "link": "https://www.jota.info/coberturas-especiais/matriz/minerais-criticos-brasil-poderia-usar-antidumping-para-se-proteger-da-hegemonia-chinesa",
+      "data": "2026-07-27T17:52:31+00:00",
+      "resumo": "Grandes reservas naturais e pouca capacidade produtiva complexificam o debate sobre soberania mineral no Brasil e o uso de barreiras comerciais como antidumping."
+    },
+    {
+      "fonte": "ConJur",
+      "titulo": "Loja é condenada a indenizar empregada por exposição vexatória em 'sala de vidro'",
+      "link": "https://www.conjur.com.br/2026-jul-27/loja-tera-que-indenizar-empregada-por-exposicao-vexatoria-em-sala-de-vidro/",
+      "data": "2026-07-27T16:45:02+00:00",
+      "resumo": "A exposição vexatória de trabalhadores a constrangimentos diante de colegas viola a dignidade e justifica indenização por dano moral, decidiu o TRT da 18ª Região."
+    },
+    {
+      "fonte": "ConJur",
+      "titulo": "Regime de fretamento não permite venda aberta de passagens ao público",
+      "link": "https://www.conjur.com.br/2026-jul-27/buser-e-proibida-de-operar-linha-intermunicipal-por-extrapolar-autorizacao/",
+      "data": "2026-07-27T15:18:31+00:00",
+      "resumo": "Uma empresa autorizada a funcionar no regime de fretamento só pode atender em circuito fechado, sem cobrança individual de passagens nem oferta aberta ao público."
+    }
+  ]
+}
