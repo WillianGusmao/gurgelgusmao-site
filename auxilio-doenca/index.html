@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auxílio-Doença — Direito Previdenciário | Gurgel Gusmão Advocacia</title>
+<meta name="description" content="Informações sobre auxílio por incapacidade temporária (auxílio-doença): requisitos, perícia médica, documentação e prazos no INSS. Atendimento na Grande Vitória/ES.">
+<meta name="robots" content="noindex">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+:root{
+  --bg:#F0F2EF;
+  --surface:#FFFFFF;
+  --surface-alt:#E6EAE5;
+  --ink:#16231F;
+  --ink-soft:#4B5B54;
+  --ink-faint:#7C8A82;
+  --line:#D3DAD1;
+  --accent:#0E5C46;
+  --accent-ink:#083B2E;
+  --accent-soft:#DCEBE3;
+  --shadow: 0 1px 2px rgba(22,35,31,0.06), 0 8px 24px -12px rgba(22,35,31,0.14);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{ font-family:'Source Serif 4', Georgia, serif; color:var(--ink); text-wrap:balance; margin:0; font-weight:600; }
+a{ color:var(--accent-ink); }
+p{ margin:0 0 14px; color:var(--ink-soft); max-width:62ch; }
+
+.topbar{ border-bottom:1px solid var(--line); background:var(--surface); }
+.topbar-inner{
+  max-width:960px; margin:0 auto; padding:16px 24px;
+  display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;
+}
+.brand{ font-family:'Source Serif 4',serif; font-weight:600; font-size:1.05rem; color:var(--ink); }
+.brand span{ display:block; font-family:'IBM Plex Sans',sans-serif; font-weight:400; font-size:0.72rem; color:var(--ink-faint); }
+.callbtn{
+  font-size:0.88rem; font-weight:500; color:var(--accent-ink);
+  border:1px solid var(--accent-soft); background:var(--accent-soft);
+  padding:8px 16px; border-radius:8px; text-decoration:none; white-space:nowrap;
+}
+
+main{ max-width:720px; margin:0 auto; padding:0 24px; }
+
+.hero{ padding:56px 0 36px; border-bottom:1px solid var(--line); }
+.eyebrow{ font-size:0.76rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent-ink); font-weight:600; margin-bottom:14px; }
+h1{ font-size:1.9rem; line-height:1.22; margin-bottom:16px; }
+.hero p{ font-size:1.04rem; max-width:56ch; }
+
+section{ padding:36px 0; border-bottom:1px solid var(--line); }
+section:last-of-type{ border-bottom:none; }
+h2{ font-size:1.25rem; margin-bottom:16px; }
+
+.situations{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; }
+.situations li{
+  display:flex; gap:10px; align-items:flex-start;
+  font-size:0.98rem; color:var(--ink-soft);
+  background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:12px 14px;
+}
+.situations li::before{ content:'—'; color:var(--accent-ink); flex:none; }
+
+.authority{
+  background:var(--surface); border:1px solid var(--line); border-radius:10px;
+  padding:18px 20px; box-shadow:var(--shadow); display:flex; gap:14px; align-items:flex-start;
+}
+.authority .init{
+  flex:none; width:44px; height:44px; border-radius:50%;
+  background:var(--accent-soft); color:var(--accent-ink);
+  font-family:'Source Serif 4',serif; font-weight:600; font-size:1.1rem;
+  display:flex; align-items:center; justify-content:center;
+}
+.authority p{ margin-bottom:0; font-size:0.92rem; }
+.authority strong{ color:var(--ink); }
+
+.checklist-box{
+  background:var(--surface); border:1px solid var(--line); border-radius:10px;
+  padding:20px 22px; box-shadow:var(--shadow);
+}
+.checklist-box h3{ font-size:1.02rem; margin-bottom:12px; }
+.checklist-box ul{ margin:0; padding-left:1.2em; color:var(--ink-soft); }
+.checklist-box li{ margin-bottom:6px; font-size:0.94rem; }
+
+#contato{ background:var(--surface-alt); }
+.formwrap{
+  background:var(--surface); border:1px solid var(--line); border-radius:12px;
+  padding:26px 26px 22px; box-shadow:var(--shadow);
+}
+.formwrap h2{ margin-bottom:6px; }
+.formwrap > p{ font-size:0.92rem; margin-bottom:20px; }
+.field{ margin-bottom:14px; }
+.field label{ display:block; font-size:0.84rem; font-weight:500; color:var(--ink); margin-bottom:5px; }
+.field input[type="text"], .field input[type="tel"], .field input[type="email"]{
+  width:100%; padding:11px 13px; border:1px solid var(--line); border-radius:7px;
+  font-family:inherit; font-size:0.95rem; background:var(--bg); color:var(--ink);
+}
+.field input:focus{ outline:2px solid var(--accent); outline-offset:1px; }
+.radiorow{ display:flex; gap:14px; flex-wrap:wrap; margin-top:4px; }
+.radiorow label{ display:flex; align-items:center; gap:6px; font-size:0.88rem; font-weight:400; color:var(--ink-soft); }
+.consent{ font-size:0.78rem; color:var(--ink-faint); margin:14px 0 16px; }
+button.submit{
+  width:100%; padding:13px; border:none; border-radius:8px;
+  background:var(--accent); color:#fff; font-family:inherit;
+  font-size:0.98rem; font-weight:600; cursor:pointer;
+}
+button.submit:hover{ background:var(--accent-ink); }
+button.submit:disabled{ opacity:0.6; cursor:default; }
+.formmsg{ margin-top:14px; font-size:0.9rem; display:none; padding:10px 12px; border-radius:7px; }
+.formmsg.ok{ display:block; background:var(--accent-soft); color:var(--accent-ink); }
+.formmsg.err{ display:block; background:#F3DEDA; color:#8C2F2F; }
+
+footer{ padding:32px 0 60px; }
+footer p{ font-size:0.8rem; color:var(--ink-faint); margin-bottom:4px; }
+
+@media (max-width:600px){
+  h1{ font-size:1.55rem; }
+  .hero{ padding:40px 0 28px; }
+}
+</style>
+
+<!-- ====== ÚNICA PENDÊNCIA ANTES DE ATIVAR A CAMPANHA ======
+  Google Ads: depois de criar a conta e a Ação de Conversão (Site > Enviar formulário), cole o
+  AW-XXXXXXXXX e o rótulo de conversão nos dois pontos marcados mais abaixo e descomente as linhas. -->
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">Willian Gurgel Gusmão<span>Direito Previdenciário · OAB/ES 14.605</span></div>
+    <a class="callbtn" href="tel:+5527999830736">📞 (27) 99983-0736</a>
+  </div>
+</div>
+
+<main>
+  <section class="hero">
+    <div class="eyebrow">Direito Previdenciário</div>
+    <h1>Auxílio por Incapacidade Temporária: entenda seus direitos e como funciona o processo no INSS</h1>
+    <p>Informações sobre requisitos, perícia médica, documentação e prazos para quem teve o benefício negado ou está preparando o pedido. Atendimento em Vitória, Serra, Vila Velha, Cariacica, Viana, Guarapari e Aracruz.</p>
+  </section>
+
+  <section>
+    <h2>Você está passando por uma dessas situações?</h2>
+    <ul class="situations">
+      <li>O INSS negou seu auxílio-doença após a perícia médica</li>
+      <li>Seu benefício foi cessado antes da recuperação</li>
+      <li>Você tem dúvidas sobre os documentos necessários para o pedido</li>
+      <li>Não sabe se cabe recurso administrativo ou ação judicial</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Como funciona o processo</h2>
+    <p>O auxílio por incapacidade temporária é concedido após avaliação por perícia médica do INSS, que analisa se há incapacidade para o trabalho e por quanto tempo. Quando o pedido é negado ou o benefício é cessado, existe a possibilidade de recurso administrativo dentro do prazo estabelecido pelo próprio INSS e, conforme o caso, de ação judicial. Cada processo tem particularidades que dependem da documentação médica e da situação previdenciária de cada pessoa.</p>
+    <div class="authority">
+      <div class="init">WG</div>
+      <p><strong>Willian Gurgel Gusmão</strong>, advogado inscrito na OAB/ES sob o nº 14.605, com atuação em Direito Previdenciário na Grande Vitória/ES (Vitória, Serra, Vila Velha, Cariacica, Viana, Guarapari e Aracruz). Atendimento por telefone e videochamada.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="checklist-box">
+      <h3>Checklist — documentos geralmente solicitados</h3>
+      <ul>
+        <li>Documento de identidade e CPF</li>
+        <li>Carteira de trabalho (CTPS) ou comprovantes de contribuição</li>
+        <li>Atestados e laudos médicos relacionados à incapacidade</li>
+        <li>Exames complementares (quando houver)</li>
+        <li>Extrato do CNIS (Cadastro Nacional de Informações Sociais)</li>
+        <li>Carta de indeferimento do INSS, se o benefício já foi negado</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="formwrap">
+      <h2>Solicitar informações</h2>
+      <p>Preencha os campos abaixo para receber orientações sobre a sua situação.</p>
+
+      <form id="leadform">
+        <div class="field">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" required>
+        </div>
+        <div class="field">
+          <label for="telefone">Telefone / WhatsApp</label>
+          <input type="tel" id="telefone" name="telefone" required>
+        </div>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="field">
+          <label>Seu benefício já foi negado pelo INSS?</label>
+          <div class="radiorow">
+            <label><input type="radio" name="status_beneficio" value="Sim, foi negado" required> Sim, foi negado</label>
+            <label><input type="radio" name="status_beneficio" value="Ainda não dei entrada" required> Ainda não dei entrada</label>
+            <label><input type="radio" name="status_beneficio" value="Foi cessado / cortado" required> Foi cessado / cortado</label>
+          </div>
+        </div>
+
+        <input type="hidden" name="access_key" value="fe3d0944-31ed-48c9-8038-7b7515fc3bb5">
+        <input type="hidden" name="subject" value="Novo lead — LP Auxílio-Doença">
+        <input type="checkbox" name="botcheck" style="display:none">
+
+        <p class="consent">Ao enviar, você concorda em ser contatado pelo escritório para orientação sobre sua situação. Seus dados não serão compartilhados com terceiros.</p>
+
+        <button type="submit" class="submit" id="submitbtn">Solicitar informações</button>
+        <div class="formmsg" id="formmsg"></div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Willian Gurgel Gusmão</strong> — OAB/ES nº 14.605</p>
+    <p>Rua Milton Manoel dos Santos, 371, Jardim Camburi, Vitória/ES, CEP 29090-110</p>
+    <p>(27) 99983-0736 · willian@gurgelgusmao.adv.br</p>
+  </footer>
+</main>
+
+<!-- ====== Google Ads — Tag global do site ======
+     Substitua AW-CONVERSION_ID pelo seu ID (formato AW-XXXXXXXXX) assim que criar a conta.
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-CONVERSION_ID');
+</script>
+-->
+
+<script>
+document.getElementById('leadform').addEventListener('submit', async function (e) {
+  e.preventDefault();
+  var btn = document.getElementById('submitbtn');
+  var msg = document.getElementById('formmsg');
+  btn.disabled = true;
+  btn.textContent = 'Enviando...';
+
+  var formData = new FormData(this);
+  try {
+    var res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    });
+    var data = await res.json();
+    if (data.success) {
+      msg.className = 'formmsg ok';
+      msg.textContent = 'Recebemos sua solicitação. Entraremos em contato em breve.';
+      this.reset();
+      btn.textContent = 'Enviado';
+
+      // ====== Google Ads — disparo de conversão ======
+      // Descomente as duas linhas abaixo depois de criar a Ação de Conversão no Google Ads
+      // e trocar AW-CONVERSION_ID/CONVERSION_LABEL pelos valores reais.
+      // if (typeof gtag === 'function') {
+      //   gtag('event', 'conversion', {'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL'});
+      // }
+    } else {
+      throw new Error('Falha no envio');
+    }
+  } catch (err) {
+    msg.className = 'formmsg err';
+    msg.textContent = 'Não foi possível enviar agora. Tente novamente ou ligue para (27) 99983-0736.';
+    btn.disabled = false;
+    btn.textContent = 'Solicitar informações';
+  }
+});
+</script>
+</body>
+</html>
