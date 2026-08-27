@@ -30,7 +30,12 @@ body{
 }
 h1,h2,h3{ font-family:'Source Serif 4', Georgia, serif; color:var(--ink); text-wrap:balance; margin:0; font-weight:600; }
 a{ color:var(--accent-ink); }
-p{ margin:0 0 14px; color:var(--ink-soft); max-width:62ch; }
+p{
+  margin:0 0 14px; color:var(--ink-soft); max-width:62ch;
+  text-align:justify; hyphens:auto; -webkit-hyphens:auto;
+}
+/* prosa curta e metadados ficam alinhados à esquerda — justificar 1-2 linhas abre buracos */
+.authority p, .consent, .formwrap > p, footer p{ text-align:left; hyphens:none; }
 
 .topbar{ border-bottom:1px solid var(--line); background:var(--surface); }
 .topbar-inner{
@@ -154,7 +159,10 @@ footer p{ font-size:0.8rem; color:var(--ink-faint); margin-bottom:4px; }
 
   <section>
     <h2>Como funciona o processo</h2>
-    <p>O auxílio por incapacidade temporária é concedido após avaliação por perícia médica do INSS, que analisa se há incapacidade para o trabalho e por quanto tempo. Quando o pedido é negado ou o benefício é cessado, existe a possibilidade de recurso administrativo dentro do prazo estabelecido pelo próprio INSS e, conforme o caso, de ação judicial. Cada processo tem particularidades que dependem da documentação médica e da situação previdenciária de cada pessoa.</p>
+    <p>O auxílio por incapacidade temporária é concedido ao trabalhador que fica temporariamente incapaz de exercer sua atividade — em geral, por um prazo determinado pelo próprio INSS.</p>
+    <p>Para a concessão, o trabalhador passa por perícia médica do INSS, que avalia se existe incapacidade para o trabalho e por quanto tempo ela deve durar.</p>
+    <p>Quando o pedido é negado ou o benefício é cessado, existe a possibilidade de recurso administrativo dentro do prazo estabelecido pelo próprio INSS e, conforme o caso, de ação judicial.</p>
+    <p>Cada situação tem particularidades que dependem da documentação médica apresentada e do histórico previdenciário do segurado.</p>
     <div class="authority">
       <div class="init">WG</div>
       <p><strong>Willian Gurgel Gusmão</strong>, advogado inscrito na OAB/ES sob o nº 14.605, com atuação em Direito Previdenciário na Grande Vitória/ES (Vitória, Serra, Vila Velha, Cariacica, Viana, Guarapari e Aracruz). Atendimento por telefone e videochamada.</p>
