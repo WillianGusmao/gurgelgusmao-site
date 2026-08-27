@@ -31,7 +31,7 @@ body{
 h1,h2,h3{ font-family:'Source Serif 4', Georgia, serif; color:var(--ink); text-wrap:balance; margin:0; font-weight:600; }
 a{ color:var(--accent-ink); }
 p{
-  margin:0 0 14px; color:var(--ink-soft); max-width:62ch;
+  margin:0 0 14px; color:var(--ink-soft);
   text-align:justify; hyphens:auto; -webkit-hyphens:auto;
 }
 /* prosa curta e metadados ficam alinhados à esquerda — justificar 1-2 linhas abre buracos */
@@ -55,7 +55,7 @@ main{ max-width:720px; margin:0 auto; padding:0 24px; }
 .hero{ padding:56px 0 36px; border-bottom:1px solid var(--line); }
 .eyebrow{ font-size:0.76rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent-ink); font-weight:600; margin-bottom:14px; }
 h1{ font-size:1.9rem; line-height:1.22; margin-bottom:16px; }
-.hero p{ font-size:1.04rem; max-width:56ch; }
+.hero p{ font-size:1.04rem; }
 
 section{ padding:36px 0; border-bottom:1px solid var(--line); }
 section:last-of-type{ border-bottom:none; }
@@ -81,6 +81,13 @@ h2{ font-size:1.25rem; margin-bottom:16px; }
 }
 .authority p{ margin-bottom:0; font-size:0.92rem; }
 .authority strong{ color:var(--ink); }
+
+.reqs{ list-style:none; padding:0; margin:0 0 18px; display:flex; flex-direction:column; gap:12px; }
+.reqs li{
+  color:var(--ink-soft); font-size:0.96rem; text-align:justify; hyphens:auto;
+  border-left:2px solid var(--accent-soft); padding-left:14px;
+}
+.reqs li strong{ color:var(--ink); font-weight:600; }
 
 .checklist-box{
   background:var(--surface); border:1px solid var(--line); border-radius:10px;
@@ -167,6 +174,26 @@ footer p{ font-size:0.8rem; color:var(--ink-faint); margin-bottom:4px; }
       <div class="init">WG</div>
       <p><strong>Willian Gurgel Gusmão</strong>, advogado inscrito na OAB/ES sob o nº 14.605, com atuação em Direito Previdenciário na Grande Vitória/ES (Vitória, Serra, Vila Velha, Cariacica, Viana, Guarapari e Aracruz). Atendimento por telefone e videochamada.</p>
     </div>
+  </section>
+
+  <!-- PENDENTE DE VALIDAÇÃO DO ADVOGADO — conteúdo técnico escrito para revisão -->
+  <section>
+    <h2>Quem pode ter direito</h2>
+    <p>De modo geral, o INSS observa três pontos ao analisar o pedido:</p>
+    <ul class="reqs">
+      <li><strong>Qualidade de segurado</strong> — estar contribuindo para o INSS ou ainda estar dentro do chamado período de graça, em que a proteção previdenciária se mantém por um tempo mesmo sem contribuição.</li>
+      <li><strong>Carência</strong> — em regra, 12 contribuições mensais. A carência é dispensada em situações como acidente de qualquer natureza, doença profissional ou do trabalho e nas doenças graves previstas em lista oficial.</li>
+      <li><strong>Incapacidade temporária</strong> — reconhecida em perícia médica, para o trabalho ou para a atividade habitual do segurado.</li>
+    </ul>
+    <p>Para quem tem carteira assinada, os primeiros 15 dias de afastamento são pagos pelo empregador, e o benefício do INSS passa a ser devido a partir do 16º dia. Para contribuintes individuais e facultativos, a contagem segue regra própria.</p>
+  </section>
+
+  <!-- PENDENTE DE VALIDAÇÃO DO ADVOGADO — conteúdo técnico escrito para revisão -->
+  <section>
+    <h2>Alta programada e pedido de prorrogação</h2>
+    <p>Ao conceder o benefício, o INSS normalmente já fixa uma data para o encerramento — a data de cessação do benefício (DCB), conhecida como alta programada. O pagamento termina nessa data sem que seja necessária uma nova perícia.</p>
+    <p>Se a incapacidade permanecer quando o prazo estiver próximo do fim, existe o pedido de prorrogação, que em regra deve ser solicitado nos 15 dias anteriores à data de cessação, pelo aplicativo Meu INSS ou pela central telefônica 135.</p>
+    <p>Perdida essa janela, o caminho passa a ser um novo requerimento. E, se o pedido de prorrogação for negado, ainda cabem reconsideração e, conforme o caso, recurso administrativo ou ação judicial.</p>
   </section>
 
   <section>
