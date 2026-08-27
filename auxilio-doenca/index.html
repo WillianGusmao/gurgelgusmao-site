@@ -134,9 +134,14 @@ footer p{ font-size:0.8rem; color:var(--ink-faint); margin-bottom:4px; }
 }
 </style>
 
-<!-- ====== ÚNICA PENDÊNCIA ANTES DE ATIVAR A CAMPANHA ======
-  Google Ads: depois de criar a conta e a Ação de Conversão (Site > Enviar formulário), cole o
-  AW-XXXXXXXXX e o rótulo de conversão nos dois pontos marcados mais abaixo e descomente as linhas. -->
+<!-- Google Ads — tag global do site (conta 834-863-5732) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-999413893"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-999413893');
+</script>
 </head>
 <body>
 
@@ -254,17 +259,6 @@ footer p{ font-size:0.8rem; color:var(--ink-faint); margin-bottom:4px; }
   </footer>
 </main>
 
-<!-- ====== Google Ads — Tag global do site ======
-     Substitua AW-CONVERSION_ID pelo seu ID (formato AW-XXXXXXXXX) assim que criar a conta.
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-CONVERSION_ID');
-</script>
--->
-
 <script>
 document.getElementById('leadform').addEventListener('submit', async function (e) {
   e.preventDefault();
@@ -287,12 +281,14 @@ document.getElementById('leadform').addEventListener('submit', async function (e
       this.reset();
       btn.textContent = 'Enviado';
 
-      // ====== Google Ads — disparo de conversão ======
-      // Descomente as duas linhas abaixo depois de criar a Ação de Conversão no Google Ads
-      // e trocar AW-CONVERSION_ID/CONVERSION_LABEL pelos valores reais.
-      // if (typeof gtag === 'function') {
-      //   gtag('event', 'conversion', {'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL'});
-      // }
+      // Google Ads — dispara a conversão só quando o envio deu certo de verdade
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-999413893/vaOCCNmM_egcEIWxx9wD',
+          'value': 1.0,
+          'currency': 'BRL'
+        });
+      }
     } else {
       throw new Error('Falha no envio');
     }
