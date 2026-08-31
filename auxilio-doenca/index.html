@@ -47,6 +47,8 @@ p{ margin:0 0 15px; color:var(--ink-soft); font-size:1.06rem; line-height:1.72; 
   border:1px solid var(--accent-soft); background:var(--accent-soft);
   padding:8px 16px; border-radius:8px; text-decoration:none; white-space:nowrap;
 }
+.callbtn.wa{ display:inline-flex; align-items:center; gap:7px; }
+.callbtn.wa svg{ flex-shrink:0; }
 
 /* ---------- hero em 2 colunas ---------- */
 .hero{ background:var(--surface); border-bottom:1px solid var(--line); }
@@ -188,7 +190,8 @@ footer p{ font-size:0.8rem; color:var(--ink-faint); margin-bottom:4px; }
     box-shadow:0 -2px 12px rgba(22,35,31,0.08);
   }
   .stickybar a{
-    display:block; text-align:center; background:var(--accent); color:#fff;
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    background:var(--accent); color:#fff;
     padding:12px; border-radius:8px; text-decoration:none; font-weight:600; font-size:0.96rem;
   }
 }
@@ -208,7 +211,10 @@ footer p{ font-size:0.8rem; color:var(--ink-faint); margin-bottom:4px; }
 <div class="topbar">
   <div class="topbar-inner">
     <div class="brand">Willian Gurgel Gusmão<span>Direito Previdenciário · OAB/ES 14.605</span></div>
-    <a class="callbtn" href="tel:+5527999830736">📞 (27) 99983-0736</a>
+    <a class="callbtn wa" href="https://wa.me/5527999830736?text=Ol%C3%A1.%20Vi%20a%20p%C3%A1gina%20sobre%20aux%C3%ADlio%20por%20incapacidade%20tempor%C3%A1ria%20e%20gostaria%20de%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.16c-.24.68-1.2 1.26-1.96 1.42-.52.11-1.2.2-3.5-.75-2.94-1.22-4.83-4.2-4.98-4.4-.14-.19-1.19-1.58-1.19-3.01 0-1.43.75-2.14 1.02-2.43.24-.26.55-.32.73-.32.18 0 .37 0 .53.01.17.01.4-.06.62.48.24.55.8 1.9.87 2.04.07.14.12.3.02.49-.09.19-.14.3-.28.47-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.72 1.18 1.54 1.92 1.06.94 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.19-.28.37-.23.62-.14.25.09 1.6.75 1.87.89.28.14.46.21.53.32.07.12.07.66-.17 1.34z"/></svg>
+      WhatsApp (27) 99983-0736
+    </a>
   </div>
 </div>
 
@@ -419,7 +425,7 @@ footer p{ font-size:0.8rem; color:var(--ink-faint); margin-bottom:4px; }
 </footer>
 
 <div class="stickybar">
-  <a href="tel:+5527999830736">Ligar para (27) 99983-0736</a>
+  <a href="https://wa.me/5527999830736?text=Ol%C3%A1.%20Vi%20a%20p%C3%A1gina%20sobre%20aux%C3%ADlio%20por%20incapacidade%20tempor%C3%A1ria%20e%20gostaria%20de%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.16c-.24.68-1.2 1.26-1.96 1.42-.52.11-1.2.2-3.5-.75-2.94-1.22-4.83-4.2-4.98-4.4-.14-.19-1.19-1.58-1.19-3.01 0-1.43.75-2.14 1.02-2.43.24-.26.55-.32.73-.32.18 0 .37 0 .53.01.17.01.4-.06.62.48.24.55.8 1.9.87 2.04.07.14.12.3.02.49-.09.19-.14.3-.28.47-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.72 1.18 1.54 1.92 1.06.94 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.19-.28.37-.23.62-.14.25.09 1.6.75 1.87.89.28.14.46.21.53.32.07.12.07.66-.17 1.34z"/></svg> Falar pelo WhatsApp</a>
 </div>
 
 <script>
@@ -461,6 +467,19 @@ document.querySelectorAll('.leadform').forEach(function (form) {
       msg.textContent = 'Não foi possível enviar agora. Tente novamente ou ligue para (27) 99983-0736.';
       btn.disabled = false;
       btn.textContent = 'Solicitar informações';
+    }
+  });
+});
+
+// Google Ads — clique no WhatsApp também conta como lead
+document.querySelectorAll('a[href*="wa.me"]').forEach(function (link) {
+  link.addEventListener('click', function () {
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-999413893/vaOCCNmM_egcEIWxx9wD',
+        'value': 1.0,
+        'currency': 'BRL'
+      });
     }
   });
 });
