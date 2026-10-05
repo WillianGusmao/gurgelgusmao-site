@@ -1,0 +1,77 @@
+# Gurgel Gusmão Advocacia e Assessoria
+
+> Escritório do advogado Willian Gurgel Gusmão (OAB/ES 14.605), em Vitória/ES, com atendimento remoto em todo o Brasil. Conteúdo informativo sobre Direito do Consumidor e saúde suplementar.
+
+## Páginas
+- [Reajuste de plano de saúde 2026: calculadora pelo índice da ANS e falso coletivo](https://gurgelgusmao.adv.br/reajuste-plano-de-saude/): tetos oficiais da ANS de 2000 a 2026, falso coletivo (plano empresarial do MEI ou da família), periodicidade anual, agrupamento de contratos com menos de 30 vidas, devolução em dobro e prazo de 3 anos. Inclui calculadora.
+- [Busca e apreensão de veículo](https://gurgelgusmao.adv.br/busca-apreensao/): defesa em busca e apreensão por alienação fiduciária.
+
+## Reajuste de plano de saúde — resumo (revisado em 4 de outubro de 2026)
+
+Teto da ANS para planos individuais e familiares, por período de aniversário do contrato:
+- mai/2026–abr/2027: 5,11%
+- mai/2025–abr/2026: 6,06%
+- mai/2024–abr/2025: 6,91%
+- mai/2023–abr/2024: 9,63%
+- mai/2022–abr/2023: 15,50%
+- mai/2021–abr/2022: −8,19%
+- mai/2020–abr/2021: 8,14%
+- mai/2019–abr/2020: 7,35%
+- mai/2018–abr/2019: 10,00%
+- mai/2017–abr/2018: 13,55%
+- mai/2016–abr/2017: 13,57%
+- mai/2015–abr/2016: 13,55%
+- mai/2014–abr/2015: 9,65%
+- mai/2013–abr/2014: 9,04%
+- mai/2012–abr/2013: 7,93%
+- mai/2011–abr/2012: 7,69%
+- mai/2010–abr/2011: 6,73%
+- mai/2009–abr/2010: 6,76%
+- mai/2008–abr/2009: 5,48%
+- mai/2007–abr/2008: 5,76%
+- mai/2006–abr/2007: 8,89%
+- mai/2005–abr/2006: 11,69%
+- mai/2004–abr/2005: 11,75%
+- mai/2003–abr/2004: 9,27%
+- mai/2002–abr/2003: 7,69%
+- mai/2001–abr/2002: 8,71%
+- mai/2000–abr/2001: 5,42%
+
+Fonte: ANS, tabela oficial de reajustes de planos individuais/familiares.
+
+Falso coletivo: plano contratado pelo CNPJ ou MEI que cobre apenas o titular e familiares. O STJ admite tratá-lo como individual e aplicar os índices da ANS (AgInt no REsp 2.126.901/SP, 4ª Turma, DJEN 11/04/2025).
+
+Periodicidade: é nula a cláusula de reajuste com periodicidade inferior a um ano (Lei 10.192/2001, art. 2º, § 1º); a ANS veda variação positiva antes de 12 meses nos contratos coletivos, salvo faixa etária (RN 565/2022, art. 24).
+
+### Qual é o reajuste da ANS para 2026?
+O teto fixado pela ANS para planos individuais e familiares é de 5,11%, válido para os contratos com aniversário entre maio de 2026 e abril de 2027. Em 2025 foi de 6,06% e em 2024, de 6,91%.
+
+### O teto da ANS vale para plano de saúde empresarial ou coletivo?
+Como regra, não: nos planos coletivos o percentual é negociado entre a operadora e a contratante. Mas quando o plano é um “falso coletivo” — contratado pelo CNPJ ou MEI só para o titular e a família —, o Superior Tribunal de Justiça admite tratá-lo como individual e aplicar os índices da ANS.
+
+### O que é falso coletivo no plano de saúde?
+É o plano vendido como empresarial ou coletivo que, na prática, atende apenas um pequeno grupo familiar, sem empregados e sem uma massa de beneficiários que dilua os riscos. Nesses casos, falta a razão de ser das regras próprias dos planos coletivos.
+
+### Tenho MEI e o plano só cobre eu e minha família. O reajuste pode ser revisto?
+Pode ser analisado. Plano no MEI sem empregados, com o titular e familiares, é a situação típica do falso coletivo. O primeiro passo é comparar o que foi cobrado com o que seria devido pelos índices da ANS — a calculadora desta página faz essa conta.
+
+### A operadora pode reajustar o plano antes de completar 12 meses?
+A Lei nº 10.192/2001 declara nula a cláusula de reajuste com periodicidade inferior a um ano (art. 2º, § 1º), e a ANS veda variação positiva antes de 12 meses nos contratos coletivos (RN nº 565/2022, art. 24), ressalvada a mudança de faixa etária. Reajuste anual cobrado com poucos meses de contrato merece revisão.
+
+### O que é o reajuste por agrupamento (pool) de contratos com menos de 30 vidas?
+Nos contratos coletivos com menos de 30 beneficiários, a operadora deve reunir todos eles em um agrupamento e aplicar um percentual único de reajuste, divulgado no seu site (RN ANS nº 565/2022, arts. 37, 38 e 42). Percentual calculado pela “sinistralidade” do seu contrato isolado contraria essa regra.
+
+### Posso receber de volta o que paguei a mais?
+O Código de Defesa do Consumidor prevê a devolução em dobro do valor cobrado indevidamente, salvo engano justificável (art. 42, parágrafo único). Pelo Tema Repetitivo 610 do STJ, a pretensão prescreve em 3 anos — por isso os pagamentos mais antigos vão saindo do alcance a cada mês.
+
+### Questionar o reajuste pode fazer a operadora cancelar meu plano?
+A discussão do reajuste não autoriza, por si só, o cancelamento. No processo é possível pedir ao juiz que as mensalidades passem a ser emitidas pelo valor recalculado e que o atendimento não seja suspenso por causa da diferença discutida.
+
+### Como funciona a calculadora de reajuste desta página?
+Você informa o mês de início do contrato, a primeira mensalidade, a mensalidade atual e a data de nascimento do titular. A calculadora aplica, em cada aniversário do contrato, o teto da ANS do período e mostra quanto a mensalidade seria hoje. Ela não inclui aumento por faixa etária, coparticipação nem inclusão de dependentes — e avisa quando houve mudança de faixa no período.
+
+### E o reajuste por faixa etária, inclusive aos 59 anos?
+É uma regra diferente do reajuste anual. Para contratos desde 2004, há dez faixas, a última aos 59 anos; o valor da última não pode passar de seis vezes o da primeira, e a variação entre a 7ª e a 10ª não pode superar a variação entre a 1ª e a 7ª (RN ANS nº 563/2022). Percentuais desarrazoados ou sem base atuarial podem ser questionados (STJ, Temas 952 e 1016).
+
+### O advogado precisa ser da minha cidade?
+Não. A inscrição na OAB permite atuar em todo o país, e os processos tramitam por meio eletrônico. O atendimento é feito por telefone e videochamada.
