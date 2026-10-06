@@ -3,134 +3,338 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gurgel Gusmão Advocacia e Assessoria — Em construção</title>
-<meta name="description" content="O novo site da Gurgel Gusmão Advocacia e Assessoria está em construção. Contato: willian@gurgelgusmao.adv.br">
+<title>Gurgel e Gusmão Advocacia · Vitória/ES</title>
+<meta name="description" content="Advocacia para empresas e pessoas: contratos, LGPD, compliance, direito do consumidor, saúde suplementar, bancário e previdenciário. Vitória/ES e atendimento remoto em todo o Brasil.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
 <style>
-  /* Identidade do escritório (mesma de cadastro/identificação/assinatura) */
   :root{
-    --navy:#1a2535;
-    --navy-2:#243044;
-    --dourado:#c9a84c;
-    --fundo:#f7f5f0;
-    --cartao:#ffffff;
-    --texto:#1a2535;
-    --suave:#5f6673;
-    --borda:#dcd8cf;
-    --raio:14px;
+    --navy:#1a2535; --navy-2:#243044; --dourado:#c9a84c; --dourado-txt:#8a6d1f;
+    --fundo:#f7f5f0; --alt:#efece4; --cartao:#fff; --texto:#1a2535; --suave:#5f6673;
+    --borda:#dcd8cf; --raio:14px;
+    --sombra:0 1px 3px rgba(26,37,53,.08), 0 8px 24px rgba(26,37,53,.06);
   }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{-webkit-text-size-adjust:100%;}
-  body{
-    font-family:'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    background:var(--fundo);
-    color:var(--texto);
-    font-size:16px;
-    line-height:1.6;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    -webkit-font-smoothing:antialiased;
-  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--fundo);color:var(--texto);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;}
   a{color:inherit;}
+  h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.15;text-wrap:balance;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
 
-  .topo{
-    background:var(--navy);color:#fff;padding:14px 20px;
-    display:flex;align-items:center;justify-content:space-between;gap:12px;
-  }
-  .marca{display:flex;flex-direction:column;line-height:1.1;}
-  .marca-nome{font-family:'Cormorant Garamond', Georgia, serif;font-size:1.45rem;font-weight:600;letter-spacing:.02em;}
+  /* topo */
+  .topo{background:var(--navy);color:#fff;position:sticky;top:0;z-index:10;}
+  .topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:14px;}
+  .marca{display:flex;flex-direction:column;line-height:1.1;text-decoration:none;}
+  .marca-nome{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.45rem;font-weight:600;letter-spacing:.02em;}
   .marca-sub{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--dourado);}
-  .topo-contato{font-size:.82rem;color:#d7dbe2;text-decoration:none;white-space:nowrap;}
-  .topo-contato:hover{color:#fff;}
+  nav{display:flex;align-items:center;gap:26px;}
+  nav a{font-size:.88rem;color:#d7dbe2;text-decoration:none;}
+  nav a:hover{color:#fff;}
+  .btn-wa{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(201,168,76,.7);color:#fff;border-radius:10px;padding:9px 16px;font-size:.88rem;font-weight:500;text-decoration:none;white-space:nowrap;}
+  .btn-wa:hover{background:rgba(201,168,76,.14);}
 
-  main{flex:1;width:100%;max-width:860px;margin:0 auto;padding:24px 16px 40px;}
-  .cartao{
-    background:var(--cartao);border-radius:var(--raio);
-    box-shadow:0 1px 3px rgba(26,37,53,.08), 0 8px 24px rgba(26,37,53,.06);
-    padding:48px 32px;text-align:center;
+  /* hero */
+  .hero{background:var(--navy);color:#fff;padding:72px 0 88px;position:relative;overflow:hidden;}
+  .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border:1px solid rgba(201,168,76,.18);border-radius:50%;}
+  .hero::before{content:"";position:absolute;right:-40px;top:-40px;width:420px;height:420px;border:1px solid rgba(201,168,76,.10);border-radius:50%;}
+  .eyebrow{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--dourado);font-weight:600;display:block;margin-bottom:18px;}
+  .hero h1{font-size:clamp(2.4rem,5.4vw,3.6rem);max-width:760px;margin-bottom:20px;}
+  .hero h1 em{font-style:italic;color:var(--dourado);}
+  .hero p{color:#c8ced8;font-size:1.08rem;max-width:620px;margin-bottom:34px;}
+  .acoes{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:13px 24px;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid transparent;}
+  .btn-ouro{background:var(--dourado);color:var(--navy);}
+  .btn-ouro:hover{background:#d6b65c;}
+  .btn-linha{border-color:rgba(255,255,255,.35);color:#fff;}
+  .btn-linha:hover{border-color:#fff;}
+  .btn-navy{background:var(--navy);color:#fff;}
+  .btn-navy:hover{background:var(--navy-2);}
+
+  /* faixa de confiança (sem números de marketing — Provimento 205/2021) */
+  .faixa{margin-top:-40px;position:relative;z-index:2;}
+  .faixa .card{background:var(--cartao);border-radius:var(--raio);box-shadow:var(--sombra);display:grid;grid-template-columns:repeat(3,1fr);}
+  .faixa .item{padding:22px 24px;border-left:1px solid var(--borda);}
+  .faixa .item:first-child{border-left:0;}
+  .faixa b{display:block;font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;}
+  .faixa span{font-size:.86rem;color:var(--suave);}
+
+  section{padding:88px 0;}
+  .sec-tag{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--dourado-txt);font-weight:600;display:block;margin-bottom:10px;}
+  .sec-tit{font-size:clamp(2rem,3.6vw,2.6rem);margin-bottom:14px;}
+  .sec-lead{color:var(--suave);max-width:640px;margin-bottom:44px;}
+
+  /* áreas */
+  .publicos{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .publico{background:var(--cartao);border-radius:var(--raio);box-shadow:var(--sombra);padding:32px;border-top:3px solid var(--dourado);}
+  .publico h3{font-size:1.7rem;margin-bottom:6px;}
+  .publico > p{color:var(--suave);font-size:.95rem;margin-bottom:22px;}
+  .areas{list-style:none;display:flex;flex-direction:column;}
+  .areas li{border-top:1px solid var(--borda);}
+  .areas a,.areas div{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;text-decoration:none;}
+  .areas strong{font-weight:600;font-size:.98rem;display:block;}
+  .areas small{color:var(--suave);font-size:.85rem;}
+  .areas .seta{color:var(--dourado-txt);font-size:1.2rem;flex:none;}
+  .areas a:hover strong{text-decoration:underline;text-decoration-color:var(--dourado);text-underline-offset:3px;}
+
+  /* advogado */
+  #escritorio{background:var(--cartao);border-top:1px solid var(--borda);border-bottom:1px solid var(--borda);}
+  .perfil{display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:start;}
+  .foto{aspect-ratio:4/5;border-radius:var(--raio);background:linear-gradient(160deg,var(--navy-2),var(--navy));display:flex;align-items:flex-end;padding:20px;color:#c8ced8;font-size:.82rem;position:relative;overflow:hidden;}
+  .foto{align-items:center;justify-content:center;}
+  .mono{font-family:'Cormorant Garamond',Georgia,serif;font-size:4.6rem;font-weight:600;color:#fff;letter-spacing:.04em;position:relative;z-index:1;}
+  .mono i{color:var(--dourado);font-style:italic;font-weight:500;margin:0 .06em;}
+  .foto::after{content:"";position:absolute;inset:14px;border:1px solid rgba(201,168,76,.35);border-radius:10px;}
+  .perfil h2{font-size:clamp(2rem,3.6vw,2.6rem);margin-bottom:4px;}
+  .oab{color:var(--dourado-txt);font-weight:600;font-size:.9rem;letter-spacing:.04em;margin-bottom:22px;display:block;}
+  .perfil p{color:var(--suave);margin-bottom:14px;max-width:640px;}
+  .marcos{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:26px;}
+  .marco{border:1px solid var(--borda);border-radius:10px;padding:16px;}
+  .marco b{display:block;font-weight:600;font-size:.95rem;margin-bottom:2px;}
+  .marco span{color:var(--suave);font-size:.85rem;}
+
+  /* como funciona */
+  .passos{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:p;}
+  .passo{background:var(--cartao);border-radius:var(--raio);box-shadow:var(--sombra);padding:26px 22px;}
+  .passo::before{counter-increment:p;content:counter(p);display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--navy);color:var(--dourado);font-weight:600;margin-bottom:14px;}
+  .passo h3{font-size:1.35rem;margin-bottom:6px;}
+  .passo p{color:var(--suave);font-size:.9rem;}
+
+  /* segurança */
+  .seguranca{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;background:var(--navy);color:#fff;border-radius:var(--raio);padding:48px;}
+  .seguranca h2{font-size:clamp(1.9rem,3.2vw,2.4rem);margin-bottom:12px;}
+  .seguranca p{color:#c8ced8;}
+  .seg-lista{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .seg-lista li{display:flex;gap:12px;align-items:flex-start;font-size:.93rem;color:#e3e6ec;}
+  .seg-lista li::before{content:"";flex:none;width:8px;height:8px;margin-top:8px;border-radius:50%;background:var(--dourado);}
+
+  /* contato */
+  #contato{background:var(--alt);}
+  .contato{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .ccard{background:var(--cartao);border-radius:var(--raio);box-shadow:var(--sombra);padding:32px;}
+  .ccard h3{font-size:1.5rem;margin-bottom:16px;}
+  .dl{display:grid;grid-template-columns:110px 1fr;gap:10px 16px;font-size:.95rem;}
+  .dl dt{color:var(--suave);}
+  .dl a{text-decoration:none;border-bottom:1px solid var(--dourado);}
+
+
+  /* IA com revisão humana */
+  .ia{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start;}
+  .ia h2{font-size:clamp(2rem,3.6vw,2.6rem);margin-bottom:14px;}
+  .ia > div > p{color:var(--suave);margin-bottom:14px;}
+  .ia-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .ia-card{background:var(--cartao);border-radius:var(--raio);box-shadow:var(--sombra);padding:22px;border-top:3px solid var(--dourado);}
+  .ia-card b{display:block;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;margin-bottom:6px;}
+  .ia-card span{color:var(--suave);font-size:.9rem;}
+  @media (max-width:900px){ .ia{grid-template-columns:1fr;gap:28px;} }
+  @media (max-width:560px){ .ia-cards{grid-template-columns:1fr;} }
+
+  footer{background:var(--navy);color:#9aa3b2;font-size:.82rem;padding:36px 0;}
+  footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+  footer .marca-nome{color:#fff;font-size:1.2rem;}
+  footer p{max-width:560px;}
+
+  @media (max-width:900px){
+    nav a:not(.btn-wa){display:none;}
+    .publicos,.perfil,.seguranca,.contato{grid-template-columns:1fr;}
+    .perfil{gap:28px;} .foto{max-width:260px;}
+    .passos{grid-template-columns:1fr 1fr;}
+    .seguranca{padding:32px 24px;}
   }
-
-  .eyebrow{
-    font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;
-    color:var(--dourado);font-weight:600;display:block;margin-bottom:14px;
-  }
-  h1{
-    font-family:'Cormorant Garamond', Georgia, serif;font-weight:600;
-    font-size:clamp(2rem,5vw,2.8rem);line-height:1.15;margin-bottom:14px;
-  }
-  .lead{font-size:1.02rem;color:var(--suave);max-width:540px;margin:0 auto 36px;}
-
-  .rule{width:44px;height:2px;background:var(--dourado);margin:0 auto 36px;border-radius:2px;}
-
-  .funcionalidades{
-    text-align:left;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;
-    margin-bottom:40px;
-  }
-  .funcionalidade{border:1px solid var(--borda);border-radius:10px;padding:16px;border-top:3px solid var(--dourado);}
-  .funcionalidade h4{font-size:.95rem;font-weight:600;color:var(--texto);margin-bottom:6px;}
-  .funcionalidade p{font-size:.86rem;color:var(--suave);line-height:1.55;}
-
-  .contato{border-top:1px solid var(--borda);padding-top:28px;}
-  .contato p{font-size:.92rem;color:var(--suave);margin-bottom:14px;}
-  .contato a.email{
-    display:inline-block;background:var(--navy);color:#fff;text-decoration:none;
-    font-weight:600;border-radius:10px;padding:13px 22px;min-height:48px;
-  }
-  .contato a.email:hover{background:var(--navy-2);}
-
-  footer{text-align:center;color:var(--suave);font-size:.8rem;padding:0 16px 28px;}
-
-  @media (max-width:760px){
-    .funcionalidades{grid-template-columns:1fr;}
-    .cartao{padding:36px 20px;}
-    .topo-contato{display:none;}
+  @media (max-width:560px){
+    .faixa .card{grid-template-columns:1fr;}
+    .faixa .item{border-left:0;border-top:1px solid var(--borda);}
+    .faixa .item:first-child{border-top:0;}
+    .passos,.marcos{grid-template-columns:1fr;}
+    section{padding:64px 0;}
+    .hero{padding:52px 0 76px;}
+    .publico,.ccard{padding:24px 20px;}
+    .btn-wa span{display:none;}
+    .dl{grid-template-columns:1fr;gap:2px;}
+    .dl dd{margin-bottom:10px;}
   }
 </style>
 </head>
 <body>
 
 <header class="topo">
-  <div class="marca">
-    <span class="marca-nome">Gurgel e Gusmão</span>
-    <span class="marca-sub">Advocacia</span>
+  <div class="wrap">
+    <a class="marca" href="#">
+      <span class="marca-nome">Gurgel e Gusmão</span>
+      <span class="marca-sub">Advocacia</span>
+    </a>
+    <nav>
+      <a href="#atuacao">Atuação</a>
+      <a href="#escritorio">O escritório</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#tecnologia">Tecnologia</a>
+      <a href="#contato">Contato</a>
+      <a class="btn-wa" href="https://wa.me/5527999830736" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2z"/></svg>
+        <span>(27) 99983-0736</span>
+      </a>
+    </nav>
   </div>
-  <a class="topo-contato" href="mailto:willian@gurgelgusmao.adv.br">willian@gurgelgusmao.adv.br</a>
 </header>
 
-<main>
-  <div class="cartao">
-    <span class="eyebrow">Em construção</span>
-    <h1>Um novo site está sendo preparado.</h1>
-    <p class="lead">Em breve, assessoria jurídica independente para empresas — organizada por quem enfrenta o problema.</p>
-
-    <div class="rule"></div>
-
-    <div class="funcionalidades">
-      <div class="funcionalidade">
-        <h4>Para Empresas</h4>
-        <p>Soluções para Direito Empresarial, Societário, Contratos, Cível, Consumidor, Tributário, Trabalhista, LGPD e Compliance.</p>
-      </div>
-      <div class="funcionalidade">
-        <h4>Consulta Inicial</h4>
-        <p>Diagnóstico da situação, identificação de riscos e um caminho de atuação com prazos e custos claros.</p>
-      </div>
-      <div class="funcionalidade">
-        <h4>Acompanhamento Jurídico</h4>
-        <p>Curadoria periódica do noticiário jurídico, como referência de contexto para quem visita o site.</p>
-      </div>
-    </div>
-
-    <div class="contato">
-      <p>Enquanto o site não está pronto, fale diretamente por e-mail:</p>
-      <a class="email" href="mailto:willian@gurgelgusmao.adv.br">willian@gurgelgusmao.adv.br</a>
+<div class="hero">
+  <div class="wrap">
+    <h1>Advocacia que explica o caminho <em>antes</em> de começar.</h1>
+    <p>Assessoria jurídica para empresas e defesa de pessoas em questões de consumo, saúde, bancárias e previdenciárias. Diagnóstico claro, prazos e custos combinados por escrito, acompanhamento sem burocracia.</p>
+    <div class="acoes">
+      <a class="btn btn-ouro" href="#contato">Falar com o escritório</a>
+      <a class="btn btn-linha" href="#atuacao">Ver áreas de atuação</a>
     </div>
   </div>
-</main>
+</div>
 
-<footer>OAB/ES 14.605 · Vitória/ES, Brasil · © 2026 Gurgel Gusmão Advocacia e Assessoria</footer>
+<div class="faixa">
+  <div class="wrap">
+    <div class="card">
+      <div class="item"><b>Atendimento remoto</b><span>Reuniões por vídeo, documentos e assinatura pela internet</span></div>
+      <div class="item"><b>Proposta por escrito</b><span>Escopo, prazos e honorários definidos antes de começar</span></div>
+      <div class="item"><b>Dados protegidos</b><span>Envio de documentos criptografado, conforme a LGPD</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="atuacao">
+  <div class="wrap">
+    <span class="sec-tag">Áreas de atuação</span>
+    <h2 class="sec-tit">Para empresas e para pessoas</h2>
+    <p class="sec-lead">Duas frentes, o mesmo método: entender o problema por inteiro, mostrar os riscos e só então indicar o caminho.</p>
+
+    <div class="publicos">
+      <div class="publico">
+        <h3>Empresas</h3>
+        <p>Prevenção e solução de problemas jurídicos do dia a dia do negócio.</p>
+        <ul class="areas">
+          <li><div><span><strong>Contratos</strong><small>Elaboração, revisão e negociação</small></span></div></li>
+          <li><div><span><strong>LGPD e compliance</strong><small>Adequação, políticas e programa de integridade</small></span></div></li>
+          <li><div><span><strong>Societário e governança</strong><small>Alterações contratuais, poderes e mandatos</small></span></div></li>
+          <li><div><span><strong>Marcas e patentes</strong><small>Registro no INPI, oposições e proteção da marca</small></span></div></li>
+          <li><div><span><strong>Licitações e contratos públicos</strong><small>Lei 14.133/2021</small></span></div></li>
+          <li><div><span><strong>Cível, consumidor, trabalhista e tributário</strong><small>Defesa da empresa em processos</small></span></div></li>
+        </ul>
+      </div>
+      <div class="publico">
+        <h3>Pessoas</h3>
+        <p>Defesa de direitos frente a planos de saúde, bancos e o INSS.</p>
+        <ul class="areas">
+          <li><a href="/reajuste-plano-de-saude/"><span><strong>Reajuste de plano de saúde</strong><small>Falso coletivo, faixa etária e índice da ANS</small></span><span class="seta">→</span></a></li>
+          <li><a href="/busca-apreensao/"><span><strong>Busca e apreensão de veículo</strong><small>Defesa, purgação da mora e revisão do contrato</small></span><span class="seta">→</span></a></li>
+          <li><a href="/auxilio-doenca/"><span><strong>Direito previdenciário</strong><small>Auxílio-doença e benefícios negados ou cessados pelo INSS</small></span><span class="seta">→</span></a></li>
+          <li><div><span><strong>Cível, consumidor, trabalhista e tributário</strong><small>Cobranças indevidas, contratos, relações de trabalho e impostos</small></span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="escritorio">
+  <div class="wrap perfil">
+    <div class="foto" aria-hidden="true"><span class="mono">G<i>&amp;</i>G</span></div>
+    <div>
+      <span class="sec-tag">O escritório</span>
+      <h2>Willian Gurgel Gusmão</h2>
+      <span class="oab">OAB/ES 14.605</span>
+      <p>Advogado há 18 anos, mais de 10 deles em jurídico corporativo de grande porte, com experiência em contratos, tributário, governança e compliance em estruturas com várias entidades e interface com órgãos de controle. Atua também para pequenas e médias empresas e para pessoas físicas.</p>
+      <p>Hoje conduz o escritório com o mesmo rigor para empresas e pessoas, aplicando tecnologia para entregar mais e melhor: cadastro e envio de documentos pela internet, assinatura digital com confirmação de identidade e acompanhamento do caso sem precisar ir ao escritório.</p>
+      <div class="marcos">
+        <div class="marco"><b>LLM em Direito Empresarial · FGV</b><span>Formação</span></div>
+        <div class="marco"><b>Inscrito na OAB desde 2008</b><span>Ordem dos Advogados do Brasil · Seção ES</span></div>
+        <div class="marco"><b>Contratos, tributário, governança e compliance</b><span>Experiência em ambiente regulado</span></div>
+        <div class="marco"><b>Vitória/ES</b><span>Presencial no ES · remoto em todo o Brasil</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="como-funciona">
+  <div class="wrap">
+    <span class="sec-tag">Como funciona</span>
+    <h2 class="sec-tit">Do primeiro contato ao acompanhamento</h2>
+    <p class="sec-lead">Você sabe em que etapa o seu caso está e o que vem a seguir.</p>
+    <div class="passos">
+      <div class="passo"><h3>Conversa inicial</h3><p>Pelo WhatsApp, telefone ou vídeo. Você conta o que aconteceu e envia o que tiver.</p></div>
+      <div class="passo"><h3>Análise</h3><p>Leitura dos documentos, identificação dos riscos e das alternativas — inclusive a de não entrar na Justiça.</p></div>
+      <div class="passo"><h3>Proposta</h3><p>Escopo, prazos e honorários por escrito. Você decide com tudo à mesa.</p></div>
+      <div class="passo"><h3>Acompanhamento</h3><p>Cadastro, documentos e assinatura pela internet. O escritório acompanha cada movimentação e informa você do que importa.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="tecnologia" style="padding-top:0">
+  <div class="wrap ia">
+    <div>
+      <span class="sec-tag">Tecnologia e revisão humana</span>
+      <h2>Inteligência artificial para trabalhar melhor — nunca no lugar do advogado.</h2>
+      <p>O escritório usa inteligência artificial e sistemas automatizados para melhorar a experiência do cliente: menos burocracia, mais agilidade e a segurança jurídica que cada caso exige.</p>
+      <p>A IA apoia as entregas mais complexas — pesquisa de jurisprudência, análise de documentos extensos e conferência de cálculos — e diminui as chances de erro.</p>
+      <p><strong>Toda manifestação, parecer ou cálculo é revisado e assinado por advogado antes de sair do escritório.</strong></p>
+    </div>
+    <div class="ia-cards">
+      <div class="ia-card"><b>Revisão humana sempre</b><span>A IA propõe; o advogado confere a técnica, os fatos e a estratégia de cada caso.</span></div>
+      <div class="ia-card"><b>Privacidade controlada</b><span>Processos sigilosos e documentos pessoais são tratados em IA executada no próprio escritório, sem envio a serviços externos.</span></div>
+      <div class="ia-card"><b>Fonte oficial</b><span>Leis e decisões são conferidas na redação vigente e no inteiro teor, nos sites dos tribunais.</span></div>
+      <div class="ia-card"><b>Prazos sob controle</b><span>Publicações oficiais lidas todos os dias e prazos calculados com os feriados de cada comarca, sempre conferidos por advogado.</span></div>
+      <div class="ia-card"><b>Cálculos com índices oficiais</b><span>Correção monetária e juros apurados com as séries oficiais do Banco Central, dia a dia, com memória de cálculo.</span></div>
+      <div class="ia-card"><b>Sempre atualizado</b><span>Ferramentas, legislação e jurisprudência acompanhadas de perto, para a peça refletir o Direito de hoje.</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="seguranca">
+      <div>
+        <span class="eyebrow">Sigilo e LGPD</span>
+        <h2>Seus documentos não ficam soltos em e-mail ou WhatsApp.</h2>
+        <p>O escritório usa canais próprios para receber dados e colher assinaturas, no domínio gurgelgusmao.adv.br.</p>
+      </div>
+      <ul class="seg-lista">
+        <li>Cadastro com criptografia feita no seu aparelho, antes do envio</li>
+        <li>Assinatura digital com confirmação de identidade (selfie, documento e localização)</li>
+        <li>Dados usados só para o seu atendimento, nos termos da Lei 13.709/2018</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="wrap">
+    <span class="sec-tag">Contato</span>
+    <h2 class="sec-tit">Fale com o escritório</h2>
+    <p class="sec-lead">Conte brevemente o seu caso. A resposta vem pelo mesmo canal.</p>
+    <div class="contato">
+      <div class="ccard">
+        <h3>Canais</h3>
+        <dl class="dl">
+          <dt>WhatsApp</dt><dd><a href="https://wa.me/5527999830736" target="_blank" rel="noopener">(27) 99983-0736</a></dd>
+          <dt>E-mail</dt><dd><a href="mailto:willian@gurgelgusmao.adv.br">willian@gurgelgusmao.adv.br</a></dd>
+          <dt>Endereço</dt><dd>Rua Milton Manoel dos Santos, 371, Jardim Camburi, Vitória/ES, CEP 29090-110</dd>
+          <dt>Horário</dt><dd>seg. a sex., 9h às 18h</dd>
+        </dl>
+      </div>
+      <div class="ccard" style="display:flex;flex-direction:column;justify-content:space-between;gap:20px;">
+        <div>
+          <h3>Atendimento a distância</h3>
+          <p style="color:var(--suave)">Para quem está fora de Vitória, todo o atendimento pode ser feito pela internet — da primeira conversa à assinatura do contrato e da procuração.</p>
+        </div>
+        <a class="btn btn-navy" href="https://wa.me/5527999830736" target="_blank" rel="noopener">Iniciar conversa no WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="marca"><span class="marca-nome">Gurgel e Gusmão</span><span class="marca-sub">Advocacia</span></div>
+    </div>
+    <p>Willian Gurgel Gusmão — OAB/ES nº 14.605 · Vitória/ES. Conteúdo de caráter informativo, conforme o Código de Ética e Disciplina da OAB e o Provimento nº 205/2021. Não constitui promessa de resultado.</p>
+  </div>
+</footer>
 
 </body>
 </html>
