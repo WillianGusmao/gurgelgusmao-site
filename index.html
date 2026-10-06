@@ -5,137 +5,132 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gurgel Gusmão Advocacia e Assessoria — Em construção</title>
 <meta name="description" content="O novo site da Gurgel Gusmão Advocacia e Assessoria está em construção. Contato: willian@gurgelgusmao.adv.br">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap">
 <style>
+  /* Identidade do escritório (mesma de cadastro/identificação/assinatura) */
   :root{
-    --navy:#1C2B3A;
-    --charcoal:#2A2A28;
-    --stone:#8A8A82;
-    --off-white:#F4F2EE;
-    --accent:#B7A57A;
-    --serif: Georgia, 'Times New Roman', Times, serif;
-    --sans: Arial, Helvetica, sans-serif;
+    --navy:#1a2535;
+    --navy-2:#243044;
+    --dourado:#c9a84c;
+    --fundo:#f7f5f0;
+    --cartao:#ffffff;
+    --texto:#1a2535;
+    --suave:#5f6673;
+    --borda:#dcd8cf;
+    --raio:14px;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  html,body{height:100%;}
+  html{-webkit-text-size-adjust:100%;}
   body{
-    font-family:var(--sans);
-    background:var(--navy);
-    color:var(--off-white);
+    font-family:'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    background:var(--fundo);
+    color:var(--texto);
+    font-size:16px;
+    line-height:1.6;
+    min-height:100vh;
     display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:40px 24px;
-    line-height:1.7;
+    flex-direction:column;
     -webkit-font-smoothing:antialiased;
   }
   a{color:inherit;}
-  .card{max-width:640px;width:100%;text-align:center;}
 
-  .brand{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:56px;}
-  .brand-mark{width:32px;height:21px;flex-shrink:0;}
-  .brand-mark circle{fill:none;stroke:var(--off-white);stroke-width:1.4;}
-  .brand-text{text-align:left;line-height:1.2;}
-  .brand-name{font-family:var(--serif);font-size:15px;letter-spacing:1.5px;text-transform:uppercase;display:block;}
-  .brand-sub{font-size:9px;letter-spacing:2px;color:var(--stone);text-transform:uppercase;display:block;}
+  .topo{
+    background:var(--navy);color:#fff;padding:14px 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+  }
+  .marca{display:flex;flex-direction:column;line-height:1.1;}
+  .marca-nome{font-family:'Cormorant Garamond', Georgia, serif;font-size:1.45rem;font-weight:600;letter-spacing:.02em;}
+  .marca-sub{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--dourado);}
+  .topo-contato{font-size:.82rem;color:#d7dbe2;text-decoration:none;white-space:nowrap;}
+  .topo-contato:hover{color:#fff;}
+
+  main{flex:1;width:100%;max-width:860px;margin:0 auto;padding:24px 16px 40px;}
+  .cartao{
+    background:var(--cartao);border-radius:var(--raio);
+    box-shadow:0 1px 3px rgba(26,37,53,.08), 0 8px 24px rgba(26,37,53,.06);
+    padding:48px 32px;text-align:center;
+  }
 
   .eyebrow{
-    font-size:11px;letter-spacing:3px;text-transform:uppercase;
-    color:var(--accent);font-weight:bold;display:block;margin-bottom:20px;
+    font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--dourado);font-weight:600;display:block;margin-bottom:14px;
   }
   h1{
-    font-family:var(--serif);font-weight:300;font-size:clamp(30px,5vw,46px);
-    margin-bottom:22px;line-height:1.2;
+    font-family:'Cormorant Garamond', Georgia, serif;font-weight:600;
+    font-size:clamp(2rem,5vw,2.8rem);line-height:1.15;margin-bottom:14px;
   }
-  .lead{
-    font-size:15.5px;color:rgba(244,242,238,0.72);max-width:520px;
-    margin:0 auto 48px;font-weight:300;
-  }
+  .lead{font-size:1.02rem;color:var(--suave);max-width:540px;margin:0 auto 36px;}
 
-  .rule{width:44px;height:1px;background:var(--accent);margin:0 auto 48px;}
+  .rule{width:44px;height:2px;background:var(--dourado);margin:0 auto 36px;border-radius:2px;}
 
   .funcionalidades{
-    text-align:left;display:grid;grid-template-columns:1fr 1fr;gap:20px 32px;
-    margin-bottom:48px;
+    text-align:left;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;
+    margin-bottom:40px;
   }
-  .funcionalidade{display:flex;gap:12px;}
-  .funcionalidade .bar{width:2px;background:var(--accent);flex-shrink:0;margin-top:3px;}
-  .funcionalidade h4{
-    font-family:var(--sans);font-size:13.5px;font-weight:bold;
-    color:var(--off-white);margin-bottom:4px;letter-spacing:0.2px;
-  }
-  .funcionalidade p{font-size:12.5px;color:var(--stone);line-height:1.55;}
+  .funcionalidade{border:1px solid var(--borda);border-radius:10px;padding:16px;border-top:3px solid var(--dourado);}
+  .funcionalidade h4{font-size:.95rem;font-weight:600;color:var(--texto);margin-bottom:6px;}
+  .funcionalidade p{font-size:.86rem;color:var(--suave);line-height:1.55;}
 
-  .contato{
-    border-top:1px solid rgba(244,242,238,0.15);
-    padding-top:36px;margin-top:8px;
-  }
-  .contato p{font-size:13px;color:var(--stone);margin-bottom:14px;}
+  .contato{border-top:1px solid var(--borda);padding-top:28px;}
+  .contato p{font-size:.92rem;color:var(--suave);margin-bottom:14px;}
   .contato a.email{
-    font-family:var(--serif);font-size:19px;color:var(--off-white);
-    border-bottom:1px solid var(--accent);padding-bottom:2px;
+    display:inline-block;background:var(--navy);color:#fff;text-decoration:none;
+    font-weight:600;border-radius:10px;padding:13px 22px;min-height:48px;
   }
-  .contato a.email:hover{color:var(--accent);}
+  .contato a.email:hover{background:var(--navy-2);}
 
-  footer{margin-top:56px;font-size:11px;color:rgba(244,242,238,0.4);letter-spacing:0.5px;}
+  footer{text-align:center;color:var(--suave);font-size:.8rem;padding:0 16px 28px;}
 
-  @media (max-width:520px){
+  @media (max-width:760px){
     .funcionalidades{grid-template-columns:1fr;}
+    .cartao{padding:36px 20px;}
+    .topo-contato{display:none;}
   }
 </style>
 </head>
 <body>
 
-<div class="card">
-
-  <div class="brand">
-    <svg class="brand-mark" viewBox="0 0 40 26" aria-hidden="true">
-      <circle cx="13" cy="13" r="11"></circle>
-      <circle cx="27" cy="13" r="11"></circle>
-    </svg>
-    <div class="brand-text">
-      <span class="brand-name">Gurgel Gusmão</span>
-      <span class="brand-sub">Advocacia e Assessoria</span>
-    </div>
+<header class="topo">
+  <div class="marca">
+    <span class="marca-nome">Gurgel e Gusmão</span>
+    <span class="marca-sub">Advocacia</span>
   </div>
+  <a class="topo-contato" href="mailto:willian@gurgelgusmao.adv.br">willian@gurgelgusmao.adv.br</a>
+</header>
 
-  <span class="eyebrow">Em Construção</span>
-  <h1>Um novo site está sendo preparado.</h1>
-  <p class="lead">Em breve, assessoria jurídica independente para empresas — organizada por quem enfrenta o problema.</p>
+<main>
+  <div class="cartao">
+    <span class="eyebrow">Em construção</span>
+    <h1>Um novo site está sendo preparado.</h1>
+    <p class="lead">Em breve, assessoria jurídica independente para empresas — organizada por quem enfrenta o problema.</p>
 
-  <div class="rule"></div>
+    <div class="rule"></div>
 
-  <div class="funcionalidades">
-    <div class="funcionalidade">
-      <div class="bar"></div>
-      <div>
+    <div class="funcionalidades">
+      <div class="funcionalidade">
         <h4>Para Empresas</h4>
         <p>Soluções para Direito Empresarial, Societário, Contratos, Cível, Consumidor, Tributário, Trabalhista, LGPD e Compliance.</p>
       </div>
-    </div>
-    <div class="funcionalidade">
-      <div class="bar"></div>
-      <div>
+      <div class="funcionalidade">
         <h4>Consulta Inicial</h4>
         <p>Diagnóstico da situação, identificação de riscos e um caminho de atuação com prazos e custos claros.</p>
       </div>
-    </div>
-    <div class="funcionalidade">
-      <div class="bar"></div>
-      <div>
+      <div class="funcionalidade">
         <h4>Acompanhamento Jurídico</h4>
         <p>Curadoria periódica do noticiário jurídico, como referência de contexto para quem visita o site.</p>
       </div>
     </div>
+
+    <div class="contato">
+      <p>Enquanto o site não está pronto, fale diretamente por e-mail:</p>
+      <a class="email" href="mailto:willian@gurgelgusmao.adv.br">willian@gurgelgusmao.adv.br</a>
+    </div>
   </div>
+</main>
 
-  <div class="contato">
-    <p>Enquanto o site não está pronto, fale diretamente por e-mail:</p>
-    <a class="email" href="mailto:willian@gurgelgusmao.adv.br">willian@gurgelgusmao.adv.br</a>
-  </div>
-
-  <footer>OAB/ES 14.605 · Vitória/ES, Brasil · © 2026 Gurgel Gusmão Advocacia e Assessoria</footer>
-
-</div>
+<footer>OAB/ES 14.605 · Vitória/ES, Brasil · © 2026 Gurgel Gusmão Advocacia e Assessoria</footer>
 
 </body>
 </html>
