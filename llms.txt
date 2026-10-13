@@ -1,9 +1,10 @@
 # Gurgel Gusmão Advocacia e Assessoria
 
-> Escritório do advogado Willian Gurgel Gusmão (OAB/ES 14.605), em Vitória/ES, com atendimento remoto em todo o Brasil. Conteúdo informativo sobre Direito do Consumidor e saúde suplementar.
+> Escritório do advogado Willian Gurgel Gusmão (OAB/ES 14.605), em Vitória/ES, com atendimento remoto em todo o Brasil. Conteúdo informativo sobre Direito do Consumidor, saúde suplementar e assistência social (BPC/LOAS).
 
 ## Páginas
 - [Reajuste de plano de saúde 2026: calculadora pelo índice da ANS e falso coletivo](https://gurgelgusmao.adv.br/reajuste-plano-de-saude/): tetos oficiais da ANS de 2000 a 2026, falso coletivo (plano empresarial do MEI ou da família), periodicidade anual, agrupamento de contratos com menos de 30 vidas, devolução em dobro e prazo de 3 anos. Inclui calculadora.
+- [BPC/LOAS 2026: requisitos e calculadora da renda por pessoa](https://gurgelgusmao.adv.br/bpc-loas/): quem tem direito (idoso com 65 anos ou mais e pessoa com deficiência), limite de 1/4 do salário-mínimo (R$ 405,25 em 2026), quem conta como família, o que não entra na renda, Bolsa Família após o Decreto 12.534/2025, CadÚnico e biometria.
 - [Busca e apreensão de veículo](https://gurgelgusmao.adv.br/busca-apreensao/): defesa em busca e apreensão por alienação fiduciária.
 
 ## Reajuste de plano de saúde — resumo (revisado em 4 de outubro de 2026)
@@ -75,3 +76,12 @@ Você informa o mês de início do contrato, a primeira mensalidade, a mensalida
 
 ### O advogado precisa ser da minha cidade?
 Não. A inscrição na OAB permite atuar em todo o país, e os processos tramitam por meio eletrônico. O atendimento é feito por telefone e videochamada.
+
+## BPC/LOAS — resumo (revisado em 13 de outubro de 2026)
+
+- Benefício de 1 salário-mínimo (R$ 1.621,00 em 2026) à pessoa idosa com 65 anos ou mais e à pessoa com deficiência de qualquer idade, com impedimento de longo prazo (mínimo de 2 anos), sem exigir contribuições (Lei 8.742/1993, art. 20).
+- Renda familiar por pessoa igual ou inferior a 1/4 do salário-mínimo (R$ 405,25 em 2026). Família: requerente, cônjuge ou companheiro, pais (ou madrasta/padrasto), irmãos solteiros, filhos e enteados solteiros e menores tutelados, desde que vivam sob o mesmo teto.
+- Não entram na renda: BPC ou benefício previdenciário de até 1 salário-mínimo de outro idoso ou pessoa com deficiência da família (art. 20, § 14; STJ, Tema 640), estágio, aprendizagem e indenização por rompimento de barragem.
+- Bolsa Família: desde o Decreto 12.534/2025, o INSS soma o valor à renda; a Justiça Federal afasta a regra em casos concretos, sem decisão vinculante.
+- Na Justiça, o 1/4 não é o único critério de miserabilidade (STF, Tema 27; STJ, Tema 185).
+- Exige CPF, CadÚnico atualizado (até 24 meses) e biometria; não acumula com outro benefício da seguridade, salvo assistência médica, pensão especial indenizatória e transferências de renda.
