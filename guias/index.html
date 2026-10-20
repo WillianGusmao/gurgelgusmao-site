@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guias e calculadoras | Gurgel Gusmão Advocacia</title>
+<meta name="description" content="Guias gratuitos e calculadoras sobre plano de saúde, BPC/LOAS, busca e apreensão de veículo e auxílio-doença. Conteúdo informativo do escritório Gurgel e Gusmão Advocacia, Vitória/ES.">
+<meta name="robots" content="noindex, follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Gurgel Gusmão Advocacia">
+<meta property="og:url" content="https://gurgelgusmao.adv.br/guias/">
+<meta property="og:title" content="Guias e calculadoras | Gurgel Gusmão Advocacia">
+<meta property="og:description" content="Guias gratuitos e calculadoras sobre plano de saúde, BPC/LOAS, busca e apreensão de veículo e auxílio-doença.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --navy:#1a2535; --navy-2:#243044; --dourado:#c9a84c; --dourado-txt:#8a6d1f;
+    --fundo:#f7f5f0; --alt:#efece4; --cartao:#fff; --texto:#1a2535; --suave:#5f6673;
+    --borda:#dcd8cf; --raio:14px;
+    --sombra:0 1px 3px rgba(26,37,53,.08), 0 8px 24px rgba(26,37,53,.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--fundo);color:var(--texto);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.15;text-wrap:balance;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+  :focus-visible{outline:2px solid var(--dourado);outline-offset:2px;}
+
+  /* topo (igual à home) */
+  .topo{background:var(--navy);color:#fff;}
+  .topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:14px;}
+  .marca{display:flex;flex-direction:column;line-height:1.1;text-decoration:none;}
+  .marca-nome{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.45rem;font-weight:600;letter-spacing:.02em;}
+  .marca-sub{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--dourado);}
+  nav{display:flex;align-items:center;gap:22px;}
+  nav a{font-size:.88rem;color:#d7dbe2;text-decoration:none;}
+  nav a:hover{color:#fff;}
+  .btn-wa{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(201,168,76,.7);color:#fff;border-radius:10px;padding:9px 16px;font-size:.88rem;font-weight:500;text-decoration:none;white-space:nowrap;}
+  .btn-wa:hover{background:rgba(201,168,76,.14);}
+
+  .cab{background:var(--navy);color:#fff;padding:44px 0 52px;}
+  .cab .tag{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dourado);font-weight:600;}
+  .cab h1{font-size:2.5rem;margin:8px 0 10px;}
+  .cab p{color:#c9ced8;max-width:640px;}
+
+  main{padding:40px 0 56px;}
+  .grade{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+  .guia{display:flex;flex-direction:column;background:var(--cartao);border:1px solid var(--borda);border-radius:var(--raio);padding:22px;text-decoration:none;box-shadow:var(--sombra);transition:border-color .15s ease,transform .15s ease;}
+  .guia:hover{border-color:var(--dourado);transform:translateY(-2px);}
+  .meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;}
+  .selo{font-size:.72rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:5px;background:var(--alt);color:var(--suave);}
+  .selo.calc{background:#f3eedf;color:var(--dourado-txt);}
+  .guia h2{font-size:1.45rem;margin-bottom:6px;}
+  .guia p{color:var(--suave);font-size:.95rem;flex:1;}
+  .rodape-guia{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:12px;border-top:1px solid var(--borda);font-size:.82rem;color:var(--suave);}
+  .rodape-guia b{color:var(--texto);font-weight:600;}
+  .aviso{margin-top:28px;font-size:.86rem;color:var(--suave);}
+
+  footer{background:var(--navy);color:#c9ced8;padding:32px 0;}
+  footer .wrap{display:flex;gap:28px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;}
+  footer p{font-size:.82rem;max-width:620px;}
+  footer .marca-nome{color:#fff;}
+
+  @media (max-width:760px){
+    .grade{grid-template-columns:1fr;}
+    nav a:not(.btn-wa){display:none;}
+    .cab h1{font-size:2rem;}
+  }
+  @media (max-width:420px){ .btn-wa span{display:none;} }
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="/">
+      <span class="marca-nome">Gurgel e Gusmão</span>
+      <span class="marca-sub">Advocacia</span>
+    </a>
+    <nav aria-label="Principal">
+      <a href="/">Início</a>
+      <a href="/#atuacao">Atuação</a>
+      <a href="/#contato">Contato</a>
+      <a class="btn-wa" href="https://wa.me/5527999830736" target="_blank" rel="noopener" aria-label="WhatsApp (27) 99983-0736">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2z"/></svg>
+        <span>(27) 99983-0736</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<div class="cab">
+  <div class="wrap">
+    <span class="tag">Conteúdo gratuito</span>
+    <h1>Guias e calculadoras</h1>
+    <p>Explicações em linguagem simples sobre direitos do dia a dia, algumas com calculadora para você fazer as contas antes de procurar um advogado.</p>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+    <div class="grade">
+      <a class="guia" href="/bpc-loas/">
+        <div class="meta"><span class="selo">Assistência social</span><span class="selo calc">Calculadora</span></div>
+        <h2>BPC/LOAS 2026</h2>
+        <p>Quem tem direito (idoso com 65 anos ou mais e pessoa com deficiência), limite de renda de 1/4 do salário-mínimo, quem conta como família e calculadora da renda por pessoa.</p>
+        <div class="rodape-guia"><span>Atualizado em 13/10/2026</span><b>Ler o guia →</b></div>
+      </a>
+      <a class="guia" href="/reajuste-plano-de-saude/">
+        <div class="meta"><span class="selo">Plano de saúde</span><span class="selo calc">Calculadora</span></div>
+        <h2>Reajuste de plano de saúde</h2>
+        <p>Índices da ANS de 2000 a 2026, falso coletivo (plano empresarial do MEI ou da família) e calculadora da mensalidade só com os reajustes oficiais.</p>
+        <div class="rodape-guia"><span>Atualizado em 04/10/2026</span><b>Ler o guia →</b></div>
+      </a>
+      <a class="guia" href="/busca-apreensao/">
+        <div class="meta"><span class="selo">Bancário</span></div>
+        <h2>Busca e apreensão de veículo</h2>
+        <p>Atraso no financiamento: como funciona a busca e apreensão, o prazo para pagar e recuperar o carro, a contestação e a revisão de juros abusivos.</p>
+        <div class="rodape-guia"><span>Atualizado em 23/09/2026</span><b>Ler o guia →</b></div>
+      </a>
+      <a class="guia" href="/auxilio-doenca/">
+        <div class="meta"><span class="selo">Previdenciário</span></div>
+        <h2>Auxílio-doença</h2>
+        <p>Auxílio por incapacidade temporária: requisitos, perícia médica do INSS, documentos e o que fazer quando o benefício é negado ou cessado.</p>
+        <div class="rodape-guia"><span>Atualizado em 31/08/2026</span><b>Ler o guia →</b></div>
+      </a>
+    </div>
+    <p class="aviso">Os guias são informativos e não substituem a análise do seu caso. Para uma orientação específica, <a href="/#contato">fale com o escritório</a>.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="marca"><span class="marca-nome">Gurgel e Gusmão</span><span class="marca-sub">Advocacia</span></div>
+    </div>
+    <p>Willian Gurgel Gusmão — OAB/ES nº 14.605 · Vitória/ES. Conteúdo de caráter informativo, conforme o Código de Ética e Disciplina da OAB e o Provimento nº 205/2021. Não constitui promessa de resultado.</p>
+  </div>
+</footer>
+
+</body>
+</html>
