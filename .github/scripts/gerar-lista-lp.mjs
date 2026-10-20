@@ -19,7 +19,8 @@ const RAIZ = process.cwd();
 const IGNORAR = new Set(['LP', 'guias', 'data', '.github', '.git', 'node_modules']);
 const ITERACOES = 600000;
 
-const usuario = process.env.LP_USUARIO ?? '';
+// usuário sem diferença de maiúsculas/minúsculas nem espaços nas pontas (a página faz o mesmo)
+const usuario = (process.env.LP_USUARIO ?? '').trim().toLowerCase();
 const senha = process.env.LP_SENHA ?? '';
 if (!usuario || !senha) {
   console.error('Defina LP_USUARIO e LP_SENHA.');

@@ -119,7 +119,7 @@
     var botao = document.getElementById('entrar'), erro = document.getElementById('erro');
     botao.disabled = true; botao.textContent = 'Conferindo…'; erro.textContent = '';
     try {
-      mostrar(await abrir(document.getElementById('usuario').value.trim(), document.getElementById('senha').value));
+      mostrar(await abrir(document.getElementById('usuario').value.trim().toLowerCase(), document.getElementById('senha').value));
     } catch (e) {
       erro.textContent = 'Usuário ou senha incorretos.';
     } finally {
