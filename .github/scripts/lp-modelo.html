@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="lp-versao" content="__VERSAO__">
+<title>Landing pages | Acesso restrito</title>
+<!-- Gerado por .github/scripts/gerar-lista-lp.mjs a partir de lp-modelo.html. Não editar à mão. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;500;600&display=swap">
+<style>
+  :root{ --navy:#1a2535; --dourado:#c9a84c; --dourado-txt:#8a6d1f; --fundo:#f7f5f0; --alt:#efece4; --texto:#1a2535; --suave:#5f6673; --borda:#dcd8cf; --erro:#8c2f2f; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--fundo);color:var(--texto);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh;}
+  :focus-visible{outline:2px solid var(--dourado);outline-offset:2px;}
+  .topo{background:var(--navy);color:#fff;}
+  .topo .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:14px;padding-bottom:14px;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+  .marca{display:flex;flex-direction:column;line-height:1.1;}
+  .marca-nome{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.4rem;font-weight:600;}
+  .marca-sub{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--dourado);}
+  .restrito{font-size:.78rem;color:#c9ced8;}
+  h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:1.9rem;}
+  .login{max-width:380px;margin:64px auto;background:#fff;border:1px solid var(--borda);border-radius:14px;padding:28px;box-shadow:0 1px 3px rgba(26,37,53,.08),0 8px 24px rgba(26,37,53,.06);}
+  .login h1{font-size:1.6rem;margin-bottom:4px;}
+  .login p{color:var(--suave);font-size:.88rem;margin-bottom:18px;}
+  label{display:block;font-size:.84rem;font-weight:500;margin:12px 0 5px;}
+  input{width:100%;padding:11px 13px;border:1px solid var(--borda);border-radius:8px;font:inherit;background:var(--fundo);}
+  button{width:100%;margin-top:18px;padding:12px;border:0;border-radius:8px;background:var(--navy);color:#fff;font:600 .95rem 'Inter',sans-serif;cursor:pointer;}
+  button:disabled{opacity:.6;cursor:default;}
+  .erro{color:var(--erro);font-size:.86rem;margin-top:12px;min-height:1.2em;}
+  .lista{padding-top:32px;padding-bottom:56px;}
+  .lista header{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:18px;}
+  .lista header p{color:var(--suave);font-size:.86rem;}
+  .sair{width:auto;margin:0;padding:8px 14px;background:transparent;color:var(--texto);border:1px solid var(--borda);font-weight:500;}
+  table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--borda);border-radius:12px;overflow:hidden;}
+  th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--borda);vertical-align:top;}
+  th{font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;color:var(--suave);background:var(--alt);font-weight:600;}
+  tr:last-child td{border-bottom:0;}
+  td a{color:var(--texto);font-weight:600;}
+  td small{display:block;color:var(--suave);font-size:.8rem;margin-top:3px;}
+  .data{white-space:nowrap;font-variant-numeric:tabular-nums;}
+  .selo{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:5px;background:#e9efe4;color:#2f6b3a;}
+  .selo.nao{background:var(--alt);color:var(--suave);}
+  @media (max-width:900px){
+    thead{display:none;}
+    table,tbody,tr,td{display:block;width:100%;}
+    tr{border-bottom:1px solid var(--borda);}
+    td{border:0;padding:6px 14px;}
+    td:first-child{padding-top:14px;}
+    td:last-child{padding-bottom:14px;}
+    td[data-r]::before{content:attr(data-r) ": ";color:var(--suave);font-size:.8rem;}
+  }
+</style>
+</head>
+<body>
+<header class="topo"><div class="wrap">
+  <div class="marca"><span class="marca-nome">Gurgel e Gusmão</span><span class="marca-sub">Advocacia</span></div>
+  <span class="restrito">Acesso restrito</span>
+</div></header>
+
+<form class="login" id="login" autocomplete="on">
+  <h1>Landing pages</h1>
+  <p>Lista das páginas publicadas no site. Informe usuário e senha.</p>
+  <label for="usuario">Usuário</label>
+  <input id="usuario" name="username" autocomplete="username" required>
+  <label for="senha">Senha</label>
+  <input id="senha" name="password" type="password" autocomplete="current-password" required>
+  <button id="entrar">Entrar</button>
+  <p class="erro" id="erro" role="alert"></p>
+</form>
+
+<main class="lista wrap" id="lista" hidden>
+  <header>
+    <div><h1>Landing pages publicadas</h1><p id="resumo"></p></div>
+    <button class="sair" id="sair" type="button">Sair</button>
+  </header>
+  <table>
+    <thead><tr><th>Página</th><th>Criada em</th><th>Última modificação</th><th>Alterações</th><th>Google</th></tr></thead>
+    <tbody id="linhas"></tbody>
+  </table>
+</main>
+
+<script id="pacote" type="application/json">__PACOTE__</script>
+<script>
+(function () {
+  var P = JSON.parse(document.getElementById('pacote').textContent);
+  var bin = function (b64) { return Uint8Array.from(atob(b64), function (c) { return c.charCodeAt(0); }); };
+  var esc = function (s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+  var fmt = new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+  var data = function (iso) { return iso ? fmt.format(new Date(iso)).replace(',', ' às') : '—'; };
+
+  async function abrir(usuario, senha) {
+    var enc = new TextEncoder();
+    var base = await crypto.subtle.importKey('raw', enc.encode(usuario + '\u0000' + senha), 'PBKDF2', false, ['deriveKey']);
+    var chave = await crypto.subtle.deriveKey({ name: 'PBKDF2', salt: bin(P.sal), iterations: P.it, hash: 'SHA-256' }, base, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
+    var claro = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: bin(P.iv) }, chave, bin(P.dados));
+    return JSON.parse(new TextDecoder().decode(claro));
+  }
+
+  function mostrar(d) {
+    document.getElementById('resumo').textContent = d.lps.length + ' página(s) · lista atualizada em ' + data(d.geradaEm);
+    document.getElementById('linhas').innerHTML = d.lps.map(function (lp) {
+      var titulo = lp.titulo.split(' | ')[0];
+      return '<tr><td><a href="' + esc(lp.caminho) + '" target="_blank" rel="noopener">' + esc(titulo) + '</a><small>gurgelgusmao.adv.br' + esc(lp.caminho) + '</small></td>' +
+        '<td class="data" data-r="Criada em">' + data(lp.criada) + '</td>' +
+        '<td class="data" data-r="Última modificação">' + data(lp.modificada) + '</td>' +
+        '<td data-r="Alterações">' + lp.alteracoes + '</td>' +
+        '<td data-r="Google"><span class="selo' + (lp.indexada ? '' : ' nao') + '">' + (lp.indexada ? 'indexável' : 'noindex') + '</span></td></tr>';
+    }).join('');
+    document.getElementById('login').hidden = true;
+    document.getElementById('lista').hidden = false;
+  }
+
+  document.getElementById('login').addEventListener('submit', async function (ev) {
+    ev.preventDefault();
+    var botao = document.getElementById('entrar'), erro = document.getElementById('erro');
+    botao.disabled = true; botao.textContent = 'Conferindo…'; erro.textContent = '';
+    try {
+      mostrar(await abrir(document.getElementById('usuario').value.trim(), document.getElementById('senha').value));
+    } catch (e) {
+      erro.textContent = 'Usuário ou senha incorretos.';
+    } finally {
+      botao.disabled = false; botao.textContent = 'Entrar';
+    }
+  });
+  document.getElementById('sair').addEventListener('click', function () {
+    document.getElementById('linhas').innerHTML = '';
+    document.getElementById('senha').value = '';
+    document.getElementById('lista').hidden = true;
+    document.getElementById('login').hidden = false;
+  });
+})();
+</script>
+</body>
+</html>

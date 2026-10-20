@@ -1,0 +1,52 @@
+# Mantém /LP/ (lista criptografada das landing pages) em dia: roda a cada push no main
+# e gera LP/index.html com data de criação e última modificação de cada LP (histórico do git).
+# Usuário e senha ficam nos segredos LP_USUARIO e LP_SENHA do repositório.
+name: Lista de LPs
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['LP/**']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: lista-lp
+  cancel-in-progress: false
+
+jobs:
+  gerar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Gerar LP/index.html
+        env:
+          LP_USUARIO: ${{ secrets.LP_USUARIO }}
+          LP_SENHA: ${{ secrets.LP_SENHA }}
+        run: node .github/scripts/gerar-lista-lp.mjs
+
+      - name: Publicar se mudou
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- LP; then
+            echo "Sem mudança na lista."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add LP/index.html
+          git commit -m "Atualiza a lista de LPs (/LP/)"
+          git push
+          # push feito com o token da rotina não dispara o build do Pages: pedir o build
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
