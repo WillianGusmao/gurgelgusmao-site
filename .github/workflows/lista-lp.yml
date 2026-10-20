@@ -39,7 +39,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if git diff --quiet -- LP; then
+          # status --porcelain pega também o arquivo novo (diff não vê arquivo não rastreado)
+          if [ -z "$(git status --porcelain -- LP)" ]; then
             echo "Sem mudança na lista."
             exit 0
           fi
