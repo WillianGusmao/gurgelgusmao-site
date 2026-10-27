@@ -6,6 +6,7 @@
 - [Reajuste de plano de saúde 2026: calculadora pelo índice da ANS e falso coletivo](https://gurgelgusmao.adv.br/reajuste-plano-de-saude/): tetos oficiais da ANS de 2000 a 2026, falso coletivo (plano empresarial do MEI ou da família), periodicidade anual, agrupamento de contratos com menos de 30 vidas, devolução em dobro e prazo de 3 anos. Inclui calculadora.
 - [BPC/LOAS 2026: requisitos e calculadora da renda por pessoa](https://gurgelgusmao.adv.br/bpc-loas/): quem tem direito (idoso com 65 anos ou mais e pessoa com deficiência), limite de 1/4 do salário-mínimo (R$ 405,25 em 2026), quem conta como família, o que não entra na renda, Bolsa Família após o Decreto 12.534/2025, CadÚnico e biometria.
 - [Aposentadoria de ACS e ACE pela EC 140/2026: calculadora](https://gurgelgusmao.adv.br/aposentadoria-especial-agentes/): aposentadoria diferenciada de agentes comunitários de saúde e de combate às endemias (e agentes indígenas, art. 13). Regra permanente de 57/60 anos com 25 de contribuição e 25 de exercício (CF, art. 40, § 5º-A, e art. 201, § 8º-A); transição por idade de 50/52 até 2030 subindo a 57/60 em 2041, com redução de até 5 anos (arts. 3º e 6º); transição por pontos 83/86 com 60/63 anos, 15 de contribuição e 10 de exercício (arts. 4º e 7º); integralidade e paridade no regime próprio; efetivação dos temporários até 31/12/2028 (art. 12). Inclui calculadora.
+- [Revisão do divisor mínimo: aposentadorias de 13/11/2019 a maio de 2022](https://gurgelgusmao.adv.br/revisao-divisor-minimo/): o STJ (REsp 2.193.427/RS, 2ª Turma) e a TNU (Tema 353) entenderam que a EC 103/2019, art. 26, não manteve o divisor mínimo de 60% do período da Lei 9.876/1999; a Lei 14.331/2022 (art. 135-A da Lei 8.213/1991, divisor de 108 meses) não retroage. Atinge aposentadorias por idade, tempo de contribuição e especial com poucas contribuições após 07/1994. Inclui estimativa.
 - [Auxílio-doença (auxílio por incapacidade temporária)](https://gurgelgusmao.adv.br/auxilio-doenca/): requisitos, perícia médica do INSS, documentos, prazos e o que fazer quando o benefício é negado ou cessado.
 - [Busca e apreensão de veículo](https://gurgelgusmao.adv.br/busca-apreensao/): defesa em busca e apreensão por alienação fiduciária.
 
@@ -87,3 +88,11 @@ Não. A inscrição na OAB permite atuar em todo o país, e os processos tramita
 - Bolsa Família: desde o Decreto 12.534/2025, o INSS soma o valor à renda; a Justiça Federal afasta a regra em casos concretos, sem decisão vinculante.
 - Na Justiça, o 1/4 não é o único critério de miserabilidade (STF, Tema 27; STJ, Tema 185).
 - Exige CPF, CadÚnico atualizado (até 24 meses) e biometria; não acumula com outro benefício da seguridade, salvo assistência médica, pensão especial indenizatória e transferências de renda.
+
+## Revisão do divisor mínimo — resumo (revisado em 27 de outubro de 2026)
+
+- Regra antiga (Lei 9.876/1999, art. 3º, § 2º): para filiados até 28/11/1999, o divisor da média não podia ser inferior a 60% do período entre 07/1994 e a aposentadoria.
+- EC 103/2019, art. 26: média de 100% dos salários de contribuição desde 07/1994, sem divisor mínimo.
+- Lei 14.331/2022: incluiu o art. 135-A na Lei 8.213/1991, com divisor mínimo de 108 meses para filiados até 07/1994; sem efeito retroativo.
+- STJ, REsp 2.193.427/RS (2ª Turma, 2026) e TNU, Tema 353: aposentadorias com início entre 13/11/2019 e a Lei 14.331/2022 são calculadas sem divisor mínimo. Decisão do STJ não repetitiva.
+- Decadência de 10 anos (Lei 8.213/1991, art. 103); prescrição das diferenças em 5 anos.
