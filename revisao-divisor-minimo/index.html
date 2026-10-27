@@ -255,7 +255,32 @@ h3{ font-size:1.2rem; }
 .calc .radiorow label{ font-size:0.9rem; }
 .calc fieldset{ border:0; padding:0; margin:6px 0 0; }
 .calc legend{ font-size:0.84rem; font-weight:500; color:var(--ink); margin-bottom:5px; padding:0; }
-@media (max-width:600px){ .tl{ grid-template-columns:1fr; } }
+/* topo: chamada para a calculadora (nesta LP, só a calculadora coleta dados) */
+.cta-list{ margin:0 0 18px; padding-left:1.2em; color:var(--ink-soft); font-size:0.94rem; }
+.cta-list li{ margin-bottom:6px; }
+a.cta-btn{ display:block; text-align:center; text-decoration:none; }
+.cta-note{ font-size:0.84rem !important; color:var(--ink-faint); margin:12px 0 0 !important; text-align:center !important; }
+.cta-band{ text-align:center; }
+.cta-band p{ text-align:center; }
+.cta-band a.cta-btn{ display:inline-block; padding:13px 28px; width:auto; }
+/* exemplo numérico */
+.cmp-wrap{ overflow-x:auto; margin:0 0 18px; }
+.cmp{ width:100%; border-collapse:collapse; background:var(--surface); border:1px solid var(--line); border-radius:10px; font-size:0.94rem; font-variant-numeric:tabular-nums; }
+.cmp th, .cmp td{ padding:11px 14px; border-bottom:1px solid var(--line); text-align:right; vertical-align:top; }
+.cmp th:first-child, .cmp td:first-child{ text-align:left; color:var(--ink-soft); }
+.cmp th{ font-size:0.8rem; font-weight:600; color:var(--ink); background:var(--surface-alt); }
+.cmp td small{ font-size:0.76rem; color:var(--ink-faint); }
+.cmp tr.tot td{ font-weight:600; color:var(--ink); border-bottom:0; background:var(--accent-soft); }
+.cmp td:last-child{ color:var(--ink); }
+/* validação do contato */
+.ferr{ display:block; color:#8C2F2F; font-size:0.78rem; margin-top:4px; min-height:0; }
+.ferr:empty{ display:none; }
+.field input[aria-invalid="true"]{ border-color:#8C2F2F; }
+@media (max-width:600px){
+  .tl{ grid-template-columns:1fr; }
+  .cmp{ font-size:0.84rem; }
+  .cmp th, .cmp td{ padding:9px 8px; }
+}
 </style>
 
 <script type="application/ld+json">
@@ -306,37 +331,16 @@ h3{ font-size:1.2rem; }
       </ul>
     </div>
 
-    <div class="formwrap">
-      <h2>Solicitar análise</h2>
-      <p>Preencha os campos para receber orientações sobre a sua aposentadoria.</p>
-      <form class="leadform" data-id="topo">
-        <div class="field">
-          <label for="nome-a">Nome completo</label>
-          <input type="text" id="nome-a" name="nome" required>
-        </div>
-        <div class="field">
-          <label for="tel-a">Telefone / WhatsApp</label>
-          <input type="tel" id="tel-a" name="telefone" required>
-        </div>
-        <div class="field">
-          <label for="mail-a">E-mail</label>
-          <input type="email" id="mail-a" name="email" required>
-        </div>
-        <div class="field">
-          <label>Qual é a sua situação?</label>
-          <div class="radiorow">
-            <label><input type="radio" name="situacao" value="Aposentado(a) entre nov/2019 e mai/2022" required> Aposentei nesse período</label>
-            <label><input type="radio" name="situacao" value="Pensionista de aposentado(a) do período" required> Recebo pensão</label>
-            <label><input type="radio" name="situacao" value="Consulta para familiar" required> É para um familiar</label>
-          </div>
-        </div>
-        <input type="hidden" name="access_key" value="fe3d0944-31ed-48c9-8038-7b7515fc3bb5">
-        <input type="hidden" name="subject" value="Novo lead — LP Divisor mínimo (topo)">
-        <input type="checkbox" name="botcheck" style="display:none">
-        <p class="consent">Ao enviar, você concorda em ser contatado pelo escritório para orientação sobre sua situação. Seus dados não serão compartilhados com terceiros.</p>
-        <button type="submit" class="submit">Solicitar análise</button>
-        <div class="formmsg"></div>
-      </form>
+    <div class="formwrap cta-card">
+      <h2>Faça a estimativa</h2>
+      <p>Em um minuto, com três informações da sua carta de concessão, veja se o divisor mínimo pode ter reduzido a sua aposentadoria.</p>
+      <ul class="cta-list">
+        <li>Mês e ano em que a aposentadoria começou</li>
+        <li>Tempo de contribuição depois de julho de 1994</li>
+        <li>Se já contribuía antes de dezembro de 1999</li>
+      </ul>
+      <a class="submit cta-btn" href="#calculadora">Fazer a estimativa</a>
+      <p class="cta-note">Antes, veja abaixo um exemplo com números.</p>
     </div>
   </div>
 </div>
@@ -346,10 +350,34 @@ h3{ font-size:1.2rem; }
     <h2>O que é o divisor mínimo</h2>
     <p>O valor da aposentadoria parte de uma <strong>média dos salários de contribuição</strong> desde julho de 1994. Para fazer a média, soma-se tudo e divide-se por um número: o <strong>divisor</strong>.</p>
     <p>Pela regra antiga (Lei nº 9.876/1999), quem já contribuía antes de dezembro de 1999 tinha um piso para esse divisor: <strong>60% dos meses</strong> entre julho de 1994 e a aposentadoria, mesmo que tivesse contribuído menos meses. Na prática, os meses sem contribuição entravam como se fossem zero, e a média caía.</p>
+  </section>
+
+  <section id="exemplo">
+    <h2>Um exemplo com números</h2>
     <div class="exemplo">
-      <p><strong>Exemplo simplificado.</strong> Uma pessoa se aposentou por idade em janeiro de 2021. Contribuiu muitos anos antes de 1994, mas só <strong>100 meses</strong> depois disso. Entre julho de 1994 e dezembro de 2020 há 318 meses; 60% disso são 191.</p>
-      <p>Com o divisor mínimo, a soma dos salários é dividida por <strong>191</strong>, e não por 100. A média fica quase <strong>metade</strong> do que seria sem a regra.</p>
+      <p><strong>Maria</strong> (nome fictício) se aposentou por idade em <strong>janeiro de 2021</strong>, com 30 anos de contribuição. Trabalhou com carteira assinada por 22 anos, até o começo dos anos 1990. Depois ficou anos parada e voltou a contribuir só para completar o tempo: foram <strong>100 meses</strong> de contribuição de julho de 1994 em diante.</p>
+      <p>Somados (e já corrigidos), os salários desses 100 meses dão <strong>R$ 300.000,00</strong>, uma média de R$ 3.000,00 por mês.</p>
+      <p>Entre julho de 1994 e dezembro de 2020 passaram-se 318 meses. Pela regra antiga, o divisor não podia ser menor que 60% disso: <strong>191</strong>. Foi o que o INSS usou.</p>
     </div>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <thead>
+          <tr><th></th><th>Como o INSS calculou</th><th>Sem o divisor mínimo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Soma dos salários desde 07/1994</td><td>R$ 300.000,00</td><td>R$ 300.000,00</td></tr>
+          <tr><td>Dividida por</td><td>191 meses</td><td>100 meses</td></tr>
+          <tr><td>Média</td><td>R$ 1.570,68</td><td>R$ 3.000,00</td></tr>
+          <tr><td>Percentual da Reforma<br><small>60% + 2% por ano acima de 15</small></td><td>90%</td><td>90%</td></tr>
+          <tr class="tot"><td>Aposentadoria</td><td>R$ 1.413,61</td><td>R$ 2.700,00</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="figure">
+      <div><b>R$ 1.286,39</b><span>a menos por mês, no exemplo</span></div>
+      <div><b>≈ R$ 16,7 mil</b><span>a menos por ano, contando o 13º</span></div>
+    </div>
+    <p class="source">Exemplo hipotético, com valores de 2021, sem os reajustes anuais e sem correção dos atrasados. Cada caso depende da carta de concessão e do histórico de contribuições. Quem tem muitas contribuições depois de 1994 normalmente não tem diferença.</p>
   </section>
 
   <section id="o-que-mudou">
@@ -396,20 +424,23 @@ h3{ font-size:1.2rem; }
       <button type="button" class="submit calc-go" id="c-go">Ver a estimativa</button>
 
       <!-- o resultado só aparece depois que a pessoa informa o contato -->
-      <form class="gate" id="c-gate" hidden>
+      <form class="gate" id="c-gate" hidden novalidate>
         <h3>Informe seu contato para ver a estimativa</h3>
         <div class="gate-grid">
           <div class="field">
             <label for="nome-c">Nome completo</label>
-            <input type="text" id="nome-c" name="nome" required>
+            <input type="text" id="nome-c" name="nome" autocomplete="name" placeholder="Nome e sobrenome" required>
+            <small class="ferr" id="nome-c-err"></small>
           </div>
           <div class="field">
-            <label for="tel-c">Telefone / WhatsApp</label>
-            <input type="tel" id="tel-c" name="telefone" required>
+            <label for="tel-c">Telefone / WhatsApp com DDD</label>
+            <input type="tel" id="tel-c" name="telefone" autocomplete="tel-national" inputmode="numeric" placeholder="(27) 99999-9999" maxlength="16" required>
+            <small class="ferr" id="tel-c-err"></small>
           </div>
           <div class="field">
             <label for="mail-c">E-mail</label>
-            <input type="email" id="mail-c" name="email" required>
+            <input type="email" id="mail-c" name="email" autocomplete="email" placeholder="nome@exemplo.com" required>
+            <small class="ferr" id="mail-c-err"></small>
           </div>
         </div>
         <input type="hidden" name="access_key" value="fe3d0944-31ed-48c9-8038-7b7515fc3bb5">
@@ -453,7 +484,7 @@ h3{ font-size:1.2rem; }
   <section>
     <h2>Como funciona o atendimento</h2>
     <ol class="steps">
-      <li><b>Primeiro contato</b><span>Você descreve a situação por telefone, videochamada ou pelo formulário desta página.</span></li>
+      <li><b>Primeiro contato</b><span>Você faz a estimativa nesta página ou chama pelo WhatsApp, e conversamos por telefone ou videochamada.</span></li>
       <li><b>Conferência do cálculo</b><span>Analisamos a carta de concessão e o CNIS para ver se o divisor mínimo foi usado e qual seria a diferença.</span></li>
       <li><b>Contrato</b><span>Havendo viabilidade, a contratação é formalizada por contrato escrito, com o objeto do trabalho definido previamente.</span></li>
       <li><b>Acompanhamento</b><span>Se houver contratação, o andamento é informado ao longo do processo.</span></li>
@@ -524,37 +555,10 @@ h3{ font-size:1.2rem; }
 </main>
 
 <section id="contato">
-  <div class="formwrap">
-    <h2>Solicitar análise</h2>
-    <p>Preencha os campos abaixo para receber orientações sobre a sua aposentadoria.</p>
-    <form class="leadform" data-id="rodape">
-      <div class="field">
-        <label for="nome-b">Nome completo</label>
-        <input type="text" id="nome-b" name="nome" required>
-      </div>
-      <div class="field">
-        <label for="tel-b">Telefone / WhatsApp</label>
-        <input type="tel" id="tel-b" name="telefone" required>
-      </div>
-      <div class="field">
-        <label for="mail-b">E-mail</label>
-        <input type="email" id="mail-b" name="email" required>
-      </div>
-      <div class="field">
-        <label>Qual é a sua situação?</label>
-        <div class="radiorow">
-          <label><input type="radio" name="situacao" value="Aposentado(a) entre nov/2019 e mai/2022" required> Aposentei nesse período</label>
-          <label><input type="radio" name="situacao" value="Pensionista de aposentado(a) do período" required> Recebo pensão</label>
-          <label><input type="radio" name="situacao" value="Consulta para familiar" required> É para um familiar</label>
-        </div>
-      </div>
-      <input type="hidden" name="access_key" value="fe3d0944-31ed-48c9-8038-7b7515fc3bb5">
-      <input type="hidden" name="subject" value="Novo lead — LP Divisor mínimo (rodapé)">
-      <input type="checkbox" name="botcheck" style="display:none">
-      <p class="consent">Ao enviar, você concorda em ser contatado pelo escritório para orientação sobre sua situação. Seus dados não serão compartilhados com terceiros.</p>
-      <button type="submit" class="submit">Solicitar análise</button>
-      <div class="formmsg"></div>
-    </form>
+  <div class="formwrap cta-band">
+    <h2>Veja se o seu cálculo foi afetado</h2>
+    <p>Faça a estimativa com os dados da sua carta de concessão. Se preferir, chame pelo WhatsApp.</p>
+    <a class="submit cta-btn" href="#calculadora">Fazer a estimativa</a>
   </div>
 </section>
 
@@ -679,10 +683,72 @@ h3{ font-size:1.2rem; }
     el.addEventListener('change', function () { err.textContent = ''; if (liberado) mostra(); });
   });
 
+  // ---------- validação do contato (nome completo, e-mail e telefone com DDD) ----------
+  var fNome = document.getElementById('nome-c');
+  var fTel = document.getElementById('tel-c');
+  var fMail = document.getElementById('mail-c');
+  function digitos(v) {
+    var d = (v || '').replace(/\D/g, '');
+    if ((d.length === 12 || d.length === 13) && d.indexOf('55') === 0) d = d.slice(2);  // +55
+    if ((d.length === 11 || d.length === 12) && d.charAt(0) === '0') d = d.slice(1);    // 0 antes do DDD
+    return d;
+  }
+  function formataTel(d) {
+    if (d.length <= 2) return d.length ? '(' + d : '';
+    var ddd = '(' + d.slice(0, 2) + ') ', n = d.slice(2);
+    if (n.length <= 4) return ddd + n;
+    var corte = n.length === 9 ? 5 : 4;
+    return ddd + n.slice(0, corte) + '-' + n.slice(corte, 9);
+  }
+  function erroNome(v) {
+    var partes = (v || '').trim().split(/\s+/).filter(function (p) { return p.replace(/[^A-Za-zÀ-ÿ]/g, '').length >= 2; });
+    if (!v.trim()) return 'Informe seu nome completo.';
+    if (/[^A-Za-zÀ-ÿ'´`.\- ]/.test(v.trim())) return 'Use apenas letras no nome.';
+    if (partes.length < 2) return 'Informe nome e sobrenome.';
+    return '';
+  }
+  function erroMail(v) {
+    v = (v || '').trim();
+    if (!v) return 'Informe seu e-mail.';
+    if (!/^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$/.test(v) || /\.\./.test(v) || /^\./.test(v) || /\.@/.test(v))
+      return 'Confira o e-mail. Exemplo: nome@exemplo.com';
+    return '';
+  }
+  function erroTel(v) {
+    var d = digitos(v);
+    if (!d) return 'Informe seu telefone com DDD.';
+    if (d.length !== 10 && d.length !== 11) return 'Informe o DDD e o número: 10 ou 11 dígitos. Exemplo: (27) 99999-9999';
+    if (!/^[1-9][1-9]/.test(d)) return 'DDD inválido.';
+    if (d.length === 11 && d.charAt(2) !== '9') return 'Celular com 11 dígitos começa com 9 depois do DDD.';
+    if (d.length === 10 && !/[2-5]/.test(d.charAt(2))) return 'Número fixo inválido. Se for celular, inclua o 9.';
+    if (/^(\d)\1+$/.test(d.slice(2))) return 'Confira o número.';
+    return '';
+  }
+  function marca(campo, msg) {
+    document.getElementById(campo.id + '-err').textContent = msg;
+    campo.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    return !msg;
+  }
+  function validaContato() {
+    var ok = [marca(fNome, erroNome(fNome.value)), marca(fTel, erroTel(fTel.value)), marca(fMail, erroMail(fMail.value))];
+    var primeiro = [fNome, fTel, fMail][ok.indexOf(false)];
+    if (primeiro) primeiro.focus();
+    return ok.indexOf(false) < 0;
+  }
+  fTel.addEventListener('input', function () { fTel.value = formataTel(digitos(fTel.value).slice(0, 11)); });
+  [[fNome, erroNome], [fTel, erroTel], [fMail, erroMail]].forEach(function (par) {
+    par[0].addEventListener('blur', function () { if (par[0].value) marca(par[0], par[1](par[0].value)); });
+    par[0].addEventListener('input', function () { if (par[0].getAttribute('aria-invalid') === 'true') marca(par[0], par[1](par[0].value)); });
+  });
+
   gate.addEventListener('submit', async function (e) {
     e.preventDefault();
     var r = conta();
     if (r.erro) { err.textContent = r.erro; return; }
+    if (!validaContato()) return;
+    fNome.value = fNome.value.trim().replace(/\s+/g, ' ');
+    fMail.value = fMail.value.trim().toLowerCase();
+    fTel.value = formataTel(digitos(fTel.value));
     var btn = gate.querySelector('button.submit');
     var msg = gate.querySelector('.formmsg');
     gate.elements.inicio_aposentadoria.value = mesAno(r.d.y, r.d.m);
