@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow, noarchive">
-<meta name="lp-versao" content="95055caa7f05d466bafc3df037093df013e093cefbc7e8565392fd217eb15f0a">
-<title>Landing pages | Acesso restrito</title>
+<meta name="lp-versao" content="0e32ab2ad9dce022bbd7fa3584f581612782500a1f0d90d9809884dd93b9f058">
+<title>Landing pages | Gurgel e Gusmão</title>
 <!-- Gerado por .github/scripts/gerar-lista-lp.mjs a partir de lp-modelo.html. Não editar à mão. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,20 +21,10 @@
   .marca{display:flex;flex-direction:column;line-height:1.1;}
   .marca-nome{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.4rem;font-weight:600;}
   .marca-sub{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--dourado);}
-  .restrito{font-size:.78rem;color:#c9ced8;}
   h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:1.9rem;}
-  .login{max-width:380px;margin:64px auto;background:#fff;border:1px solid var(--borda);border-radius:14px;padding:28px;box-shadow:0 1px 3px rgba(26,37,53,.08),0 8px 24px rgba(26,37,53,.06);}
-  .login h1{font-size:1.6rem;margin-bottom:4px;}
-  .login p{color:var(--suave);font-size:.88rem;margin-bottom:18px;}
-  label{display:block;font-size:.84rem;font-weight:500;margin:12px 0 5px;}
-  input{width:100%;padding:11px 13px;border:1px solid var(--borda);border-radius:8px;font:inherit;background:var(--fundo);}
-  button{width:100%;margin-top:18px;padding:12px;border:0;border-radius:8px;background:var(--navy);color:#fff;font:600 .95rem 'Inter',sans-serif;cursor:pointer;}
-  button:disabled{opacity:.6;cursor:default;}
-  .erro{color:var(--erro);font-size:.86rem;margin-top:12px;min-height:1.2em;}
   .lista{padding-top:32px;padding-bottom:56px;}
   .lista header{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:18px;}
   .lista header p{color:var(--suave);font-size:.86rem;}
-  .sair{width:auto;margin:0;padding:8px 14px;background:transparent;color:var(--texto);border:1px solid var(--borda);font-weight:500;}
   table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--borda);border-radius:12px;overflow:hidden;}
   th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--borda);vertical-align:top;}
   th{font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;color:var(--suave);background:var(--alt);font-weight:600;}
@@ -58,24 +48,11 @@
 <body>
 <header class="topo"><div class="wrap">
   <div class="marca"><span class="marca-nome">Gurgel e Gusmão</span><span class="marca-sub">Advocacia</span></div>
-  <span class="restrito">Acesso restrito</span>
 </div></header>
 
-<form class="login" id="login" autocomplete="on">
-  <h1>Landing pages</h1>
-  <p>Lista das páginas publicadas no site. Informe usuário e senha.</p>
-  <label for="usuario">Usuário</label>
-  <input id="usuario" name="username" autocomplete="username" required>
-  <label for="senha">Senha</label>
-  <input id="senha" name="password" type="password" autocomplete="current-password" required>
-  <button id="entrar">Entrar</button>
-  <p class="erro" id="erro" role="alert"></p>
-</form>
-
-<main class="lista wrap" id="lista" hidden>
+<main class="lista wrap" id="lista">
   <header>
     <div><h1>Landing pages publicadas</h1><p id="resumo"></p></div>
-    <button class="sair" id="sair" type="button">Sair</button>
   </header>
   <table>
     <thead><tr><th>Página</th><th>Criada em</th><th>Última modificação</th><th>Alterações</th><th>Google</th></tr></thead>
@@ -83,55 +60,23 @@
   </table>
 </main>
 
-<script id="pacote" type="application/json">{"v":1,"it":600000,"sal":"MRgcL+VMcmUq8iEjH7VBdw==","iv":"UHFtfflDupLFO8j4","dados":"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"}</script>
+<script id="pacote" type="application/json">{"geradaEm":"2026-10-30T00:47:24.032Z","lps":[{"caminho":"/revisao-divisor-minimo/","titulo":"Revisão do divisor mínimo: aposentadoria concedida entre 2019 e 2022 | Gurgel Gusmão Advocacia","descricao":"Aposentou-se pelo INSS entre 13/11/2019 e 04/05/2022? O STJ decidiu que, nesse período, o divisor mínimo não limita o descarte das contribuições baixas. Veja quem pode ter direito à revisão e faça uma estimativa.","criada":"2026-10-27T17:11:46-03:00","modificada":"2026-10-27T17:38:42-03:00","alteracoes":5,"indexada":true},{"caminho":"/aposentadoria-especial-agentes/","titulo":"Aposentadoria de ACS e ACE pela EC 140/2026: calculadora | Gurgel Gusmão Advocacia","descricao":"Agente comunitário de saúde ou agente de combate às endemias: descubra quando você pode se aposentar pela Emenda Constitucional 140/2026. Calculadora gratuita, sem cadastro.","criada":"2026-10-20T09:20:01-03:00","modificada":"2026-10-20T09:20:01-03:00","alteracoes":1,"indexada":true},{"caminho":"/bpc-loas/","titulo":"BPC/LOAS 2026: requisitos, renda de 1/4 do salário-mínimo e calculadora | Gurgel Gusmão Advocacia","descricao":"Quem tem direito ao BPC/LOAS em 2026: idoso com 65 anos ou mais e pessoa com deficiência, renda por pessoa de até R$ 405,25, CadÚnico e biometria. Calcule a renda da sua família.","criada":"2026-10-13T11:01:18-03:00","modificada":"2026-10-13T11:01:18-03:00","alteracoes":1,"indexada":true},{"caminho":"/reajuste-plano-de-saude/","titulo":"Reajuste de Plano de Saúde 2026: Calculadora pelo Índice da ANS e Falso Coletivo","descricao":"Seu plano empresarial ou do MEI subiu além do índice da ANS (5,11% em 2026)? Calcule em 1 minuto quanto a mensalidade seria só com os reajustes da ANS e entenda o falso coletivo. Advogado OAB/ES 14.605.","criada":"2026-10-04T23:36:23-03:00","modificada":"2026-10-06T09:29:48-03:00","alteracoes":2,"indexada":true},{"caminho":"/busca-apreensao/","titulo":"Busca e Apreensão de Veículo: Defesa, Purgação da Mora e Revisão de Contrato | Gurgel Gusmão Advocacia","descricao":"Busca e apreensão de veículo por atraso no financiamento: como funciona a purgação da mora, a contestação e a possibilidade de revisão de cláusulas e juros abusivos no contrato. Advogado OAB/ES.","criada":"2026-09-23T09:14:08-03:00","modificada":"2026-10-06T09:29:48-03:00","alteracoes":2,"indexada":true},{"caminho":"/auxilio-doenca/","titulo":"Auxílio-Doença — Direito Previdenciário | Gurgel Gusmão Advocacia","descricao":"Informações sobre auxílio por incapacidade temporária (auxílio-doença): requisitos, perícia médica, documentação e prazos no INSS. Atendimento na Grande Vitória/ES.","criada":"2026-08-27T10:46:05-03:00","modificada":"2026-10-20T09:20:01-03:00","alteracoes":16,"indexada":true}]}</script>
 <script>
 (function () {
-  var P = JSON.parse(document.getElementById('pacote').textContent);
-  var bin = function (b64) { return Uint8Array.from(atob(b64), function (c) { return c.charCodeAt(0); }); };
+  var d = JSON.parse(document.getElementById('pacote').textContent);
   var esc = function (s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
   var fmt = new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
   var data = function (iso) { return iso ? fmt.format(new Date(iso)).replace(',', ' às') : '—'; };
 
-  async function abrir(usuario, senha) {
-    var enc = new TextEncoder();
-    var base = await crypto.subtle.importKey('raw', enc.encode(usuario + '\u0000' + senha), 'PBKDF2', false, ['deriveKey']);
-    var chave = await crypto.subtle.deriveKey({ name: 'PBKDF2', salt: bin(P.sal), iterations: P.it, hash: 'SHA-256' }, base, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
-    var claro = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: bin(P.iv) }, chave, bin(P.dados));
-    return JSON.parse(new TextDecoder().decode(claro));
-  }
-
-  function mostrar(d) {
-    document.getElementById('resumo').textContent = d.lps.length + ' página(s) · lista atualizada em ' + data(d.geradaEm);
-    document.getElementById('linhas').innerHTML = d.lps.map(function (lp) {
-      var titulo = lp.titulo.split(' | ')[0];
-      return '<tr><td><a href="' + esc(lp.caminho) + '" target="_blank" rel="noopener">' + esc(titulo) + '</a><small>gurgelgusmao.adv.br' + esc(lp.caminho) + '</small></td>' +
-        '<td class="data" data-r="Criada em">' + data(lp.criada) + '</td>' +
-        '<td class="data" data-r="Última modificação">' + data(lp.modificada) + '</td>' +
-        '<td data-r="Alterações">' + lp.alteracoes + '</td>' +
-        '<td data-r="Google"><span class="selo' + (lp.indexada ? '' : ' nao') + '">' + (lp.indexada ? 'indexável' : 'noindex') + '</span></td></tr>';
-    }).join('');
-    document.getElementById('login').hidden = true;
-    document.getElementById('lista').hidden = false;
-  }
-
-  document.getElementById('login').addEventListener('submit', async function (ev) {
-    ev.preventDefault();
-    var botao = document.getElementById('entrar'), erro = document.getElementById('erro');
-    botao.disabled = true; botao.textContent = 'Conferindo…'; erro.textContent = '';
-    try {
-      mostrar(await abrir(document.getElementById('usuario').value.trim().toLowerCase(), document.getElementById('senha').value));
-    } catch (e) {
-      erro.textContent = 'Usuário ou senha incorretos.';
-    } finally {
-      botao.disabled = false; botao.textContent = 'Entrar';
-    }
-  });
-  document.getElementById('sair').addEventListener('click', function () {
-    document.getElementById('linhas').innerHTML = '';
-    document.getElementById('senha').value = '';
-    document.getElementById('lista').hidden = true;
-    document.getElementById('login').hidden = false;
-  });
+  document.getElementById('resumo').textContent = d.lps.length + ' página(s) · lista atualizada em ' + data(d.geradaEm);
+  document.getElementById('linhas').innerHTML = d.lps.map(function (lp) {
+    var titulo = lp.titulo.split(' | ')[0];
+    return '<tr><td><a href="' + esc(lp.caminho) + '" target="_blank" rel="noopener">' + esc(titulo) + '</a><small>gurgelgusmao.adv.br' + esc(lp.caminho) + '</small></td>' +
+      '<td class="data" data-r="Criada em">' + data(lp.criada) + '</td>' +
+      '<td class="data" data-r="Última modificação">' + data(lp.modificada) + '</td>' +
+      '<td data-r="Alterações">' + lp.alteracoes + '</td>' +
+      '<td data-r="Google"><span class="selo' + (lp.indexada ? '' : ' nao') + '">' + (lp.indexada ? 'indexável' : 'noindex') + '</span></td></tr>';
+  }).join('');
 })();
 </script>
 </body>
