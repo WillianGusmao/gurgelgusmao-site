@@ -1,6 +1,5 @@
-# Mantém /LP/ (lista criptografada das landing pages) em dia: roda a cada push no main
+# Mantém /LP/ (lista aberta das landing pages) em dia: roda a cada push no main
 # e gera LP/index.html com data de criação e última modificação de cada LP (histórico do git).
-# Usuário e senha ficam nos segredos LP_USUARIO e LP_SENHA do repositório.
 name: Lista de LPs
 
 on:
@@ -30,9 +29,6 @@ jobs:
           node-version: 20
 
       - name: Gerar LP/index.html
-        env:
-          LP_USUARIO: ${{ secrets.LP_USUARIO }}
-          LP_SENHA: ${{ secrets.LP_SENHA }}
         run: node .github/scripts/gerar-lista-lp.mjs
 
       - name: Publicar se mudou
