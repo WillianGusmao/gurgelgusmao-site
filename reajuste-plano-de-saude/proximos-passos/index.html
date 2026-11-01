@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Próximos passos — reajuste de plano de saúde</title>
+<meta name="description" content="Lista de documentos e modelo de e-mail para questionar o reajuste do plano de saúde junto à operadora.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root{
+  --bg:#f7f5f0;
+  --surface:#FFFFFF;
+  --surface-alt:#efece4;
+  --ink:#1a2535;
+  --ink-soft:#5f6673;
+  --ink-faint:#8a8f99;
+  --line:#dcd8cf;
+  --accent:#1a2535;
+  --accent-ink:#243044;
+  --accent-soft:#f3eedf;
+  --gold:#c9a84c;
+  --gold-ink:#8a6d1f;
+  --shadow: 0 1px 3px rgba(26,37,53,.08), 0 8px 24px rgba(26,37,53,.06);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{ font-family:'Cormorant Garamond', Georgia, serif; color:var(--ink); text-wrap:balance; margin:0; font-weight:600; }
+a{ color:var(--accent-ink); }
+/* coluna mais larga pede corpo um pouco maior e entrelinha maior, senão a leitura sofre */
+p{ margin:0 0 15px; color:var(--ink-soft); font-size:1.06rem; line-height:1.72; text-align:justify; hyphens:auto; -webkit-hyphens:auto; }
+.authority p, .consent, .formwrap > p, footer p, .hero-sub{ text-align:left; hyphens:none; }
+
+/* ---------- topo ---------- */
+.topbar{ border-bottom:1px solid var(--line); background:var(--surface); }
+.topbar-inner{
+  max-width:820px; margin:0 auto; padding:16px 24px;
+  display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;
+}
+.brand{ font-family:'Cormorant Garamond',serif; font-weight:600; font-size:1.05rem; color:var(--ink); }
+.brand span{ display:block; font-family:'Inter',sans-serif; font-weight:400; font-size:0.72rem; color:var(--ink-faint); }
+.callbtn{
+  font-size:0.88rem; font-weight:500; color:var(--accent-ink);
+  border:1px solid var(--accent-soft); background:var(--accent-soft);
+  padding:8px 16px; border-radius:8px; text-decoration:none; white-space:nowrap;
+}
+.callbtn.wa{ display:inline-flex; align-items:center; gap:7px; }
+.callbtn.wa svg{ flex-shrink:0; }
+
+/* ---------- hero em 2 colunas ---------- */
+.hero{ background:var(--surface); border-bottom:1px solid var(--line); }
+.hero-inner{
+  max-width:820px; margin:0 auto; padding:44px 24px 40px;
+  display:grid; grid-template-columns:1.02fr 0.98fr; gap:32px; align-items:start;
+}
+.eyebrow{ font-size:0.76rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent-ink); font-weight:600; margin-bottom:14px; }
+h1{ font-size:1.86rem; line-height:1.22; margin-bottom:16px; }
+.hero-sub{ font-size:1.02rem; color:var(--ink-soft); margin-bottom:22px; }
+.hero-points{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:9px; }
+.hero-points li{ display:flex; gap:10px; align-items:flex-start; font-size:0.95rem; color:var(--ink-soft); }
+.hero-points svg{ flex:none; margin-top:3px; }
+
+/* ---------- bloco de situações (logo após o hero) ---------- */
+.situations-band{ background:var(--surface); border-bottom:1px solid var(--line); }
+.situations-inner{ max-width:820px; margin:0 auto; padding:8px 24px 34px; }
+.situations-inner h2{ margin-bottom:18px; }
+
+
+/* ---------- conteúdo ---------- */
+main{ max-width:820px; margin:0 auto; padding:0 24px; }
+section{ padding:38px 0; border-bottom:1px solid var(--line); }
+section:last-of-type{ border-bottom:none; }
+h2{ font-size:1.28rem; margin-bottom:18px; }
+/* uma única largura de conteúdo: prosa, cards e listas terminam na mesma margem direita */
+.narrow{ max-width:none; }
+
+/* cards de situação */
+.situations{ list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+.situations li{
+  display:flex; gap:12px; align-items:flex-start;
+  font-size:0.95rem; color:var(--ink-soft);
+  background:var(--surface); border:1px solid var(--line); border-radius:9px; padding:16px 16px;
+}
+.situations svg{ flex:none; margin-top:2px; }
+
+/* pontos de defesa */
+.reqs{ list-style:none; padding:0; margin:0 0 18px; display:flex; flex-direction:column; gap:12px; }
+.reqs li{ color:var(--ink-soft); font-size:1.02rem; line-height:1.7; text-align:justify; hyphens:auto; border-left:2px solid var(--accent-soft); padding-left:14px; }
+.reqs li strong{ color:var(--ink); font-weight:600; }
+
+/* etapas numeradas */
+.steps{ list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(2,1fr); gap:14px; counter-reset:s; }
+.steps li{ background:var(--surface); border:1px solid var(--line); border-radius:9px; padding:16px; counter-increment:s; }
+.steps li::before{
+  content:counter(s,decimal-leading-zero);
+  font-family:'Cormorant Garamond',serif; font-size:0.9rem; font-weight:600;
+  color:var(--accent-ink); background:var(--accent-soft);
+  padding:2px 8px; border-radius:5px; display:inline-block; margin-bottom:9px;
+}
+.steps b{ display:block; font-size:0.94rem; color:var(--ink); margin-bottom:4px; }
+.steps span{ font-size:0.87rem; color:var(--ink-soft); }
+
+/* checklist */
+.checklist-box{ background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:20px 22px; box-shadow:var(--shadow); }
+.checklist-box h3{ font-size:1.02rem; margin-bottom:12px; }
+.checklist-box ul{ margin:0; padding-left:1.2em; color:var(--ink-soft); }
+.checklist-box li{ margin-bottom:6px; font-size:0.94rem; }
+.docs-link{ display:inline-block; margin-top:12px; font-weight:600; color:var(--accent); text-decoration:none; }
+.docs-link:hover{ text-decoration:underline; }
+.res-cta2{ display:block; text-align:center; margin-top:10px; padding:11px; border:1px solid var(--accent); border-radius:8px; color:var(--accent); font-weight:600; text-decoration:none; }
+
+/* FAQ */
+.faq{ border-top:1px solid var(--line); }
+.faq details{ border-bottom:1px solid var(--line); }
+.faq summary{
+  cursor:pointer; list-style:none; padding:15px 34px 15px 0; position:relative;
+  font-size:0.98rem; font-weight:500; color:var(--ink);
+}
+.faq summary::-webkit-details-marker{ display:none; }
+.faq summary::after{
+  content:''; position:absolute; right:6px; top:22px;
+  width:9px; height:9px; border-right:2px solid var(--ink-faint); border-bottom:2px solid var(--ink-faint);
+  transform:rotate(45deg); transition:transform .18s ease;
+}
+.faq details[open] summary::after{ transform:rotate(-135deg); top:25px; }
+.faq summary:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+.faq .ans{ padding:0 0 16px; }
+.faq .ans p{ font-size:0.94rem; margin-bottom:10px; }
+.faq .ans p:last-child{ margin-bottom:0; }
+
+/* autoridade */
+.authority{
+  background:var(--surface); border:1px solid var(--line); border-radius:10px;
+  padding:18px 20px; box-shadow:var(--shadow);
+}
+.authority p{ margin-bottom:0; font-size:0.92rem; }
+.authority strong{ color:var(--ink); }
+
+/* ---------- formulário ---------- */
+.formwrap{
+  background:var(--surface); border:1px solid var(--line); border-radius:12px;
+  padding:24px 24px 20px; box-shadow:var(--shadow);
+}
+.formwrap h2{ margin-bottom:6px; font-size:1.16rem; }
+.formwrap > p{ font-size:0.9rem; margin-bottom:18px; }
+.field{ margin-bottom:13px; }
+.field label{ display:block; font-size:0.84rem; font-weight:500; color:var(--ink); margin-bottom:5px; }
+.field input[type="text"], .field input[type="tel"], .field input[type="email"]{
+  width:100%; padding:11px 13px; border:1px solid var(--line); border-radius:7px;
+  font-family:inherit; font-size:0.95rem; background:var(--bg); color:var(--ink);
+}
+.field input:focus{ outline:2px solid var(--accent); outline-offset:1px; }
+.radiorow{ display:flex; gap:8px; flex-wrap:wrap; margin-top:4px; }
+.radiorow label{ display:flex; align-items:center; gap:6px; font-size:0.86rem; font-weight:400; color:var(--ink-soft); }
+.consent{ font-size:0.77rem; color:var(--ink-faint); margin:13px 0 15px; }
+button.submit{
+  width:100%; padding:13px; border:none; border-radius:8px;
+  background:var(--accent); color:#fff; font-family:inherit;
+  font-size:0.98rem; font-weight:600; cursor:pointer;
+}
+button.submit:hover{ background:var(--accent-ink); }
+button.submit:disabled{ opacity:0.6; cursor:default; }
+.formmsg{ margin-top:13px; font-size:0.9rem; display:none; padding:10px 12px; border-radius:7px; }
+.formmsg.ok{ display:block; background:var(--accent-soft); color:var(--accent-ink); }
+.formmsg.err{ display:block; background:#F3DEDA; color:#8C2F2F; }
+#contato{ background:var(--surface-alt); border-top:1px solid var(--line); }
+#contato .formwrap{ max-width:640px; margin:0 auto; }
+
+/* ---------- rodapé + barra fixa ---------- */
+footer{ max-width:820px; margin:0 auto; padding:30px 24px 40px; }
+footer p{ font-size:0.8rem; color:var(--ink-faint); margin-bottom:4px; }
+.stickybar{ display:none; }
+
+@media (max-width:860px){
+  .hero-inner{ grid-template-columns:1fr; gap:28px; padding:34px 24px 32px; }
+  .situations{ grid-template-columns:1fr; }
+  .steps{ grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:600px){
+  h1{ font-size:1.5rem; }
+  .steps{ grid-template-columns:1fr; }
+  body{ padding-bottom:64px; }
+  .stickybar{
+    display:block; position:fixed; left:0; right:0; bottom:0; z-index:50;
+    background:var(--surface); border-top:1px solid var(--line); padding:10px 16px;
+    box-shadow:0 -2px 12px rgba(26,37,53,0.08);
+  }
+  .stickybar a{
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    background:var(--accent); color:#fff;
+    padding:12px; border-radius:8px; text-decoration:none; font-weight:600; font-size:0.96rem;
+  }
+}
+
+.ans-table{ width:100%; border-collapse:collapse; font-size:0.9rem; margin:4px 0 14px; background:var(--surface); border:1px solid var(--line); border-radius:9px; overflow:hidden; }
+.ans-table caption{ text-align:left; font-size:0.85rem; color:var(--ink-faint); padding:0 0 8px; }
+.ans-table th, .ans-table td{ padding:7px 12px; border-bottom:1px solid var(--line); text-align:left; }
+.ans-table th{ background:var(--surface-alt); color:var(--ink); font-weight:600; font-size:0.82rem; }
+.ans-table td.num{ text-align:right; font-variant-numeric:tabular-nums; color:var(--ink); }
+.ans-table tr:last-child td{ border-bottom:none; }
+.ans-cols{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.fonte{ font-size:0.8rem; color:var(--ink-faint); text-align:left; hyphens:none; }
+.quote{ border-left:3px solid var(--accent); background:var(--surface); padding:12px 16px; margin:4px 0 16px; border-radius:0 8px 8px 0; }
+.quote p{ margin:0; font-size:0.98rem; color:var(--ink); text-align:left; hyphens:none; }
+.quote span{ display:block; margin-top:6px; font-size:0.8rem; color:var(--ink-faint); }
+.answer{ background:var(--accent-soft); border-radius:8px; padding:12px 16px; margin:0 0 16px; }
+.answer p{ margin:0; color:var(--accent-ink); text-align:left; hyphens:none; }
+.example{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:6px 0 16px; }
+.example div{ background:var(--surface); border:1px solid var(--line); border-radius:9px; padding:14px; }
+.example b{ display:block; font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--ink); }
+.example span{ font-size:0.82rem; color:var(--ink-faint); }
+.example .hl{ border-color:var(--accent); background:var(--accent-soft); }
+.updated{ font-size:0.8rem; color:var(--ink-faint); margin-top:14px; }
+h1 em{ font-style:normal; color:var(--accent); }
+
+/* calculadora */
+.calc h2{ margin-bottom:4px; font-size:1.16rem; }
+.calc .lead{ font-size:0.88rem; margin-bottom:14px; text-align:left; hyphens:none; }
+.calc .row2{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.calc select, .calc input[type="date"], .calc input.money{
+  width:100%; padding:10px 11px; border:1px solid var(--line); border-radius:7px;
+  font-family:inherit; font-size:0.95rem; background:var(--bg); color:var(--ink);
+}
+.calc .hint{ font-size:0.76rem; color:var(--ink-faint); margin-top:3px; display:block; }
+.calc .err{ color:#8C2F2F; font-size:0.84rem; margin:6px 0 0; display:none; }
+.calc .stepbadge{ display:inline-block; font-size:0.72rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:var(--accent-ink); background:var(--accent-soft); padding:3px 8px; border-radius:5px; margin-bottom:10px; }
+.calc .ready{ background:var(--accent-soft); color:var(--accent-ink); border-radius:8px; padding:10px 12px; font-size:0.9rem; margin-bottom:12px; }
+.calc .back{ background:none; border:none; color:var(--ink-faint); font-family:inherit; font-size:0.84rem; cursor:pointer; padding:8px 0 0; text-decoration:underline; }
+.res-big{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:6px 0 12px; }
+.res-big div{ border:1px solid var(--line); border-radius:9px; padding:11px 12px; background:var(--bg); }
+.res-big b{ display:block; font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--ink); }
+.res-big span{ font-size:0.78rem; color:var(--ink-faint); }
+.res-diff{ border-radius:9px; padding:12px 14px; margin-bottom:12px; }
+.res-diff.alto{ background:#F6E3DF; color:#7A2A22; }
+.res-diff.ok{ background:var(--accent-soft); color:var(--accent-ink); }
+.res-diff b{ font-size:1.15rem; }
+.res-steps{ width:100%; border-collapse:collapse; font-size:0.84rem; margin:4px 0 12px; }
+.res-steps td, .res-steps th{ padding:5px 6px; border-bottom:1px solid var(--line); text-align:left; }
+.res-steps td.n, .res-steps th.n{ text-align:right; font-variant-numeric:tabular-nums; }
+.res-note{ font-size:0.84rem; color:var(--ink-soft); border-left:2px solid var(--accent-soft); padding-left:10px; margin:0 0 10px; }
+.res-note.warn{ border-left-color:#C7764F; }
+.res-cta{ display:flex; align-items:center; justify-content:center; gap:8px; background:var(--accent); color:#fff; padding:12px; border-radius:8px; text-decoration:none; font-weight:600; margin-top:6px; }
+.res-disc{ font-size:0.74rem; color:var(--ink-faint); margin-top:10px; }
+@media (max-width:600px){
+  .ans-cols, .example, .res-big{ grid-template-columns:1fr; }
+}
+
+/* ---------- identidade do escritório (06/10/2026) ---------- */
+.topbar{ background:#1a2535; border-bottom:0; }
+.topbar-inner{ padding:14px 24px; }
+.marca{ display:flex; flex-direction:column; line-height:1.1; }
+.marca-nome{ font-family:'Cormorant Garamond', Georgia, serif; font-size:1.45rem; font-weight:600; letter-spacing:.02em; color:#fff; }
+.marca-sub{ font-size:.7rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); }
+.topbar .callbtn{ color:#fff; background:transparent; border-color:rgba(201,168,76,.7); }
+.topbar .callbtn:hover{ background:rgba(201,168,76,.14); }
+.eyebrow{ color:var(--gold-ink); }
+h1,h2,h3{ letter-spacing:.005em; }
+h1{ font-size:2.15rem; }
+/* Cormorant tem olho pequeno: sobe ~20% p/ ficar no peso visual da serifa anterior */
+section h2{ font-size:1.5rem; }
+h3{ font-size:1.2rem; }
+.formwrap h2{ font-size:1.45rem; }
+</style>
+<style>
+.pp{ max-width:760px; margin:0 auto; padding:28px 16px 48px; }
+.pp h1{ font-family:'Cormorant Garamond',serif; font-size:2rem; line-height:1.15; margin:0 0 8px; color:var(--ink); }
+.pp .lead{ color:var(--ink-soft); margin-bottom:22px; }
+.pp h2{ margin-top:30px; }
+.passo{ display:inline-block; font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; color:#c9a84c; font-weight:700; margin-bottom:4px; }
+.card{ background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:20px 22px; box-shadow:var(--shadow); margin-top:12px; }
+.card h3{ font-size:1rem; margin:14px 0 8px; }
+.card h3:first-child{ margin-top:0; }
+.chk{ list-style:none; padding:0; margin:0; }
+.chk li{ display:flex; gap:10px; align-items:flex-start; padding:6px 0; border-bottom:1px dashed var(--line); font-size:.95rem; }
+.chk li:last-child{ border-bottom:0; }
+.chk input{ margin-top:4px; width:18px; height:18px; accent-color:#1a2535; flex:0 0 auto; }
+.chk small{ display:block; color:var(--ink-faint); font-size:.82rem; }
+.grid2{ display:grid; grid-template-columns:1fr 1fr; gap:10px 14px; }
+@media (max-width:620px){ .grid2{ grid-template-columns:1fr; } .pp h1{ font-size:1.6rem; } }
+.pp label{ display:block; font-size:.85rem; font-weight:600; margin-bottom:4px; color:var(--ink); }
+.pp input[type=text], .pp input[type=email], .pp select{ width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font:inherit; background:#fff; }
+.pp input:focus, .pp select:focus, .pp textarea:focus{ outline:2px solid #c9a84c; outline-offset:1px; }
+.irr{ border:1px solid var(--line); border-radius:10px; padding:10px 12px; margin-top:10px; }
+.irr > label{ display:flex; gap:8px; align-items:center; font-weight:600; cursor:pointer; }
+.irr .sub{ display:none; margin-top:8px; }
+.irr.on .sub{ display:grid; }
+.pp textarea{ width:100%; min-height:360px; padding:12px; border:1px solid var(--line); border-radius:8px; font:0.88rem/1.5 ui-monospace,Consolas,monospace; background:#fbfaf7; }
+.acoes{ display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; }
+.btn{ border:0; border-radius:8px; padding:11px 16px; font-weight:600; cursor:pointer; font:inherit; text-decoration:none; display:inline-flex; align-items:center; }
+.btn.primary{ background:#1a2535; color:#fff; }
+.btn.sec{ background:#fff; color:#1a2535; border:1px solid #1a2535; }
+.ok{ color:#2e7d32; font-size:.88rem; align-self:center; display:none; }
+.aviso{ font-size:.85rem; color:var(--ink-soft); background:#f7f5f0; border-left:3px solid #c9a84c; padding:10px 12px; border-radius:6px; margin-top:12px; }
+.pp ol.depois li{ margin-bottom:6px; }
+.voltar{ display:inline-block; margin-top:6px; color:var(--accent); font-weight:600; text-decoration:none; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="marca"><span class="marca-nome">Gurgel e Gusmão</span><span class="marca-sub">Advocacia</span></div>
+    <a class="callbtn wa" href="https://wa.me/5527999830736?text=Ol%C3%A1.%20Vi%20a%20p%C3%A1gina%20sobre%20reajuste%20de%20plano%20de%20sa%C3%BAde%20e%20gostaria%20de%20uma%20an%C3%A1lise%20do%20meu%20contrato." target="_blank" rel="noopener">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.16c-.24.68-1.2 1.26-1.96 1.42-.52.11-1.2.2-3.5-.75-2.94-1.22-4.83-4.2-4.98-4.4-.14-.19-1.19-1.58-1.19-3.01 0-1.43.75-2.14 1.02-2.43.24-.26.55-.32.73-.32.18 0 .37 0 .53.01.17.01.4-.06.62.48.24.55.8 1.9.87 2.04.07.14.12.3.02.49-.09.19-.14.3-.28.47-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.72 1.18 1.54 1.92 1.06.94 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.19-.28.37-.23.62-.14.25.09 1.6.75 1.87.89.28.14.46.21.53.32.07.12.07.66-.17 1.34z"/></svg>
+      WhatsApp (27) 99983-0736
+    </a>
+  </div>
+</header>
+<div class="pp">
+  <a class="voltar" href="../">← Reajuste de plano de saúde</a>
+  <h1>Próximos passos para revisar o reajuste do seu plano</h1>
+  <p class="lead">Dois passos simples: separar os documentos e pedir à operadora, por escrito, o contrato e a explicação dos aumentos. Nada do que você marcar ou digitar nesta página é enviado ao escritório — fica só no seu aparelho.</p>
+
+  <span class="passo">Passo 1</span>
+  <h2 style="margin-top:0">Separe os documentos</h2>
+  <div class="card" id="documentos">
+    <h3>Pessoais</h3><ul class="chk"><li><input type="checkbox" id="d1" data-k="d1"><label for="d1" style="font-weight:400">CNH ou RG e CPF</label></li><li><input type="checkbox" id="d2" data-k="d2"><label for="d2" style="font-weight:400">Comprovante de residência recente<small>Com cidade e CEP visíveis (luz, água, internet).</small></label></li><li><input type="checkbox" id="d3" data-k="d3"><label for="d3" style="font-weight:400">Comprovante de renda<small>Contracheque ou declaração de Imposto de Renda — serve para pedir a gratuidade das custas, se for o caso.</small></label></li></ul><h3>Da empresa (se o plano foi contratado pelo CNPJ ou MEI)</h3><ul class="chk"><li><input type="checkbox" id="d4" data-k="d4"><label for="d4" style="font-weight:400">Cartão CNPJ e, se for MEI, o certificado do MEI (CCMEI)</label></li><li><input type="checkbox" id="d5" data-k="d5"><label for="d5" style="font-weight:400">Informação sobre empregados<small>Se a empresa tem empregados registrados e quantos. Plano “empresarial” sem empregados é o típico falso coletivo.</small></label></li></ul><h3>Do plano</h3><ul class="chk"><li><input type="checkbox" id="d6" data-k="d6"><label for="d6" style="font-weight:400">Contrato ou termo de adesão completo<small>Todas as páginas: tabela de preços por faixa etária, declarações assinadas e qualquer “termo de condições específicas” ou anexo que indique o mês do reajuste.</small></label></li><li><input type="checkbox" id="d7" data-k="d7"><label for="d7" style="font-weight:400">Carteirinha (frente e verso)</label></li><li><input type="checkbox" id="d8" data-k="d8"><label for="d8" style="font-weight:400">Lista de beneficiários<small>Quem está ou já esteve no plano, com data de nascimento e datas de entrada e saída.</small></label></li><li><input type="checkbox" id="d9" data-k="d9"><label for="d9" style="font-weight:400">Boletos<small>O primeiro de todos; os de antes e depois de cada aumento; o do mês em que alguém mudou de faixa de idade; e o mais recente.</small></label></li><li><input type="checkbox" id="d10" data-k="d10"><label for="d10" style="font-weight:400">Declaração anual de pagamento<small>A que a operadora fornece para o Imposto de Renda, se tiver.</small></label></li><li><input type="checkbox" id="d11" data-k="d11"><label for="d11" style="font-weight:400">Comunicados de reajuste<small>Cartas ou e-mails da operadora ou da administradora.</small></label></li><li><input type="checkbox" id="d12" data-k="d12"><label for="d12" style="font-weight:400">Reclamações já feitas<small>E-mails, protocolos, ANS, Procon — com as respostas recebidas.</small></label></li><li><input type="checkbox" id="d13" data-k="d13"><label for="d13" style="font-weight:400">Trocas de plano ou de operadora<small>Se houve migração, as datas e os documentos.</small></label></li></ul>
+    <p class="aviso">Não tem algum documento? Tudo bem: o e-mail do passo 2 pede à operadora o contrato completo e o histórico das faturas.</p>
+  </div>
+
+  <span class="passo" style="margin-top:30px">Passo 2</span>
+  <h2 style="margin-top:0" id="email">Peça à operadora o contrato e a explicação dos reajustes</h2>
+  <p>Envie <strong>do seu próprio e-mail</strong>, o mesmo cadastrado no plano, para a operadora ou a administradora (o endereço costuma estar no boleto ou no site). Se a resposta não explicar o cálculo — ou não vier —, isso ajuda a pedir a devolução em dobro (STJ, Tema 929).</p>
+  <div class="card">
+    <div class="grid2">
+      <div><label for="f-nome">Seu nome completo</label><input type="text" id="f-nome"></div>
+      <div><label for="f-cpf">CPF</label><input type="text" id="f-cpf" inputmode="numeric"></div>
+      <div><label for="f-tel">Telefone</label><input type="text" id="f-tel" inputmode="tel"></div>
+      <div><label for="f-plano">Nome do plano</label><input type="text" id="f-plano" placeholder="Ex.: Superior Mais"></div>
+      <div><label for="f-contrato">Nº do contrato</label><input type="text" id="f-contrato"></div>
+      <div><label for="f-cart">Nº da carteirinha</label><input type="text" id="f-cart"></div>
+      <div><label for="f-adesao">Data de adesão</label><input type="text" id="f-adesao" placeholder="dd/mm/aaaa"></div>
+      <div><label for="f-via">Contratado por meio de</label><input type="text" id="f-via" placeholder="Ex.: MEI CNPJ 00.000.000/0001-00, administradora X"></div>
+    </div>
+    <h3>O que aconteceu no seu plano? (marque o que se aplica)</h3>
+    <div class="irr" id="i-a"><label><input type="checkbox" id="c-a"> Reajuste anual com menos de 12 meses de contrato</label>
+      <div class="sub grid2"><div><label for="a-mes">Mês/ano do reajuste</label><input type="text" id="a-mes" placeholder="mm/aaaa"></div><div><label for="a-meses">Meses de contrato na época</label><input type="text" id="a-meses" placeholder="Ex.: 6"></div></div></div>
+    <div class="irr" id="i-b"><label><input type="checkbox" id="c-b"> Reajustes anuais acima do teto da ANS</label>
+      <div class="sub grid2"><div><label for="b-pcts">Percentuais aplicados</label><input type="text" id="b-pcts" placeholder="Ex.: 15% e 12,9%"></div><div><label for="b-anos">Em quais anos</label><input type="text" id="b-anos" placeholder="Ex.: 2024 e 2025"></div></div></div>
+    <div class="irr" id="i-c"><label><input type="checkbox" id="c-c"> Aumento grande por mudança de faixa etária</label>
+      <div class="sub grid2"><div><label for="c-pct">Percentual do aumento</label><input type="text" id="c-pct" placeholder="Ex.: 143,93%"></div><div><label for="c-mes">Mês/ano</label><input type="text" id="c-mes" placeholder="mm/aaaa"></div></div></div>
+    <h3>Texto do e-mail</h3>
+    <div><label for="f-para">E-mail da operadora ou administradora (opcional)</label><input type="email" id="f-para" placeholder="atendimento@operadora.com.br"></div>
+    <label for="f-texto" style="margin-top:10px">Assunto e mensagem (pode editar)</label>
+    <textarea id="f-texto" spellcheck="false"></textarea>
+    <div class="acoes">
+      <button type="button" class="btn primary" id="b-copiar">Copiar texto</button>
+      <a class="btn sec" id="b-mail" href="#">Abrir no meu e-mail</a>
+      <span class="ok" id="ok">Copiado!</span>
+    </div>
+    <p class="aviso">Se o seu programa de e-mail cortar o texto ao abrir, use “Copiar texto” e cole na mensagem.</p>
+  </div>
+
+  <span class="passo" style="margin-top:30px">Passo 3</span>
+  <h2 style="margin-top:0">Depois de enviar</h2>
+  <ol class="depois">
+    <li>Guarde o número de protocolo ou a confirmação de envio.</li>
+    <li>Quando a resposta chegar — ou se não chegar em alguns dias —, envie para nós pelo WhatsApp, junto com os documentos do passo 1.</li>
+    <li>Com o contrato e os boletos, conferimos cada cobrança e dizemos, por escrito, se há o que discutir.</li>
+  </ol>
+  <a class="res-cta" style="max-width:420px" href="https://wa.me/5527999830736?text=Ol%C3%A1.%20Separei%20os%20documentos%20do%20plano%20de%20sa%C3%BAde%20e%20enviei%20o%20e-mail%20%C3%A0%20operadora.%20Quero%20uma%20an%C3%A1lise%20do%20meu%20contrato." target="_blank" rel="noopener">Enviar pelo WhatsApp (27) 99983-0736</a>
+</div>
+<footer>
+  <p><strong>Willian Gurgel Gusmão</strong> — OAB/ES nº 14.605</p>
+  <p>Rua Milton Manoel dos Santos, 371, Jardim Camburi, Vitória/ES, CEP 29090-110</p>
+  <p>(27) 99983-0736 · willian@gurgelgusmao.adv.br</p>
+  <p>Conteúdo informativo. Não substitui a análise individual do contrato.</p>
+</footer>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  function v(id) { return ($(id).value || '').trim(); }
+  function ph(x, rot) { return x || '[' + rot + ']'; }
+  // checklist salvo só no aparelho
+  document.querySelectorAll('.chk input').forEach(function (cb) {
+    try { cb.checked = localStorage.getItem('pp-' + cb.dataset.k) === '1'; } catch (e) {}
+    cb.addEventListener('change', function () { try { localStorage.setItem('pp-' + cb.dataset.k, cb.checked ? '1' : '0'); } catch (e) {} });
+  });
+  function assunto() { return 'Questionamento de reajustes e solicitação de documentos – contrato nº ' + ph(v('f-contrato'), 'nº do contrato') + ' – ' + ph(v('f-nome'), 'seu nome').toUpperCase(); }
+  function corpo() {
+    var L = [];
+    L.push('Prezados,', '');
+    L.push('Sou titular do plano ' + ph(v('f-plano'), 'nome do plano') + ', contrato nº ' + ph(v('f-contrato'), 'nº') + ', carteirinha nº ' + ph(v('f-cart'), 'nº') + ', contratado em ' + ph(v('f-adesao'), 'data de adesão') + ' por meio de ' + ph(v('f-via'), 'CNPJ/MEI ou administradora') + '.', '');
+    var itens = [], letra = 'abc'.split(''), i = 0;
+    if ($('c-a').checked) itens.push('o reajuste anual aplicado em ' + ph(v('a-mes'), 'mês/ano') + ', com apenas ' + ph(v('a-meses'), 'X') + ' meses de contrato');
+    if ($('c-b').checked) itens.push('os percentuais anuais de ' + ph(v('b-pcts'), 'percentuais') + ' (' + ph(v('b-anos'), 'anos') + '), muito superiores aos autorizados pela ANS para os planos individuais e familiares');
+    if ($('c-c').checked) itens.push('o reajuste de ' + ph(v('c-pct'), '%') + ' aplicado em ' + ph(v('c-mes'), 'mês/ano') + ' por mudança de faixa etária');
+    if (itens.length) {
+      L.push('Questiono a regularidade dos reajustes aplicados à minha mensalidade, em especial:');
+      itens.forEach(function (x, j) { L.push('(' + letra[j] + ') ' + x + (j < itens.length - 1 ? ';' : '.')); });
+      L.push('');
+    } else {
+      L.push('Questiono a regularidade dos reajustes aplicados à minha mensalidade.', '');
+    }
+    L.push('Para que eu possa conferir os valores cobrados, solicito, com fundamento no art. 6º, III, do Código de Defesa do Consumidor e no art. 16, XI, da Lei nº 9.656/1998:', '');
+    L.push('1. cópia integral do contrato, inclusive do “Contrato de Produto” firmado entre a administradora e a operadora e do termo de condições específicas que indica o mês de aniversário (data-base) do reajuste anual;');
+    L.push('2. a memória de cálculo de cada reajuste anual aplicado ao meu contrato, com o extrato pormenorizado de despesas assistenciais e receitas que o justificou e a indicação de se o contrato integra agrupamento de contratos (“pool”), e qual;');
+    L.push('3. a tabela de preços por faixa etária vigente na data da minha adesão e a atual;');
+    L.push('4. o histórico de todas as faturas desde a adesão, com a composição de cada valor (mensalidade por beneficiário, taxas associativas, coparticipações e retroativos);');
+    L.push('5. a relação de beneficiários do contrato, com as datas de inclusão e exclusão.', '');
+    L.push('Peço resposta por escrito, com número de protocolo, no prazo previsto na regulamentação da ANS.', '');
+    L.push('Atenciosamente,', ph(v('f-nome'), 'Nome completo'), 'CPF: ' + ph(v('f-cpf'), 'CPF'), 'Telefone: ' + ph(v('f-tel'), 'telefone'));
+    return L.join('\n');
+  }
+  var editado = false;
+  function gerar() { if (!editado) $('f-texto').value = 'Assunto: ' + assunto() + '\n\n' + corpo(); }
+  $('f-texto').addEventListener('input', function () { editado = true; });
+  document.querySelectorAll('.card input').forEach(function (el) {
+    if (el.closest('.chk')) return;
+    el.addEventListener('input', function () { editado = false; gerar(); });
+    el.addEventListener('change', function () { editado = false; gerar(); });
+  });
+  ['a', 'b', 'c'].forEach(function (x) { $('c-' + x).addEventListener('change', function () { $('i-' + x).classList.toggle('on', $('c-' + x).checked); }); });
+  function partes() {
+    var txt = $('f-texto').value, m = txt.match(/^Assunto:\s*(.*)\n+/);
+    return m ? { s: m[1], b: txt.slice(m[0].length) } : { s: assunto(), b: txt };
+  }
+  $('b-copiar').addEventListener('click', function () {
+    var t = $('f-texto').value;
+    var ok = function () { $('ok').style.display = 'inline'; setTimeout(function () { $('ok').style.display = 'none'; }, 2500); };
+    if (navigator.clipboard) navigator.clipboard.writeText(t).then(ok, function () { $('f-texto').select(); document.execCommand('copy'); ok(); });
+    else { $('f-texto').select(); document.execCommand('copy'); ok(); }
+  });
+  $('b-mail').addEventListener('click', function (e) {
+    e.preventDefault(); var p = partes();
+    window.location.href = 'mailto:' + encodeURIComponent(v('f-para')) + '?subject=' + encodeURIComponent(p.s) + '&body=' + encodeURIComponent(p.b);
+  });
+  // Link enviado pelo escritório (Gestor): dados no fragmento, que o navegador
+  // não manda ao servidor — ex.: #email&nome=FULANA&tel=27999990000&cpf=...
+  (function preencherDoLink() {
+    var h = (location.hash || '').replace(/^#/, '');
+    if (!h || h.indexOf('=') < 0) return;
+    var mapa = { nome: 'f-nome', tel: 'f-tel', cpf: 'f-cpf', plano: 'f-plano', contrato: 'f-contrato', cart: 'f-cart', adesao: 'f-adesao', via: 'f-via', para: 'f-para' };
+    h.split('&').forEach(function (par) {
+      var i = par.indexOf('='); if (i < 0) return;
+      var k = par.slice(0, i), v = '';
+      try { v = decodeURIComponent(par.slice(i + 1).replace(/\+/g, ' ')); } catch (e) { return; }
+      if (mapa[k] && $(mapa[k]) && v) $(mapa[k]).value = v.slice(0, 200);
+    });
+    if (/(^|&)email(&|$)/.test(h) && $('email')) setTimeout(function () { $('email').scrollIntoView({ block: 'start' }); }, 50);
+  })();
+  gerar();
+})();
+</script>
+</body>
+</html>
