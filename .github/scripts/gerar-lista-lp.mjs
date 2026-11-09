@@ -12,7 +12,7 @@ import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 
 const RAIZ = process.cwd();
-const IGNORAR = new Set(['LP', 'guias', 'data', '.github', '.git', 'node_modules']);
+const IGNORAR = new Set(['LP', 'guias', 'data', 'teses', '.github', '.git', 'node_modules']);
 
 const git = (...args) => execFileSync('git', args, { cwd: RAIZ, encoding: 'utf8' }).trim();
 const meta = (html, re) => (html.match(re)?.[1] ?? '').replace(/&amp;/g, '&').trim();
