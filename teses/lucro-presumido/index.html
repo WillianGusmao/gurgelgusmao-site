@@ -60,7 +60,7 @@ ul.tight{margin:6px 0;padding-left:20px}ul.tight li{margin:3px 0}
 .toggle{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
 .toggle button{border:0;background:var(--card);color:var(--ink);padding:6px 10px;cursor:pointer;font-size:13px}
 .toggle button.on{background:var(--navy);color:var(--bg)}
-</style>
+.rel{padding-left:18px;display:inline-block}tr.relator td{font-size:.95em}tr.turma td{border-top:2px solid var(--line, #ddd)}</style>
 
 </head>
 <body>
@@ -88,7 +88,8 @@ ul.tight{margin:6px 0;padding-left:20px}ul.tight li{margin:3px 0}
     <p class="small muted">"Favorável" inclui agravo da União desprovido e efeito suspensivo negado à União.</p>
   </div>
   <div class="card">
-    <h2>Por turma — onde a distribuição pesa</h2>
+    <h2>TRF2 por turma e desembargador — onde a distribuição pesa</h2>
+    <p class="small muted">Linhas em negrito: total da turma. Abaixo, cada relator(a), do maior para o menor número de decisões; juízes convocados aparecem pelo nome. Turmas com menos de 5 decisões foram omitidas.</p>
     <div class="scroll"><table id="tabTurma"></table></div>
   </div>
   <div class="card">
@@ -237,8 +238,20 @@ function distRows(groups){let h="<tr><th>Grupo</th><th>Decisões</th>"+VS.map(v=
   h+=`<tr><td><b>${esc(name)}</b></td><td class="n">${n}</td>`+VS.map(v=>`<td class="n">${cnt(a,v)}</td>`).join("")+`<td class="n">${dn?(100*f/dn).toFixed(1).replace(".",","):"—"}</td><td><div class="bar">`+VS.map(v=>`<i style="width:${100*cnt(a,v)/n}%;background:${col[v]}"></i>`).join("")+`</div></td></tr>`;}
  return h;}
 document.getElementById("tabTrib").innerHTML=distRows(TR.map(t=>[t,D.filter(d=>d.t===t)]));
-(function(){const g={};D.forEach(d=>{if(!["TRF2","TRF4"].includes(d.t))return;const k=d.t+" · "+d.o;(g[k]=g[k]||[]).push(d)});
- document.getElementById("tabTurma").innerHTML=distRows(Object.keys(g).filter(k=>g[k].length>=5).sort().map(k=>[k,g[k]]))+"";})();
+(function(){
+ const fix={"WILLIAM DOUGLAS":"WILLIAM DOUGLAS RESINENTE DOS SANTOS"};
+ const nome=s=>{s=fix[s]||s||"—";return s.toLowerCase().replace(/(^|\s)(\S)/g,(m,a,b)=>a+b.toUpperCase()).replace(/\b(Da|De|Do|Das|Dos|E)\b/g,w=>w.toLowerCase());};
+ const T=D.filter(d=>d.t==="TRF2"); const tur={};
+ T.forEach(d=>{(tur[d.o]=tur[d.o]||[]).push(d)});
+ const row=(label,a,cls)=>{const n=a.length;const f=cnt(a,"Favorável")+cnt(a,"Parcial"),dn=n-cnt(a,"Neutro");
+  return `<tr class="${cls}"><td>${label}</td><td class="n">${n}</td>`+VS.map(v=>`<td class="n">${cnt(a,v)}</td>`).join("")+`<td class="n">${dn?(100*f/dn).toFixed(1).replace(".",","):"—"}</td><td><div class="bar">`+VS.map(v=>`<i style="width:${100*cnt(a,v)/n}%;background:${col[v]}"></i>`).join("")+`</div></td></tr>`;};
+ let h="<tr><th>Turma / desembargador(a)</th><th>Decisões</th>"+VS.map(v=>`<th>${v}</th>`).join("")+"<th>% fav.*</th><th style='min-width:160px'>Distribuição</th></tr>";
+ Object.keys(tur).filter(k=>tur[k].length>=5).sort().forEach(k=>{
+  h+=row(`<b>${esc(k)}</b>`,tur[k],"turma");
+  const rel={}; tur[k].forEach(d=>{const r=fix[d.r]||d.r;(rel[r]=rel[r]||[]).push(d)});
+  Object.keys(rel).sort((a,b)=>rel[b].length-rel[a].length).forEach(r=>{h+=row(`<span class="rel">${esc(nome(r))}</span>`,rel[r],"relator");});
+ });
+ document.getElementById("tabTurma").innerHTML=h;})();
 // fundamentos
 let scope="all";
 const rate=(k,t,sc)=>NT[t]?F.stats[k][sc][t].n/(sc==="all"?NT[t]:Math.max(1,D.filter(d=>d.t===t&&(d.v==="Favorável"||d.v==="Parcial")).length)):0;
