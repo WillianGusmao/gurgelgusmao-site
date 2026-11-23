@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teses — exclusão do IVA da base do ICMS</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root{--bg:#f6f5f1;--card:#ffffff;--ink:#1b2333;--muted:#5d6676;--line:#e3e0d6;--navy:#14213d;--gold:#b8901f;--fav:#1f7a4d;--par:#b07a10;--des:#b3362f;--neu:#7a8190;--chip:#eef0f4;--hl:#fff7dc}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#11151d;--card:#1a2030;--ink:#e7e9ee;--muted:#9aa3b2;--line:#2a3243;--navy:#9db4e6;--gold:#e0b84a;--fav:#4cc38a;--par:#e2a93b;--des:#ef6b62;--neu:#8b93a3;--chip:#232b3c;--hl:#3a3220}}
+:root[data-theme="dark"]{--bg:#11151d;--card:#1a2030;--ink:#e7e9ee;--muted:#9aa3b2;--line:#2a3243;--navy:#9db4e6;--gold:#e0b84a;--fav:#4cc38a;--par:#e2a93b;--des:#ef6b62;--neu:#8b93a3;--chip:#232b3c;--hl:#3a3220}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{background:#14213d;color:#fff;padding:22px 16px 18px;border-bottom:4px solid #b8901f}
+header h1{margin:0;font-size:22px;letter-spacing:.2px}
+header p{margin:6px 0 0;color:#cfd6e4;font-size:13.5px}
+main{max-width:1180px;margin:0 auto;padding:16px}
+nav.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 14px}
+nav.tabs button{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:7px 12px;border-radius:8px;cursor:pointer;font-size:14px}
+nav.tabs button.on{background:var(--navy);color:var(--bg);border-color:var(--navy)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:14px}
+.card h2{margin:0 0 10px;font-size:17px;color:var(--navy)}
+.card h3{margin:14px 0 6px;font-size:15px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px}
+.kpi b{display:block;font-size:24px}
+.kpi span{color:var(--muted);font-size:12.5px}
+.muted{color:var(--muted)}
+.small{font-size:12.5px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{border-bottom:1px solid var(--line);padding:7px 6px;text-align:left;vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);position:sticky;top:0;background:var(--card)}
+td.n{text-align:center;white-space:nowrap}
+.scroll{overflow-x:auto}
+.tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap}
+.v-Favorável{background:color-mix(in srgb,var(--fav) 18%,transparent);color:var(--fav)}
+.v-Parcial{background:color-mix(in srgb,var(--par) 18%,transparent);color:var(--par)}
+.v-Desfavorável{background:color-mix(in srgb,var(--des) 16%,transparent);color:var(--des)}
+.v-Neutro{background:var(--chip);color:var(--neu)}
+.bar{display:flex;height:22px;border-radius:6px;overflow:hidden;background:var(--chip);min-width:120px}
+.bar i{display:block;height:100%}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-top:6px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.filters select,.filters input{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:6px 8px;font-size:13.5px}
+.filters input{flex:1;min-width:180px}
+tr.row{cursor:pointer}
+tr.row:hover td{background:var(--chip)}
+tr.det td{background:var(--chip);font-size:13px}
+.gap{background:var(--hl)}
+.pill{display:inline-block;padding:1px 7px;border-radius:6px;background:var(--chip);font-size:12px;margin:1px 2px}
+.side-fav{border-left:4px solid var(--fav)}
+.side-con{border-left:4px solid var(--des)}
+.ex{border-left:3px solid var(--gold);padding:6px 10px;margin:6px 0;background:var(--chip);border-radius:0 8px 8px 0;font-size:13px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:760px){.grid2{grid-template-columns:1fr}header h1{font-size:19px}}
+ul.tight{margin:6px 0;padding-left:20px}ul.tight li{margin:3px 0}
+.callout{border:1px solid var(--gold);background:var(--hl);border-radius:10px;padding:12px 14px}
+.hidden{display:none}
+.toggle{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.toggle button{border:0;background:var(--card);color:var(--ink);padding:6px 10px;cursor:pointer;font-size:13px}
+.toggle button.on{background:var(--navy);color:var(--bg)}
+.law{font-size:13.5px;background:var(--chip);border-left:3px solid var(--navy);padding:8px 12px;border-radius:0 8px 8px 0;margin:8px 0}
+.law b{background:var(--hl)}
+.tl{border-left:3px solid var(--gold);margin:6px 0 6px 6px;padding-left:12px}
+.tl div{margin:5px 0}.tl .d{font-weight:700;color:var(--navy);display:inline-block;min-width:96px}
+</style>
+</head>
+<body>
+<header>
+  <p style="margin:0 0 6px"><a href="../" style="color:#e0c36a;text-decoration:none;font-size:13px">← Painel de teses</a></p>
+  <h1>Exclusão do IVA (IBS e CBS) da base de cálculo do ICMS</h1>
+  <p>Transição 2027–2032 · TJSP, outros estados, STJ e STF · tramitação da PEC 45 · ISS · levantamento de 23/11/2026</p>
+</header>
+<main>
+<nav class="tabs" id="tabs">
+  <button data-t="resumo" class="on">Resumo</button>
+  <button data-t="normas">Normas</button>
+  <button data-t="pec">PEC 45</button>
+  <button data-t="dec">Decisões</button>
+  <button data-t="sup">2º grau, STJ e STF</button>
+  <button data-t="arg">Argumentos</button>
+  <button data-t="uf">Estados e ISS</button>
+  <button data-t="est">Estratégia</button>
+</nav>
+
+<section id="t-resumo">
+  <div class="kpis" id="kpis"></div>
+  <div class="card" style="margin-top:14px">
+    <h2>A tese em uma frase</h2>
+    <p>De 2027 a 2032, enquanto o ICMS convive com a CBS e o IBS, <b>o valor desses novos tributos não pode entrar na base de cálculo do ICMS</b>. Nenhuma lei complementar manda incluí-los: a LC 227/2026 incluiu na base do ICMS só o Imposto Seletivo. O sentido inverso já está garantido: o ICMS fica fora da base do IBS e da CBS (ADCT, art. 133; LC 214, art. 12, §2º, V).</p>
+    <div class="grid2">
+      <div class="callout"><b>Fazenda (SP, MG, PR, RS):</b> "valor da operação" é tudo o que o comprador paga, inclusive tributos repassados (Tema 1.223 do STJ). Não há regra que exclua.</div>
+      <div class="callout"><b>Contribuinte:</b> incluir é majorar a base e exige lei complementar (CF, art. 146, III, "a"; CTN, art. 97, §1º). O IBS e a CBS são "por fora", com destaque legal e <i>split payment</i>.</div>
+    </div>
+  </div>
+  <div class="card">
+    <h2>Onde estamos</h2>
+    <ul class="tight">
+      <li><b>Em jogo:</b> cerca de <b>1,6% do valor das vendas</b>, com ICMS de 18% e CBS + IBS de cerca de 9%. Para SP, R$ 10,2 bi em 2027 (Nota Técnica DEPT 72/2026).</li>
+      <li><b>TJSP, 1º grau:</b> <span id="placar"></span>. Depois de 09/11 o placar virou para a Fazenda (3 contra 8).</li>
+      <li><b>Presidência do TJSP (SLS 2270251-20.2026, 09/11/2026):</b> suspendeu 3 sentenças e 7 liminares favoráveis. Pode estender por aditamento a novas decisões.</li>
+      <li><b>2º grau:</b> nenhum acórdão de mérito. Os agravos ficaram prejudicados pelas sentenças.</li>
+      <li><b>Fora de SP:</b> liminar favorável no DF. No ES, o único MS foi extinto por falta de ato concreto.</li>
+      <li><b>STJ/STF:</b> sem tema. O Tema 1.223 (PIS/Cofins na base do ICMS) é o precedente mais perigoso. Não há ADI contra a EC 132 sobre o ponto.</li>
+    </ul>
+    <p class="small muted">Uso interno. Confira o inteiro teor antes de citar. Fontes secundárias estão identificadas como tal.</p>
+  </div>
+  <div class="card">
+    <h2>Linha do tempo</h2>
+    <div class="tl">
+      <div><span class="d">jul/2023</span> Câmara aprova a PEC 45 com o IBS fora da base do ICMS e do ISS (art. 156-A, §1º, IX)</div>
+      <div><span class="d">nov/2023</span> O Senado mantém e amplia a vedação (inclui o IPI)</div>
+      <div><span class="d">15/12/2023</span> Na fase final da Câmara, a vedação cai sem destaque nem justificativa</div>
+      <div><span class="d">20/12/2023</span> EC 132 promulgada. Fica só o ADCT, art. 133 (ICMS fora da base do IVA)</div>
+      <div><span class="d">16/01/2025</span> LC 214: ICMS fora da base do IBS e da CBS. Nada sobre o inverso</div>
+      <div><span class="d">nov/2025–fev/2026</span> SEFAZ-SP: o IBS e a CBS entram na base "quando efetivamente exigíveis" (RCs 32.303, 32.931, 32.903 e 33.083)</div>
+      <div><span class="d">13/01/2026</span> LC 227: Lei Kandir, art. 13, §1º, III. Inclui só o Imposto Seletivo a partir de 2027</div>
+      <div><span class="d">09/09/2026</span> Primeira liminar (16ª VFP, caso Privalia)</div>
+      <div><span class="d">09/11/2026</span> Presidência do TJSP suspende as decisões favoráveis</div>
+      <div><span class="d">09–22/11/2026</span> O 1º grau passa a negar na maioria (3 × 8)</div>
+    </div>
+  </div>
+</section>
+
+<section id="t-normas" class="hidden">
+  <div class="card"><h2>Lei Kandir (LC 87/96), art. 13</h2>
+  <div class="law">"A base de cálculo do imposto é: I – na saída de mercadoria (...), <b>o valor da operação</b>". §1º: integram a base "I – o montante do próprio imposto"; "II – (...) a) seguros, juros e <b>demais importâncias pagas, recebidas ou debitadas</b>"; "III – <b>a partir de 1º de janeiro de 2027, o valor correspondente ao Imposto Seletivo</b>" (LC 227/2026). §2º: fica fora o IPI, só entre contribuintes.</div>
+  <p class="small">É o centro da disputa: para a Fazenda, o IBS e a CBS estão em "valor da operação" e em "demais importâncias". Para o contribuinte, o §1º lista o que entra, e a LC 227 incluiu só o IS.</p></div>
+  <div class="card"><h2>Constituição</h2>
+  <div class="law"><b>Art. 153, §6º, IV:</b> o IS "integrará a base de cálculo dos tributos previstos nos arts. 155, II [ICMS], 156, III [ISS], 156-A [IBS] e 195, V [CBS]". Daí a Fazenda dizer que a LC 227 foi "meramente declaratória".</div>
+  <div class="law"><b>Art. 156-A, §1º, IX</b> e <b>art. 195, §17:</b> o IBS e a CBS não integram a base do IS, das contribuições do art. 195 e do PIS. <b>O ICMS e o ISS não estão na lista</b> (argumento <i>a contrario</i> da Fazenda; ver a aba PEC 45).</div>
+  <div class="law"><b>Art. 155, §2º, XI:</b> o IPI só sai da base do ICMS por exceção expressa (entre contribuintes). A Fazenda usa isso para dizer que o destaque "por fora" não basta. <b>Art. 146, III, "a":</b> base de cálculo é matéria de lei complementar.</div></div>
+  <div class="card"><h2>LC 214/2025 e CTN</h2>
+  <div class="law"><b>LC 214, art. 12:</b> a base do IBS e da CBS é o valor da operação; incluem-se os "tributos (...) incidentes (...), exceto aqueles previstos no §2º" (§1º, V). Não integram "o montante do IBS e da CBS" (§2º, I) nem, de 2026 a 2032, o ICMS, o ISS e o PIS/Cofins (§2º, V). <b>Art. 4º, §5º:</b> o IVA não altera a base do ITCMD e do ITBI. O ICMS não é mencionado.</div>
+  <div class="law"><b>CTN, art. 97, IV e §1º:</b> só a lei fixa a base, e "<b>equipara-se à majoração do tributo a modificação da sua base de cálculo, que importe em torná-lo mais oneroso</b>". <b>Art. 108, §1º:</b> a analogia não pode resultar em exigência de tributo. O "substituem o PIS/Cofins" da SEFAZ-SP é analogia.</div></div>
+</section>
+
+<section id="t-pec" class="hidden">
+  <div class="card"><h2>A vedação que caiu na PEC 45/2019 (textos oficiais conferidos)</h2>
+  <div class="scroll"><table>
+   <tr><th>Fase</th><th>Art. 156-A, §1º, IX: o IBS não integrará a base de…</th><th>Fonte</th></tr>
+   <tr><td>Câmara, jul/2023 (45-F)</td><td>"…153, VIII, <b>155, II, 156, III</b>, e 195, V" (IS, <b>ICMS, ISS</b>, CBS)</td><td>Câmara, codteor 2305786</td></tr>
+   <tr><td>Senado, nov/2023 (Parecer 174/2023-PLEN)</td><td>"…<b>153, IV</b> e VIII, <b>155, II, 156, III</b>, e 195, I, "b", IV e V, e [PIS]" (acrescenta o <b>IPI</b>)</td><td>Senado</td></tr>
+   <tr><td>Câmara, 15/12/2023 (manifestação do relator + redação final)</td><td>"…153, VIII, e 195, I, "b", IV e V, e [PIS]". <b>Saem o ICMS, o ISS e o IPI</b></td><td>Câmara, codteors 2377625 e 2380280</td></tr>
+   <tr><td>EC 132 (20/12/2023)</td><td>Igual ao texto final da Câmara. Fica o ADCT, art. 133, só no sentido inverso</td><td>Autógrafo e Planalto</td></tr>
+  </table></div>
+  <ul class="tight">
+   <li>A manifestação do relator Aguinaldo Ribeiro lista as supressões ao texto do Senado e <b>não menciona esta</b>. Termina com: "correções de redação, de erros materiais e de referências (...) sem qualquer repercussão no mérito".</li>
+   <li>Nenhum destaque votado em plenário em 15/12/2023 tratou do inciso.</li>
+  </ul></div>
+  <div class="grid2">
+   <div class="card side-con"><h2>Leitura da Fazenda</h2><p>"Silêncio eloquente do constituinte": a vedação existiu nas duas Casas e foi retirada. A SLS da Presidência do TJSP aceitou isso como reforço de plausibilidade.</p></div>
+   <div class="card side-fav"><h2>Resposta</h2><ul class="tight"><li>Não houve deliberação. O relator descreveu o texto como correção "sem repercussão no mérito".</li><li>Silêncio não cria tributo: a matéria volta à lei complementar, e a LC 227 incluiu só o IS.</li><li>ADI 2128: a Câmara só pode suprimir sem devolver ao Senado se não alterar o sentido. Ler a supressão como decisão de mérito lhe daria um efeito que o relator negou. É argumento de interpretação, não ataque à EC: a ADI 2135 (2024) mostra deferência do STF ao processo interno.</li></ul></div>
+  </div>
+</section>
+
+<section id="t-dec" class="hidden">
+  <div class="card"><h2>Decisões de 1º grau</h2>
+  <div class="filters"><select id="fT"><option value="">Tribunal</option></select><select id="fR"><option value="">Resultado</option><option>Favorável</option><option>Parcial</option><option>Desfavorável</option><option>Neutro</option></select><input id="fQ" placeholder="Buscar vara, juiz, processo, parte…"></div>
+  <div class="small muted" id="dCount"></div>
+  <div class="scroll"><table id="tabDec"></table></div>
+  <p class="small muted">Clique na linha para ver o dispositivo. TJSP: sentenças do CJPG até 22/11/2026, com PDF oficial no acervo interno. "Parcial" = favorável no mérito, mas sem restituição em dinheiro (Súmulas 269 e 271 do STF). As decisões do TJDFT e do ISS vêm de notícias.</p></div>
+  <div class="card"><h2>Por vara (Capital)</h2><div class="scroll"><table id="tabVara"></table></div></div>
+</section>
+
+<section id="t-sup" class="hidden">
+  <div class="card"><h2>Presidência do TJSP: SLS 2270251-20.2026.8.26.0000 (09/11/2026)</h2>
+  <ul class="tight"><li><b>Deferida</b> para suspender as sentenças 1005586 (Santos), 1158490 (3ª VFP) e 1138866 (16ª VFP) e 7 liminares (1154803, 1001048, 1166548, 1170779, 1007488, 1016224 e 1162331). Vale até a reapreciação pelo Tribunal (Súmula 626 do STF) e pode ser estendida por aditamento.</li>
+  <li><b>Fumus da Fazenda em delibação:</b> Tema 1.223 com "particular relevância" para a CBS, que sucede o PIS/Cofins (ADCT, art. 126); REsp 1.144.469/PR; exceção do IPI; listas da CF; supressão na PEC 45; PLP 16/2025 "sintomático".</li>
+  <li>Reconhece: <i>"Há argumentos jurídicos relevantes em ambos os sentidos."</i> Impacto alegado: R$ 10,2 bi, R$ 2,55 bi para os municípios e cerca de 45 ações.</li></ul></div>
+  <div class="card"><h2>Agravos de instrumento (sem mérito)</h2><div class="scroll"><table>
+   <tr><th>Processo</th><th>Câmara / relator</th><th>Data</th><th>Resultado</th></tr>
+   <tr><td>2262519-85.2026</td><td>10ª Câm. Dir. Público · Marcelo Semer</td><td>12/11/2026</td><td><span class="tag v-Neutro">prejudicado</span> tutela negada antes</td></tr>
+   <tr><td>2250679-78.2026</td><td>8ª Câm. · José Maria Câmara Junior</td><td>18/11/2026</td><td><span class="tag v-Neutro">prejudicado</span> tutela negada antes</td></tr>
+   <tr><td>2267809-81.2026</td><td>4ª Câm. · Maurício Fiorito</td><td>12/11/2026</td><td><span class="tag v-Favorável">tutela concedida</span> depois prejudicado</td></tr>
+   <tr><td>3016457-51.2026 (do Estado)</td><td>11ª Câm. · Francisco Shintate</td><td>13/11/2026</td><td><span class="tag v-Neutro">prejudicado</span></td></tr>
+   <tr><td>2260896-83.2026</td><td>11ª Câm. · Márcio Kammer de Lima</td><td>28/10/2026</td><td><span class="tag v-Neutro">não conhecido</span> (prevenção)</td></tr>
+  </table></div>
+  <p class="small">As Câmaras de Direito Público (10ª, 8ª, 5ª e 2ª) e o TJES aplicam o Tema 1.223 ao PIS/Cofins de forma uniforme em 2026.</p></div>
+  <div class="card"><h2>STJ: Tema 1.223 (REsp 2.091.202/SP, 1ª Seção, unânime, 11/12/2024)</h2>
+  <div class="ex">"A inclusão do PIS e da Cofins na base de cálculo do ICMS atende à legalidade nas hipóteses em que a base de cálculo é o valor da operação, por configurar repasse econômico."</div>
+  <ul class="tight"><li><span class="tag v-Desfavorável">contra</span> "Por ausência de previsão legal específica, não é possível excluir" (CF, art. 150, §6º; o exemplo do IPI).</li>
+  <li><span class="tag v-Favorável">a favor</span> O PIS/Cofins é repasse econômico porque "o destaque na nota fiscal é <b>facultativo e existe apenas a título informativo</b>". No IBS e na CBS o destaque é legal.</li>
+  <li><span class="tag v-Neutro">processual</span> O STJ não examina o art. 97 do CTN (matéria constitucional). Prequestionar os arts. 146, III, "a", e 150, I, da CF para o RE.</li></ul></div>
+  <div class="card"><h2>STF</h2><ul class="tight"><li>Nenhuma ADI contra a EC 132 por vício formal localizada (Jusratio, 23/11/2026).</li><li>ADI 2135 (EC 19/1998): vício formal em emenda julgado <b>improcedente</b> em 06/11/2024, com deferência à autonomia do Parlamento.</li><li>Analogias: Tema 69 (ICMS fora do PIS/Cofins) e Tema 118 (ISS fora do PIS/Cofins, 21/10/2026, 6 a 5). Só por analogia: o Tema 69 trata de "receita", não de "valor da operação".</li></ul></div>
+</section>
+
+<section id="t-arg" class="hidden">
+  <div class="card"><h2>Mapa de argumentos</h2><div class="scroll"><table>
+   <tr><th style="width:50%">Contribuinte</th><th>Fazenda</th></tr>
+   <tr><td>Reserva de LC e legalidade estrita: incluir é majorar (CF, art. 146, III, "a"; CTN, art. 97, §1º)</td><td>A LC já define a base como "valor da operação" e "demais importâncias debitadas"</td></tr>
+   <tr><td>A LC 227 incluiu só o IS: silêncio eloquente</td><td>A inclusão do IS só repete a CF, art. 153, §6º, IV</td></tr>
+   <tr><td>O IBS e a CBS são "por fora", com destaque legal e <i>split payment</i>: receita do ente, não preço</td><td>O IPI também é "por fora" e integra a base, salvo a exceção expressa. O <i>split</i> é só forma de pagamento</td></tr>
+   <tr><td>O Tema 1.223 tratou de repasse econômico de destaque facultativo</td><td>O Tema 1.223 exige lei para excluir. A CBS sucede o PIS/Cofins</td></tr>
+   <tr><td>Simetria e neutralidade (LC 214, art. 12, §2º, V)</td><td>Não há reciprocidade. As listas da CF omitem o ICMS. A LC 214, art. 4º, §5º, só protege o ITCMD e o ITBI</td></tr>
+   <tr><td>A supressão na PEC 45 não foi deliberada ("sem repercussão no mérito")</td><td>A vedação existiu e caiu: silêncio eloquente do constituinte</td></tr>
+   <tr><td>A neutralidade arrecadatória é feita pela alíquota de referência (ADCT, art. 130)</td><td>R$ 10,2 bi; ADCT, arts. 128 e 130; REsp 1.144.469</td></tr>
+   <tr><td>O PLP 16/2025 dá segurança jurídica, não prova que o direito não existe</td><td>O PLP 16/2025 é "sintomático" da falta de previsão</td></tr>
+  </table></div></div>
+  <div class="card"><h2>Pontos de atenção</h2><ul class="tight"><li><b>CBS × IBS:</b> a CBS sucede o PIS/Cofins, e ali o Tema 1.223 pesa mais. O IBS sucede o próprio ICMS. Considere pedidos autônomos.</li><li>Não apoiar a tese só no Tema 69 nem só no <i>split payment</i>.</li><li>Juntar simulação de carga: a 8ª VFP criticou a falta de prova de distorção.</li></ul></div>
+</section>
+
+<section id="t-uf" class="hidden">
+  <div class="card"><h2>Posição dos fiscos estaduais para 2027</h2><div class="scroll"><table>
+   <tr><th>Ente</th><th>Posição</th><th>Fonte</th></tr>
+   <tr><td>SP</td><td><span class="tag v-Desfavorável">inclui</span> RCs 32.303/2025, 32.931/2025, 32.903/2025 e 33.083/2026</td><td>oficial</td></tr>
+   <tr><td>MG</td><td><span class="tag v-Desfavorável">inclui</span> Consulta 20/2026</td><td>secundária</td></tr>
+   <tr><td>PR</td><td><span class="tag v-Desfavorável">inclui</span> IBS, CBS e IS (Consulta 48/2026)</td><td>secundária</td></tr>
+   <tr><td>RS</td><td><span class="tag v-Desfavorável">inclui</span> orientação sem número</td><td>secundária</td></tr>
+   <tr><td>PE</td><td>RC 39/2025 incluía já em 2026; nota posterior afastou só 2026</td><td>oficial e nota</td></tr>
+   <tr><td>ES</td><td><span class="tag v-Neutro">silente</span> PC 939/2025: fora em 2026 porque "não representarão um acréscimo no valor final da operação". Nada sobre 2027</td><td>informe Findes; sentença do TJES</td></tr>
+   <tr><td>DF, SC, PI</td><td><span class="tag v-Neutro">silentes</span> só sobre 2026</td><td>secundária</td></tr>
+   <tr><td>BA, RJ, GO e demais</td><td>nada encontrado</td><td>—</td></tr>
+  </table></div>
+  <p class="small"><b>ES na prática:</b> sem posição para 2027, o MS preventivo foi extinto por ser contra lei em tese (MS 5044804-86.2026.8.08.0024). Antes, protocolar consulta formal sobre 2027.</p></div>
+  <div class="card"><h2>ISS: a mesma tese contra o município</h2>
+  <div class="law"><b>LC 116/2003, art. 7º:</b> "<b>A base de cálculo do imposto é o preço do serviço.</b>" Não há lista de parcelas, e a LC 227 não alterou a LC 116 (nem para o IS, apesar da CF, art. 153, §6º, IV).</div>
+  <ul class="tight"><li><b>Mais favorável que o ICMS</b> no texto: não há o gancho das "demais importâncias". Analogia com o Tema 118 do STF (ISS fora do PIS/Cofins).</li>
+  <li><b>Município de SP:</b> fórmulas da NFS-e com o IBS e a CBS na base do ISS a partir de 2027 (notícia de 04/11/2026). Primeira liminar favorável: 9ª VFP, 1161497-36.2026.8.26.0053 (03/11/2026).</li>
+  <li><b>Municípios do ES:</b> em estudo (Vitória, Serra, Vila Velha, Cariacica, Linhares, Aracruz, Cachoeiro de Itapemirim, São Mateus).</li>
+  <li><b>Não se aplica</b> a quem paga ISS fixo por profissional (sociedades de advogados: DL 406/68, art. 9º, §§1º e 3º) nem ao Simples.</li></ul></div>
+</section>
+
+<section id="t-est" class="hidden">
+  <div class="card"><h2>Estratégia recomendada</h2><ol>
+   <li><b>Não deixar de recolher</b> com base em liminar: ela tende a ser suspensa por aditamento à SLS.</li>
+   <li><b>MS preventivo</b> com pedido declaratório e de compensação após o trânsito (CTN, art. 170-A; Súmula 213 do STJ). Sem restituição em dinheiro.</li>
+   <li><b>Depósito judicial</b> da diferença (CTN, art. 151, II): suspende sem depender de liminar e elimina o risco de multa.</li>
+   <li><b>Pedidos autônomos</b> para o IBS e para a CBS.</li>
+   <li><b>Prequestionar</b> a matéria constitucional (CF, arts. 146, III, "a", e 150, I). No STJ: LC 87, art. 13, e CTN, art. 110.</li>
+   <li><b>Fora de SP</b> (ES, por exemplo): consulta formal ao fisco antes do MS, para haver ato concreto.</li>
+   <li><b>ISS:</b> analisar município a município (lei local, NFS-e, posição do fisco).</li>
+  </ol>
+  <p class="small muted">Análise técnica de risco. A decisão de litigar cabe ao cliente.</p></div>
+  <div class="card"><h2>O que pode mudar o cenário</h2><ul class="tight"><li>Primeiros acórdãos de mérito do TJSP (apelações e remessas).</li><li>Agravo interno contra a SLS no Órgão Especial.</li><li>Aprovação do PLP 16/2025, que exclui o IBS e a CBS das bases do ICMS, do ISS e do IPI.</li><li>Afetação no STJ ou no STF. A modulação é provável, dado o impacto.</li></ul></div>
+</section>
+</main>
+<script>
+const D=[{"p": "1153106-92.2026.8.26.0053", "t": "TJSP", "v": "16ª VFP Capital", "j": "Marcio Ferraz Nunes", "d": "21/10/2026", "r": "Favorável", "imp": "", "tipo": "Sentença", "disp": "CONCEDO A SEGURANÇA vindicada na presente ação, para os fins de: a) reconhecer e declarar o direito líquido e certo da impetrante de não incluir os valores correspondentes ao Imposto sobre Bens e Serviços e à Contribuição sobre Bens e Serviços na base de cálculo do ICMS a partir do momento em que tais tributos forem exigíveis e enquanto perdurar a sua convivência transitória com o imposto estadual; b) determinar à au"}, {"p": "1138866-98.2026.8.26.0053", "t": "TJSP", "v": "16ª VFP Capital", "j": "Marcio Ferraz Nunes", "d": "26/10/2026", "r": "Favorável", "imp": "Privalia", "tipo": "Sentença", "disp": "CONCEDO A SEGURANÇA pleiteada por Privalia Brasil S/A, confirmando em definitivo a medida liminar deferida (fls. 82/85), para: a) reconhecer e declarar o direito da impetrante de apurar e recolher o ICMS perante o Estado de São Paulo sem a inclusão dos montantes correspondentes ao Imposto sobre Bens e Serviços ( IBS ) e à Contribuição sobre Bens e Serviços ( CBS ) em sua base de cálculo, a partir de sua efetiva exigi"}, {"p": "1152860-96.2026.8.26.0053", "t": "TJSP", "v": "16ª VFP Capital", "j": "Patrícia Persicano Pires", "d": "05/11/2026", "r": "Parcial", "imp": "Nouk", "tipo": "Sentença", "disp": "CONCEDO EM PARTE A SEGURANÇA, com resolução do mérito, nos termos do artigo 487, inciso I, do Código de Processo Civil e do artigo 1º da Lei nº 12.016/2009, o que faço para: a) DECLARAR a inexigibilidade da inclusão dos valores devidos a título de IBS e de CBS na base de cálculo do ICMS devido pela impetrante a contar de 01/01/2027, afastando-se, em relação a ela, a exigência pautada nas Respostas às Consultas Tribut"}, {"p": "1151865-83.2026.8.26.0053", "t": "TJSP", "v": "16ª VFP Capital", "j": "Patrícia Persicano Pires", "d": "19/11/2026", "r": "Desfavorável", "imp": "ABRAVA (coletivo)", "tipo": "Sentença", "disp": "DENEGO A SEGURANÇA, com resolução do mérito, nos termos do art. 487, inciso I, do Código de Processo Civil. Custas e despesas pela impetrante, observada eventual gratuidade. Descabida a condenação em honorários advocatícios em face do art. 25 da Lei nº 12.016, de 07 de agosto de 2009. Dispensado o reexame necessário. Decorrido o prazo para recursos voluntários, arquivem-se. Promova-se a remessa do processo ao fluxo d"}, {"p": "1155211-42.2026.8.26.0053", "t": "TJSP", "v": "3ª VFP Capital", "j": "Alessandra Teixeira Miguel", "d": "28/10/2026", "r": "Favorável", "imp": "Emphasis", "tipo": "Sentença", "disp": "CONCEDO A SEGURANÇA impetrada por Emphasis Indústria e Comércio Votorantim Ltda., para: a) declarar a inexigibilidade da inclusão dos montantes devidos a título de Imposto sobre Bens e Serviços ( IBS ) e de Contribuição Social sobre Bens e Serviços ( CBS ) na base de cálculo do ICMS devido pela impetrante, a partir de sua efetiva exigibilidade no exercício de 2027 e enquanto durar a coexistência do regime de transiçã"}, {"p": "1158490-36.2026.8.26.0053", "t": "TJSP", "v": "3ª VFP Capital", "j": "Luis Manuel Fonseca Pires", "d": "29/10/2026", "r": "Favorável", "imp": "Plastoy", "tipo": "Sentença", "disp": "CONCEDO A SEGURANÇA vindicada por Plastoy Produtos e Brindes Plasticos Ltda, tornando definitiva a tutela postulada, para: a) reconhecer e declarar o direito líquido e certo da impetrante de não incluir os valores devidos a título de Contribuição sobre Bens e Serviços ( CBS ) e de Imposto sobre Bens e Serviços ( IBS ) na base de cálculo do ICMS em suas operações mercantis a partir de 1º de janeiro de 2027 e enquanto"}, {"p": "1154352-26.2026.8.26.0053", "t": "TJSP", "v": "3ª VFP Capital", "j": "Luis Manuel Fonseca Pires", "d": "09/11/2026", "r": "Favorável", "imp": "Dileta", "tipo": "Sentença", "disp": "JULGO PROCEDENTE o pedido formulado na inicial para conceder a segurança pleiteada, determinando às autoridades apontadas como coatoras que se abstenham de exigir, lançar ou cobrar o ICMS com a inclusão dos valores correspondentes ao Imposto sobre Bens e Serviços ( IBS ) e à Contribuição sobre Bens e Serviços ( CBS ) em sua base de cálculo, a partir de 1º de janeiro de 2027 e enquanto perdurar a coexistência dos regi"}, {"p": "1162331-39.2026.8.26.0053", "t": "TJSP", "v": "2ª VFP Capital", "j": "Tamara Priscila Tocci", "d": "09/11/2026", "r": "Favorável", "imp": "Caedu", "tipo": "Sentença", "disp": "julgo extinto o processo com resolução do mérito, nos termos do art. 487, I, do Código de Processo Civil, confirmando a liminar de fls. 80/91, para: a) declarar o direito líquido e certo da impetrante, abrangidos todos os seus estabelecimentos situados no Estado de São Paulo, de apurar e recolher o ICMS sem a inclusão, em sua base de cálculo, dos valores destacados nos documentos fiscais a título de Imposto sobre Ben"}, {"p": "1173097-54.2026.8.26.0053", "t": "TJSP", "v": "15ª VFP Capital", "j": "Kenichi Koyama", "d": "17/11/2026", "r": "Favorável", "imp": "Gates do Brasil", "tipo": "Sentença", "disp": "CONCEDO A SEGURANÇA para declarar o direito líquido e certo da impetrante Gates do Brasil Indústria e Comércio Ltda. de apurar e recolher o ICMS próprio incidente sobre as operações de saída de seus estabelecimentos industriais de Jacareí sem a inclusão, em sua base de cálculo, dos valores correspondentes ao IBS e à CBS , a partir da efetiva exigibilidade dessas exações e enquanto perdurar sua coexistência com o ICMS"}, {"p": "1170227-36.2026.8.26.0053", "t": "TJSP", "v": "15ª VFP Capital", "j": "Gilsa Elena Rios", "d": "11/11/2026", "r": "Desfavorável", "imp": "", "tipo": "Sentença", "disp": "DENEGO A SEGURANÇA. Custas pela impetrante. Descabida a condenação em honorários advocatícios, nos termos do artigo 25 da Lei nº 12.016/2009. P.I.C. São Paulo, 11 de novembro de 2026. GILSA ELENA RIOS Juíza de Direito DOCUMENTO ASSINADO DIGITALMENTE NOS TERMOS DA LEI 11.419/2006, CONFORME IMPRESSÃO À MARGEM DIREITA"}, {"p": "1005586-56.2026.8.26.0562", "t": "TJSP", "v": "2ª VFP Santos", "j": "Bruno Nascimento Troccoli", "d": "09/10/2026", "r": "Parcial", "imp": "Sisnergy", "tipo": "Sentença", "disp": "CONCEDO EM PARTE A SEGURANÇA pleiteada por Sisnergy - Soluções e Sistemas Integrados Ltda., para: a) DECLARAR a inexigibilidade da inclusão dos valores devidos a título de Imposto sobre Bens e Serviços e de Contribuição sobre Bens e Serviços na base de cálculo do ICMS devido pela impetrante a contar de 1º de janeiro de 2027, afastando-se em definitivo, em relação a ela, os efeitos da Consulta Tributária Eletrônica nº"}, {"p": "1105098-84.2026.8.26.0053", "t": "TJSP", "v": "13ª VFP Capital", "j": "Luiza Barros Rozas Verotti", "d": "22/09/2026", "r": "Desfavorável", "imp": "AXNS", "tipo": "Sentença", "disp": "julgo extinto o processo nos termos do artigo 487, inciso I, do Código de Processo Civil, e revogo a liminar concedida. Custas e despesas na forma da lei. Sem condenação em honorários. Decorrido o prazo para recurso voluntário, certifique-se o trânsito em julgado. Após, arquivem-se com as cautelas de praxe. P.R.I. São Paulo, 22 de setembro de 2026. DOCUMENTO ASSINADO DIGITALMENTE NOS TERMOS DA LEI 11.419/2006, CONFOR"}, {"p": "1157295-16.2026.8.26.0053", "t": "TJSP", "v": "13ª VFP Capital", "j": "Luiza Barros Rozas Verotti", "d": "06/11/2026", "r": "Desfavorável", "imp": "Yas", "tipo": "Sentença", "disp": "julgo extinto o processo nos termos do artigo 487, inciso I, do Código de Processo Civil, e revogo a liminar concedida. Custas e despesas na forma da lei. Sem condenação em honorários. Decorrido o prazo para recurso voluntário, certifique-se o trânsito em julgado. Após, arquivem-se com as cautelas de praxe. P.R.I. São Paulo, 06 de novembro de 2026. DOCUMENTO ASSINADO DIGITALMENTE NOS TERMOS DA LEI 11.419/2006, CONFOR"}, {"p": "1148720-19.2026.8.26.0053", "t": "TJSP", "v": "8ª VFP Capital", "j": "Josué Vilela Pimentel", "d": "06/11/2026", "r": "Desfavorável", "imp": "", "tipo": "Sentença", "disp": "DENEGO A SEGURANÇA, resolvendo o mérito nos termos do artigo 487, inciso I, do Código de Processo Civil. Custas pela impetrante. Sem condenação em honorários advocatícios (art. 25 da Lei nº 12.016/09 e Súmulas 512 do STF e 105 do STJ). Sentença não sujeita ao reexame necessário. Após o trânsito em julgado, na ausência de pendências, arquivem-se os autos com as cautelas de praxe. P.R.I.C. São Paulo, 06 de novembro de"}, {"p": "1162861-43.2026.8.26.0053", "t": "TJSP", "v": "7ª VFP Capital", "j": "Juliana Brescansin Demarchi Molina", "d": "06/11/2026", "r": "Desfavorável", "imp": "Ranalle", "tipo": "Sentença", "disp": "DENEGO A SEGURANÇA; e assim o faço para extinguir o processo com resolução do mérito, com fundamento no artigo 487, inciso I, do Código de Processo Civil. Custas e despesas processuais pelo impetrante. Sem condenação em honorários advocatícios, nos termos do artigo 25 da Lei nº 12.016/2009. P.I.C. Oportunamente, ao arquivo. São Paulo, 06 de novembro de 2026."}, {"p": "1161610-87.2026.8.26.0053", "t": "TJSP", "v": "7ª VFP Capital", "j": "Juliana Brescansin Demarchi Molina", "d": "20/10/2026", "r": "Neutro", "imp": "Seger (litispendência)", "tipo": "Sentença", "disp": "JULGO EXTINTO o processo sem resolução do mérito, em razão da litispendência, com fundamento no artigo 485, inciso V, do Código de Processo Civil. Custas na forma da lei. Sem condenação ao pagamento de honorários advocatícios por expressa disposição legal (art. 25, da Lei 12.016/09). P.I.C. Oportunamente, arquivem-se os autos com as cautelas de praxe. São Paulo, 19 de outubro de 2026."}, {"p": "1005661-70.2026.8.26.0344", "t": "TJSP", "v": "VFP Marília", "j": "Walmir Idalencio dos Santos Cruz", "d": "04/11/2026", "r": "Desfavorável", "imp": "Nortox", "tipo": "Sentença", "disp": "DENEGO A SEGURANÇA. Em razão da sucumbência, arcará a impetrante com as custas e despesas processuais incorridas, mas sem verba honorária (artigo 25 da Lei Federal nº 12.016/2.009, c/c a Súmula nº 512 do C. STF). Oportunamente, arquivem-se os autos, observadas as formalidades legais. P.R.I.C. Marilia, 04 de novembro de 2026 Walmir Idalêncio dos Santos Cruz JUIZ DE DIREITO DOCUMENTO ASSINADO DIGITALMENTE NOS TERMOS DA"}, {"p": "1161823-93.2026.8.26.0053", "t": "TJSP", "v": "1ª VFP Capital", "j": "Luiz Fernando Rodrigues Guerra", "d": "16/11/2026", "r": "Desfavorável", "imp": "", "tipo": "Sentença", "disp": "JULGO IMPROCEDENTES os pedidos formulados pela parte autora, com fundamento no artigo 487, inciso I, do Código Processo Civil, DENEGANDO A SEGURANÇA perseguida. Deixo de condenar a parte autora em honorários advocatícios, com fundamento na Súmula 512 do STF, na Súmula 105 do STJ e no artigo 25 da Lei n° 12.016/09. Em caso de recurso de apelação, deve o patrono observar o código correto de peticionamento (38023). Após"}, {"p": "1163696-31.2026.8.26.0053", "t": "TJSP", "v": "1ª VFP Capital", "j": "Luiz Fernando Rodrigues Guerra", "d": "16/11/2026", "r": "Desfavorável", "imp": "", "tipo": "Sentença", "disp": "JULGO IMPROCEDENTES os pedidos formulados pela parte autora, com fundamento no artigo 487, inciso I, do Código Processo Civil, DENEGANDO A SEGURANÇA perseguida. Deixo de condenar a parte autora em honorários advocatícios, com fundamento na Súmula 512 do STF, na Súmula 105 do STJ e no artigo 25 da Lei n° 12.016/09. Em caso de recurso de apelação, deve o patrono observar o código correto de peticionamento (38023). Após"}, {"p": "1016765-42.2026.8.26.0576", "t": "TJSP", "v": "1ª VFP S.J. Rio Preto", "j": "Marcelo Haggi Andreotti", "d": "17/11/2026", "r": "Desfavorável", "imp": "", "tipo": "Sentença", "disp": "denego a segurança pretendida. Sem honorários, a teor do STJ/105 e art. 25, da Lei 12.016/2009. Oportunamente, arquivem-se os autos com as anotações de praxe. Publique-se e intimem-se. São José do Rio Preto, 17 de novembro de 2026. DOCUMENTO ASSINADO DIGITALMENTE NOS TERMOS DA LEI 11.419/2006, CONFORME IMPRESSÃO À MARGEM DIREITA"}, {"p": "1145319-12.2026.8.26.0053", "t": "TJSP", "v": "6ª VFP Capital", "j": "Liliane Keyko Hioki", "d": "18/11/2026", "r": "Desfavorável", "imp": "Royaltex", "tipo": "Sentença", "disp": "DENEGO A SEGURANÇA, pois ausente violação a direito líquido e certo das impetrantes. Custas pelas impetrantes. Sem honorários nos termos do art. 25 da Lei 12.016/09. Transitada e nada requerido, arquivem-se. P.I.C São Paulo, 16 de novembro de 2026. DOCUMENTO ASSINADO DIGITALMENTE NOS TERMOS DA LEI 11.419/2006, CONFORME IMPRESSÃO À MARGEM DIREITA"}, {"p": "1158839-39.2026.8.26.0053", "t": "TJSP", "v": "6ª VFP Capital", "j": "Liliane Keyko Hioki", "d": "19/11/2026", "r": "Desfavorável", "imp": "", "tipo": "Sentença", "disp": "DENEGO A SEGURANÇA, pois ausente violação a direito líquido e certo da impetrante. Custas pela impetrante. Sem honorários nos termos do art. 25 da Lei 12.016/09. Transitada e nada requerido, arquivem-se. P.I.C São Paulo, 19 de novembro de 2026. DOCUMENTO ASSINADO DIGITALMENTE NOS TERMOS DA LEI 11.419/2006, CONFORME IMPRESSÃO À MARGEM DIREITA"}, {"p": "1007599-11.2026.8.26.0309", "t": "TJSP", "v": "VFP Jundiaí", "j": "Nayara Sônia Vettorazzi", "d": "19/11/2026", "r": "Desfavorável", "imp": "ICP Latin America", "tipo": "Sentença", "disp": "DENEGO A SEGURANÇA, com resolução do mérito, nos termos do art. 487, I, do Código de Processo Civil. Em consequência, fica prejudicada a apreciação do pedido de medida liminar, diante do julgamento definitivo da pretensão. Rejeito, igualmente, o pedido de reconhecimento do direito à compensação dos valores eventualmente recolhidos com fundamento na tese ora afastada, diante da inexistência de crédito tributário recon"}, {"p": "5044804-86.2026.8.08.0024", "t": "TJES", "v": "3ª VFP Vitória", "j": "Rogério Rodrigues de Almeida", "d": "06/10/2026", "r": "Neutro", "imp": "Promex Mais", "tipo": "Sentença", "disp": "Extinto sem resolução do mérito: ausência de ato coator e impetração contra lei em tese (Súmula 266/STF). O PC SEFAZ-ES 939/2025 é silente quanto a 2027."}, {"p": "0713203-54.2026.8.07.0018", "t": "TJDFT", "v": "6ª VFP Brasília", "j": "Sandra Cristina Candeira de Lira", "d": "nov/2026", "r": "Favorável", "imp": "empresa do setor de alimentação", "tipo": "Liminar", "disp": "Liminar: veda exigir a inclusão do IBS e da CBS na base do ICMS durante a coexistência dos tributos; suspende a exigibilidade (CTN, art. 151, IV). Fonte: ConJur, 13/11/2026 (não conferido no TJDFT)."}, {"p": "1161497-36.2026.8.26.0053", "t": "TJSP", "v": "9ª VFP Capital (ISS)", "j": "", "d": "03/11/2026", "r": "Favorável", "imp": "empresa de tecnologia (ISS)", "tipo": "Liminar", "disp": "ISS: recolher sem o IBS e a CBS na base a partir de 01/01/2027, sem autuação por esse motivo. Fonte: notícias especializadas (não conferido)."}];
+const esc=s=>(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{document.querySelectorAll("#tabs button").forEach(x=>x.classList.toggle("on",x===b));document.querySelectorAll("main>section").forEach(s=>s.classList.toggle("hidden",s.id!=="t-"+b.dataset.t));});
+const sp=D.filter(d=>d.t==="TJSP"&&d.tipo==="Sentença");
+const c=v=>sp.filter(d=>d.r===v).length;
+const fav=c("Favorável")+c("Parcial"), des=c("Desfavorável");
+document.getElementById("kpis").innerHTML=[[sp.length,"sentenças no TJSP (até 22/11/2026)"],[fav,"favoráveis no mérito (incl. parciais)"],[des,"desfavoráveis"],["10","decisões suspensas pela Presidência"],["0","acórdãos de mérito"]].map(k=>`<div class="kpi"><b>${k[0]}</b><span>${k[1]}</span></div>`).join("");
+document.getElementById("placar").textContent=`${fav} favoráveis × ${des} contrárias (+${c("Neutro")} extinta)`;
+const sT=document.getElementById("fT");[...new Set(D.map(d=>d.t))].forEach(t=>sT.insertAdjacentHTML("beforeend",`<option>${t}</option>`));
+const key=d=>d.d.split("/").reverse().join("");
+function draw(){const t=sT.value,r=document.getElementById("fR").value,q=document.getElementById("fQ").value.toLowerCase();
+ const a=D.filter(d=>(!t||d.t===t)&&(!r||d.r===r)&&(!q||(d.p+" "+d.v+" "+d.j+" "+d.imp+" "+d.disp).toLowerCase().includes(q))).sort((x,y)=>key(y).localeCompare(key(x)));
+ document.getElementById("dCount").textContent=a.length+" decisões";
+ let h="<tr><th>Data</th><th>Tribunal / vara</th><th>Juiz(a)</th><th>Processo / parte</th><th>Resultado</th></tr>";
+ a.forEach((d,i)=>{h+=`<tr class="row" data-i="${i}"><td class="n">${d.d}</td><td>${d.t}<div class="small">${esc(d.v)}</div></td><td class="small">${esc(d.j)}</td><td>${esc(d.p)}<div class="small muted">${esc(d.tipo)}${d.imp?" · "+esc(d.imp):""}</div></td><td><span class="tag v-${d.r}">${d.r}</span></td></tr><tr class="det hidden" data-d="${i}"><td colspan="5">${esc(d.disp)}</td></tr>`;});
+ const tb=document.getElementById("tabDec");tb.innerHTML=h;tb.querySelectorAll("tr.row").forEach(x=>x.onclick=()=>tb.querySelector(`tr[data-d="${x.dataset.i}"]`).classList.toggle("hidden"));}
+["fT","fR"].forEach(id=>document.getElementById(id).onchange=draw);document.getElementById("fQ").oninput=draw;draw();
+const vr={};sp.forEach(d=>{vr[d.v]=vr[d.v]||{F:0,D:0,N:0};if(d.r==="Favorável"||d.r==="Parcial")vr[d.v].F++;else if(d.r==="Desfavorável")vr[d.v].D++;else vr[d.v].N++;});
+document.getElementById("tabVara").innerHTML="<tr><th>Vara</th><th class='n'>Favoráveis</th><th class='n'>Contrárias</th><th class='n'>Outras</th></tr>"+Object.keys(vr).sort().map(k=>`<tr><td>${esc(k)}</td><td class="n">${vr[k].F||""}</td><td class="n">${vr[k].D||""}</td><td class="n">${vr[k].N||""}</td></tr>`).join("");
+</script>
+</body>
+</html>
