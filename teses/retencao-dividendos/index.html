@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teses — retenção de 10% sobre dividendos</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root{--bg:#f6f5f1;--card:#ffffff;--ink:#1b2333;--muted:#5d6676;--line:#e3e0d6;--navy:#14213d;--gold:#b8901f;--fav:#1f7a4d;--par:#b07a10;--des:#b3362f;--neu:#7a8190;--chip:#eef0f4;--hl:#fff7dc}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#11151d;--card:#1a2030;--ink:#e7e9ee;--muted:#9aa3b2;--line:#2a3243;--navy:#9db4e6;--gold:#e0b84a;--fav:#4cc38a;--par:#e2a93b;--des:#ef6b62;--neu:#8b93a3;--chip:#232b3c;--hl:#3a3220}}
+:root[data-theme="dark"]{--bg:#11151d;--card:#1a2030;--ink:#e7e9ee;--muted:#9aa3b2;--line:#2a3243;--navy:#9db4e6;--gold:#e0b84a;--fav:#4cc38a;--par:#e2a93b;--des:#ef6b62;--neu:#8b93a3;--chip:#232b3c;--hl:#3a3220}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{background:#14213d;color:#fff;padding:22px 16px 18px;border-bottom:4px solid #b8901f}
+header h1{margin:0;font-size:22px;letter-spacing:.2px}
+header p{margin:6px 0 0;color:#cfd6e4;font-size:13.5px}
+main{max-width:1180px;margin:0 auto;padding:16px}
+nav.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 14px}
+nav.tabs button{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:7px 12px;border-radius:8px;cursor:pointer;font-size:14px}
+nav.tabs button.on{background:var(--navy);color:var(--bg);border-color:var(--navy)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:14px}
+.card h2{margin:0 0 10px;font-size:17px;color:var(--navy)}
+.card h3{margin:14px 0 6px;font-size:15px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px}
+.kpi b{display:block;font-size:24px}
+.kpi span{color:var(--muted);font-size:12.5px}
+.muted{color:var(--muted)}
+.small{font-size:12.5px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{border-bottom:1px solid var(--line);padding:7px 6px;text-align:left;vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);position:sticky;top:0;background:var(--card)}
+td.n{text-align:center;white-space:nowrap}
+.scroll{overflow-x:auto}
+.tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap}
+.v-Favorável{background:color-mix(in srgb,var(--fav) 18%,transparent);color:var(--fav)}
+.v-Parcial{background:color-mix(in srgb,var(--par) 18%,transparent);color:var(--par)}
+.v-Desfavorável{background:color-mix(in srgb,var(--des) 16%,transparent);color:var(--des)}
+.v-Neutro{background:var(--chip);color:var(--neu)}
+.bar{display:flex;height:22px;border-radius:6px;overflow:hidden;background:var(--chip);min-width:120px}
+.bar i{display:block;height:100%}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-top:6px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.filters select,.filters input{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:6px 8px;font-size:13.5px}
+.filters input{flex:1;min-width:180px}
+tr.row{cursor:pointer}
+tr.row:hover td{background:var(--chip)}
+tr.det td{background:var(--chip);font-size:13px}
+.gap{background:var(--hl)}
+.pill{display:inline-block;padding:1px 7px;border-radius:6px;background:var(--chip);font-size:12px;margin:1px 2px}
+.side-fav{border-left:4px solid var(--fav)}
+.side-con{border-left:4px solid var(--des)}
+.ex{border-left:3px solid var(--gold);padding:6px 10px;margin:6px 0;background:var(--chip);border-radius:0 8px 8px 0;font-size:13px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:760px){.grid2{grid-template-columns:1fr}header h1{font-size:19px}}
+ul.tight{margin:6px 0;padding-left:20px}ul.tight li{margin:3px 0}
+.callout{border:1px solid var(--gold);background:var(--hl);border-radius:10px;padding:12px 14px}
+.hidden{display:none}
+.toggle{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.toggle button{border:0;background:var(--card);color:var(--ink);padding:6px 10px;cursor:pointer;font-size:13px}
+.toggle button.on{background:var(--navy);color:var(--bg)}
+.law{font-size:13.5px;background:var(--chip);border-left:3px solid var(--navy);padding:8px 12px;border-radius:0 8px 8px 0;margin:8px 0}
+.law b{background:var(--hl)}
+.tl{border-left:3px solid var(--gold);margin:6px 0 6px 6px;padding-left:12px}
+.tl div{margin:5px 0}.tl .d{font-weight:700;color:var(--navy);display:inline-block;min-width:96px}
+</style>
+</head>
+<body>
+<header>
+  <p style="margin:0 0 6px"><a href="../" style="color:#e0c36a;text-decoration:none;font-size:13px">← Painel de teses</a></p>
+  <h1>Retenção de 10% sobre dividendos acima de R$ 50 mil (art. 6º-A da Lei 9.250)</h1>
+  <p>Efeito degrau e retenção pela alíquota anual projetada · TRF2, TRF4, TRF6 e STF · levantamento de 25/11/2026</p>
+</header>
+<main>
+<nav class="tabs" id="tabs">
+  <button data-t="resumo" class="on">Resumo</button>
+  <button data-t="normas">Normas e conta</button>
+  <button data-t="dec">Decisões</button>
+  <button data-t="arg">Argumentos</button>
+  <button data-t="est">Estratégia no TRF2</button>
+</nav>
+
+<section id="t-resumo">
+  <div class="kpis" id="kpis"></div>
+  <div class="card" style="margin-top:14px">
+    <h2>A tese em uma frase</h2>
+    <p>A retenção de 10% <b>sobre o total</b> quando o pagamento mensal passa de R$ 50 mil cria um degrau (quem recebe R$ 50.001 fica com R$ 4.999,10 a menos do que quem recebe R$ 50.000) e antecipa mais imposto do que a própria lei manda pagar no ajuste anual, cuja alíquota cresce de 0% a 10% entre R$ 600 mil e R$ 1,2 milhão por ano.</p>
+    <div class="grid2">
+      <div class="callout"><b>Fazenda e TRF2:</b> é só antecipação, com ajuste e restituição; o Tema 1.174 trata de tributação exclusiva na fonte; o juiz não pode criar fórmula de retenção; o perigo é meramente patrimonial.</div>
+      <div class="callout"><b>Contribuinte e TRF4 (1ª Turma):</b> a antecipação tem de espelhar a alíquota anual (art. 16-A, § 2º, II); reter acima do devido viola a capacidade contributiva e funciona como empréstimo compulsório.</div>
+    </div>
+  </div>
+  <div class="card">
+    <h2>Onde estamos</h2>
+    <ul class="tight">
+      <li><b>TRF2 (ES e RJ):</b> desfavorável nas duas Turmas Especializadas. O motivo mais comum é a falta de prova contábil do perigo, não o mérito.</li>
+      <li><b>TRF2, processo:</b> quem não prova atingir o patamar da norma tem o MS extinto como impugnação de lei em tese (Súmula 266). A 3ª Turma ainda nega legitimidade à fonte pagadora; a 4ª Turma admite.</li>
+      <li><b>TRF4, 1ª Turma:</b> Paulsen e Münch deferem a retenção pela alíquota projetada nos pagamentos entre R$ 50 mil e R$ 100 mil.</li>
+      <li><b>TRF6:</b> nega em cognição sumária, mas afasta o óbice da Súmula 266.</li>
+      <li><b>STF:</b> a cautelar na ADI 7.912 só prorrogou o prazo de aprovação dos lucros de 2025. A ADI 7.954 (CFOAB) pede a progressividade marginal e está sem decisão localizada.</li>
+      <li><b>1º grau federal:</b> há notícia de decisões favoráveis (DF, Botucatu, Osasco, Barueri), não conferidas, e de uma medida paulista suspensa.</li>
+    </ul>
+    <p class="small muted">Uso interno. Confira o inteiro teor antes de citar.</p>
+  </div>
+</section>
+
+<section id="t-normas" class="hidden">
+  <div class="card">
+    <h2>O que a lei diz</h2>
+    <div class="law"><b>Lei 9.250/1995, art. 6º-A:</b> lucros e dividendos pagos por uma mesma pessoa jurídica a uma mesma pessoa física acima de R$ 50.000,00 no mês ficam sujeitos à retenção de 10% <b>sobre o total do valor pago</b>. § 1º: <b>vedadas quaisquer deduções</b>.</div>
+    <div class="law"><b>Art. 16-A, § 2º:</b> tributação mínima anual. A partir de R$ 1,2 milhão, 10%. Entre R$ 600 mil e R$ 1,2 milhão, <b>Alíquota % = (REND/60.000) − 10</b>.</div>
+    <div class="law"><b>Art. 16-A, §§ 5º e 6º:</b> o valor retido pelo art. 6º-A é deduzido no ajuste e o resultado vai para o saldo <b>a pagar ou a restituir</b>.</div>
+    <div class="law"><b>Art. 16-B:</b> redutor quando a alíquota efetiva da PJ mais a da PF passa de 34% (40% e 45% para seguradoras e instituições financeiras).</div>
+    <div class="law"><b>Art. 16:</b> a restituição só rende Selic a partir da data prevista para a entrega da declaração.</div>
+    <div class="law"><b>Lei 10.426/2002, art. 9º:</b> a fonte pagadora que não retém fica sujeita à multa do art. 44, I, da Lei 9.430/1996 (75%).</div>
+  </div>
+  <div class="card">
+    <h2>A conta do degrau</h2>
+    <div class="scroll"><table>
+      <tr><th>Distribuição no mês</th><th>Retenção</th><th>Líquido</th><th>Diferença para R$ 50.000</th></tr>
+      <tr><td>R$ 50.000,00</td><td>0,00</td><td>50.000,00</td><td>—</td></tr>
+      <tr><td>R$ 50.001,00</td><td>5.000,10</td><td>45.000,90</td><td>− 4.999,10</td></tr>
+      <tr><td>R$ 52.000,00</td><td>5.200,00</td><td>46.800,00</td><td>− 3.200,00</td></tr>
+      <tr><td>R$ 55.555,56</td><td>5.555,56</td><td>50.000,00</td><td>0,00</td></tr>
+    </table></div>
+    <p class="small">Alíquota marginal no degrau: R$ 5.000,10 sobre R$ 1,00 de acréscimo (500.010%).</p>
+    <h3>Alíquota projetada (fórmula do TRF4)</h3>
+    <div class="scroll"><table>
+      <tr><th>Pagamento mensal</th><th>Renda anual</th><th>Alíquota anual</th><th>Retenção de 10%</th><th>Retenção projetada</th></tr>
+      <tr><td>R$ 55.000</td><td>R$ 660.000</td><td>1%</td><td>R$ 5.500</td><td>R$ 550</td></tr>
+      <tr><td>R$ 60.000</td><td>R$ 720.000</td><td>2%</td><td>R$ 6.000</td><td>R$ 1.200</td></tr>
+      <tr><td>R$ 75.000</td><td>R$ 900.000</td><td>5%</td><td>R$ 7.500</td><td>R$ 3.750</td></tr>
+      <tr><td>R$ 90.000</td><td>R$ 1.080.000</td><td>8%</td><td>R$ 9.000</td><td>R$ 7.200</td></tr>
+      <tr><td>R$ 100.000</td><td>R$ 1.200.000</td><td>10%</td><td>R$ 10.000</td><td>R$ 10.000</td></tr>
+    </table></div>
+    <p class="small muted">Alíquota mensal (%) = (rendimento mensal × 12 / 60.000) − 10. Antes do redutor do art. 16-B.</p>
+  </div>
+</section>
+
+<section id="t-dec" class="hidden">
+  <div class="card">
+    <h2>Decisões levantadas</h2>
+    <div class="filters">
+      <select id="fT"><option value="">Todos os tribunais</option></select>
+      <select id="fR"><option value="">Todos os resultados</option><option>Favorável</option><option>Parcial</option><option>Desfavorável</option><option>Neutro</option></select>
+      <input id="fQ" placeholder="Buscar (processo, relator, assunto)">
+    </div>
+    <p class="small muted" id="dCount"></p>
+    <div class="scroll"><table id="tabDec"></table></div>
+    <p class="small muted">Clique na linha para ver o resumo e o link do inteiro teor. Fonte: Jusratio (portais oficiais), pesquisa de 25/11/2026.</p>
+  </div>
+</section>
+
+<section id="t-arg" class="hidden">
+  <div class="card">
+    <h2>Argumentos contrários e respostas</h2>
+    <div class="scroll"><table>
+      <tr><th>Argumento</th><th>Quem usa</th><th>Resposta</th></tr>
+      <tr><td>É mera antecipação, com ajuste anual</td><td>TRF2 (todas), TRF6</td><td>A antecipação também se submete aos limites constitucionais: o STF manda examinar a "razoabilidade e a proporcionalidade dos valores retidos" e a eficácia da compensação (RE 628.845 AgR). A devolução só vem no ano seguinte e sem Selic até o ajuste.</td></tr>
+      <tr><td>Tema 1.174 não se aplica (era tributação exclusiva)</td><td>TRF2</td><td>A razão de decidir é a alíquota única sobre a totalidade, sem faixas. O caráter antecipatório não afasta a progressividade e o confisco no mês da retenção.</td></tr>
+      <tr><td>Tema 833: o STF admitiu a progressividade simples</td><td>TRF4 (ao negar o pedido principal)</td><td>O item 3 da ementa do Tema 833 valida a técnica porque o aumento de carga é proporcional ao aumento da base. No art. 6º-A, R$ 1 a mais gera R$ 5.000,10 de imposto.</td></tr>
+      <tr><td>O juiz não pode criar metodologia de retenção</td><td>TRF2 (AI 5012904)</td><td>A fórmula é a do próprio legislador (art. 16-A, § 2º, II), e o ajuste é um <i>minus</i> do pedido (Paulsen).</td></tr>
+      <tr><td>O pagamento isolado não revela a renda anual</td><td>TRF2 (AI 5016803)</td><td>Os sócios entram como litisconsortes e juntam a renda de todas as fontes (DIRPF e informes).</td></tr>
+      <tr><td>Perigo meramente patrimonial e genérico</td><td>TRF2 (todas)</td><td>Quadro por sócio do excesso retido, prazo de indisponibilidade, Súmula 271, multa de 75% da fonte; alternativa de depósito da diferença.</td></tr>
+      <tr><td>Fonte pagadora não tem legitimidade</td><td>TRF2, 3ª Turma; União</td><td>TRF2, 4ª Turma (AI 5006710): a PJ pode impugnar o dever de retenção. E os sócios entram no polo ativo.</td></tr>
+      <tr><td>MS contra lei em tese (Súmula 266)</td><td>TRF2 quando falta prova do patamar; União</td><td>Provar o patamar (acordo de distribuição, comprovantes de 2026). Obrigação de trato sucessivo (Tema 1.273 do STJ); TRF6, AI 6016601.</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<section id="t-est" class="hidden">
+  <div class="card">
+    <h2>Estratégia para um MS no Espírito Santo</h2>
+    <ul class="tight">
+      <li><b>O agravo e a apelação vão para o TRF2</b>, hoje desfavorável. A chance real está no 1º grau e na qualidade da prova.</li>
+      <li><b>Provar o patamar:</b> acordo de distribuição e comprovantes de pagamentos acima de R$ 50 mil por sócio, para afastar a Súmula 266.</li>
+      <li><b>Prova do perigo com números:</b> excesso retido por sócio, meses de indisponibilidade, balancete e fluxo de caixa.</li>
+      <li><b>Sócios no polo ativo</b>, com a renda de todas as fontes. Isso responde ao "pagamento isolado" e à divergência sobre a legitimidade da fonte pagadora.</li>
+      <li><b>Pedido subsidiário da alíquota projetada em destaque</b>, com a fórmula do TRF4 e o argumento do <i>minus</i>.</li>
+      <li><b>Pedido de depósito da diferença</b> como alternativa à liminar.</li>
+      <li><b>Lucro presumido:</b> calcular o redutor do art. 16-B com a carga efetiva sobre o lucro contábil; se favorecer, é argumento extra de excesso.</li>
+      <li><b>Acompanhar:</b> ADIs 7.912, 7.914, 7.917 e 7.954 no STF e o julgamento colegiado dos agravos da 1ª Turma do TRF4.</li>
+    </ul>
+  </div>
+</section>
+</main>
+<script>
+const D=[{"p": "5012904-61.2026.4.02.0000", "t": "TRF2", "v": "4ª Turma Especializada", "j": "Alberto Nogueira Júnior", "d": "10/11/2026", "r": "Desfavorável", "tipo": "Acórdão (AI)", "u": "https://eproc.trf2.jus.br/eproc/externo_controlador.php?acao=consulta_publica_documento&numProcesso=50129046120264020000&idDocumento=21794440210945392801257174635&hash=90497c49aeefbc97571c9b4ac7d72a896aea6623e127f4c2d28d0bf8c1591297", "disp": "Unânime. Efeito degrau e alíquota projetada: a retenção deve ser vista com o ajuste anual e o redutor; não cabe afastar liminarmente a retenção nem estabelecer metodologia alternativa. Perigo: controvérsia patrimonial, passível de restituição."}, {"p": "5016803-67.2026.4.02.0000", "t": "TRF2", "v": "4ª Turma Especializada", "j": "(monocrática)", "d": "28/10/2026", "r": "Desfavorável", "tipo": "Decisão monocrática (AI)", "u": "https://eproc.trf2.jus.br/eproc/externo_controlador.php?acao=consulta_publica_documento&numProcesso=50168036720264020000&idDocumento=21793198173680699641502197515&hash=651f3621d3c93b915d88cd06ae4acfc0773696bb72dc9a8037a02f570e38ace0", "disp": "Holding no lucro presumido. O pagamento mensal isolado multiplicado por 12 não demonstra a renda anual do sócio. Tema 1.174 distinto (tributação exclusiva na fonte). Registra que a medida de um processo paulista foi suspensa."}, {"p": "5012838-81.2026.4.02.0000", "t": "TRF2", "v": "4ª Turma Especializada", "j": "Claudia Franco Correa", "d": "13/10/2026", "r": "Desfavorável", "tipo": "Acórdão (AI)", "u": "https://eproc.trf2.jus.br/eproc/externo_controlador.php?acao=consulta_publica_documento&numProcesso=50128388120264020000&idDocumento=21792008069654510635672450955&hash=3d2d56d81b6992ab0a7f76795443a0ccb7f0a7fc6d868517b90f2686be3ca560", "disp": "Sociedade de advogados. A natureza antecipatória afasta, em cognição sumária, a violação à progressividade; alegações genéricas de impacto financeiro não configuram perigo; presunção de constitucionalidade enquanto as ADIs não forem julgadas."}, {"p": "5011969-21.2026.4.02.0000", "t": "TRF2", "v": "4ª Turma Especializada", "j": "Carmen Silvia Lima de Arruda", "d": "26/10/2026", "r": "Desfavorável", "tipo": "Acórdão (AI)", "u": "https://eproc.trf2.jus.br/eproc/externo_controlador.php?acao=consulta_publica_documento&numProcesso=50119692120264020000&idDocumento=21793806644654340464358421266&hash=7495448fc0d99e053e77591d5c840f32a7bd929baf80338898dba03f0b46afb0", "disp": "Simples Nacional (arts. 6º-A, 16-A e 16-B). Probabilidade do direito não caracterizada."}, {"p": "5006710-45.2026.4.02.0000", "t": "TRF2", "v": "4ª Turma Especializada", "j": "Fernanda Duarte Lopes Lucas da Silva", "d": "31/08/2026", "r": "Parcial", "tipo": "Acórdão (AI)", "u": "https://eproc.trf2.jus.br/eproc/externo_controlador.php?acao=consulta_publica_documento&numProcesso=50067104520264020000&idDocumento=21788461877266673043825685410&hash=07a5f2d616976f00aee8b713069bcc00753f14d4e4e1fcce391252d4afe21369", "disp": "Favorável na preliminar: a pessoa jurídica pagadora tem legitimidade para questionar o dever de retenção. Liminar negada: não provou distribuição mensal acima de R$ 50 mil nem o impacto contábil."}, {"p": "5028462-96.2026.4.02.5101", "t": "TRF2", "v": "4ª Turma Especializada", "j": "Alberto Nogueira Júnior", "d": "28/09/2026", "r": "Desfavorável", "tipo": "Acórdão (apelação, LC 224)", "u": "https://eproc.trf2.jus.br/eproc/externo_controlador.php?acao=consulta_publica_documento&numProcesso=50284629620264025101&idDocumento=21791235639422061365215529372&hash=7595a44b091ed0087c6e5200786dd9466857e9471d6289559bb850219dbfc854", "disp": "Tese processual aplicável aqui: extinguiu o MS (Súmula 266, lei em tese) quanto à impetrante que não provou atingir o patamar da norma (receita acima de R$ 5 milhões na LC 224)."}, {"p": "5004694-21.2026.4.02.0000", "t": "TRF2", "v": "4ª Turma Especializada", "j": "Helena Elias Pinto", "d": "01/06/2026", "r": "Desfavorável", "tipo": "Acórdão (AI)", "u": "https://eproc.trf2.jus.br/eproc/externo_controlador.php?acao=jurisprudencia@jurisprudencia/download_inteiro_teor&id_jurisprudencia=21781231124610172695675775668", "disp": "Simples Nacional. A retenção opera no plano da pessoa física; a fonte pagadora é responsável. Precedente citado nos acórdãos posteriores da Turma."}, {"p": "5016384-47.2026.4.02.0000", "t": "TRF2", "v": "3ª Turma Especializada", "j": "Sandra Meirim Chalu Barbosa de Campos (conv.)", "d": "20/10/2026", "r": "Desfavorável", "tipo": "Decisão monocrática (AI)", "u": "https://eproc.trf2.jus.br/eproc/externo_controlador.php?acao=jurisprudencia@jurisprudencia/download_inteiro_teor&id_jurisprudencia=21792515133794644339314467147", "disp": "Holding no lucro presumido, efeito degrau e alíquota projetada. Tema 1.174 distinto; falta de elementos contábeis objetivos do perigo."}, {"p": "5010108-97.2026.4.02.0000", "t": "TRF2", "v": "3ª Turma Especializada", "j": "Paulo Leite", "d": "30/09/2026", "r": "Desfavorável", "tipo": "Acórdão (AI)", "u": "https://eproc.trf2.jus.br/eproc/externo_controlador.php?acao=consulta_publica_documento&numProcesso=50101089720264020000&idDocumento=21790820164906006841113398244&hash=7d5f6ebe21bf85247d30a371996e0983e2444092e255d5b4f6ec992064d3c1da", "disp": "Simples Nacional, retenção de 10%. Controvérsia relevante, mas sem probabilidade do direito e sem perigo."}, {"p": "5051876-26.2026.4.02.5101", "t": "TRF2", "v": "3ª Turma Especializada", "j": "Paulo Leite", "d": "23/09/2026", "r": "Desfavorável", "tipo": "Acórdão (apelação)", "u": "https://eproc.trf2.jus.br/eproc/externo_controlador.php?acao=consulta_publica_documento&numProcesso=50518762620264025101&idDocumento=21790299213375682416487971183&hash=c46ca3c3bb32f9b0b248311f944466a2b1f5eeb11f295143738b9e1437f056a2", "disp": "Sociedade individual de advocacia (Simples). Ilegitimidade ativa da fonte pagadora: defesa de direito alheio em nome próprio. Por isso os sócios devem estar no polo ativo."}, {"p": "5015744-67.2026.4.02.5101", "t": "TRF2", "v": "3ª Turma Especializada", "j": "Alfredo Jara Moura", "d": "28/07/2026", "r": "Desfavorável", "tipo": "Acórdão (apelação)", "u": "https://eproc.trf2.jus.br/eproc/externo_controlador.php?acao=jurisprudencia@jurisprudencia/download_inteiro_teor&id_jurisprudencia=21785339470292270537300057786", "disp": "Simples Nacional. Ilegitimidade ativa da fonte pagadora; extinção sem resolução do mérito. A 3ª Turma diverge da 4ª (AI 5006710) quanto à legitimidade da PJ."}, {"p": "5033263-75.2026.4.04.0000", "t": "TRF4", "v": "1ª Turma", "j": "Leandro Paulsen", "d": "29/10/2026", "r": "Parcial", "tipo": "Tutela na apelação", "u": "https://eproc-jur.trf4.jus.br/eproc2trf4/externo_controlador.php?acao=jurisprudencia@jurisprudencia/download_inteiro_teor&id_jurisprudencia=41793279458925397239268787519", "disp": "Restabelece, após sentença denegatória, a retenção pela alíquota projetada nos pagamentos entre R$ 50 mil e R$ 100 mil: alíquota mensal (%) = (rendimento mensal × 12 / 60.000) − 10. Retenção acima do devido = empréstimo compulsório."}, {"p": "5034473-64.2026.4.04.0000", "t": "TRF4", "v": "1ª Turma", "j": "Leandro Paulsen", "d": "09/11/2026", "r": "Parcial", "tipo": "Decisão monocrática (AI)", "u": "https://eproc-jur.trf4.jus.br/eproc2trf4/externo_controlador.php?acao=jurisprudencia@jurisprudencia/download_inteiro_teor&id_jurisprudencia=41794248617787796840739980614", "disp": "Escritório de advocacia e sócios. Mesma fórmula; o ajuste ao percentual anual é um minus do pedido de afastamento total."}, {"p": "5038203-83.2026.4.04.0000", "t": "TRF4", "v": "1ª Turma", "j": "Luciane A. Corrêa Münch", "d": "03/11/2026", "r": "Parcial", "tipo": "Decisão monocrática (AI)", "u": "https://eproc-jur.trf4.jus.br/eproc2trf4/externo_controlador.php?acao=jurisprudencia@jurisprudencia/download_inteiro_teor&id_jurisprudencia=41793709424743107534764048083", "disp": "Segue Paulsen integralmente (alíquota projetada; capacidade contributiva; empréstimo compulsório)."}, {"p": "5026333-41.2026.4.04.0000", "t": "TRF4", "v": "1ª Turma", "j": "Leandro Paulsen", "d": "21/10/2026", "r": "Neutro", "tipo": "Decisão monocrática (AI)", "u": "https://eproc-jur.trf4.jus.br/eproc2trf4/externo_controlador.php?acao=jurisprudencia@jurisprudencia/download_inteiro_teor&id_jurisprudencia=41792584859558920396421048557", "disp": "Agravo prejudicado pela sentença denegatória. A tutela foi restabelecida na TutAntAntec 5033263-75.2026.4.04.0000."}, {"p": "6017143-80.2026.4.06.0000", "t": "TRF6", "v": "3ª Turma", "j": "Marcelo Dolzany da Costa", "d": "29/10/2026", "r": "Desfavorável", "tipo": "Decisão monocrática (AI)", "u": "https://eproc-jur.trf6.jus.br/eproc/externo_controlador.php?acao=jurisprudencia@jurisprudencia/download_inteiro_teor&id_jurisprudencia=381793282129336810509272571995", "disp": "Lucro real. Indefere a tutela, inclusive os subsidiários (excedente e alíquota projetada); ressalva que não é pronunciamento definitivo."}, {"p": "6016601-62.2026.4.06.0000", "t": "TRF6", "v": "3ª Turma", "j": "Marcelo Dolzany da Costa", "d": "15/10/2026", "r": "Favorável", "tipo": "Decisão monocrática (AI da União)", "u": "https://eproc-jur.trf6.jus.br/eproc/externo_controlador.php?acao=jurisprudencia@jurisprudencia/download_inteiro_teor&id_jurisprudencia=381792084517360707643685763580", "disp": "Mantém liminar (regra de transição até 31/01/2026, ADI 7.912). Afasta a tese de MS contra lei em tese: a retenção a partir de jan/2026 caracteriza controvérsia preventiva."}, {"p": "ADI 7.912 MC", "t": "STF", "v": "Rel. Min. Nunes Marques", "j": "Nunes Marques", "d": "26/12/2025", "r": "Parcial", "tipo": "Cautelar monocrática", "u": "http://portal.stf.jus.br/processos/downloadPeca.asp?id=15383397719&ext=.pdf", "disp": "Prorrogou até 31/01/2026 o prazo de aprovação dos lucros de 2025 (arts. 6º-A, § 3º, II, e 16-A, § 1º, XII, b). Não suspendeu a retenção. ADIs 7.914, 7.917 e 7.954 pendentes."}];
+const esc=s=>(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{document.querySelectorAll("#tabs button").forEach(x=>x.classList.toggle("on",x===b));document.querySelectorAll("main>section").forEach(s=>s.classList.toggle("hidden",s.id!=="t-"+b.dataset.t));});
+const n=f=>D.filter(f).length;
+document.getElementById("kpis").innerHTML=[[D.length,"decisões levantadas (25/11/2026)"],[n(d=>d.t==="TRF2"&&d.r==="Desfavorável"),"desfavoráveis no TRF2"],[n(d=>d.t==="TRF4"&&d.r==="Parcial"),"deferimentos parciais no TRF4 (alíquota projetada)"],["0","decisões de mérito do STF"]].map(k=>`<div class="kpi"><b>${k[0]}</b><span>${k[1]}</span></div>`).join("");
+const sT=document.getElementById("fT");[...new Set(D.map(d=>d.t))].forEach(t=>sT.insertAdjacentHTML("beforeend",`<option>${t}</option>`));
+const key=d=>d.d.split("/").reverse().join("");
+function draw(){const t=sT.value,r=document.getElementById("fR").value,q=document.getElementById("fQ").value.toLowerCase();
+ const a=D.filter(d=>(!t||d.t===t)&&(!r||d.r===r)&&(!q||(d.p+" "+d.v+" "+d.j+" "+d.disp).toLowerCase().includes(q))).sort((x,y)=>key(y).localeCompare(key(x)));
+ document.getElementById("dCount").textContent=a.length+" decisões";
+ let h="<tr><th>Data</th><th>Tribunal / órgão</th><th>Relator(a)</th><th>Processo</th><th>Resultado</th></tr>";
+ a.forEach((d,i)=>{h+=`<tr class="row" data-i="${i}"><td class="n">${d.d}</td><td>${d.t}<div class="small">${esc(d.v)}</div></td><td class="small">${esc(d.j)}</td><td>${esc(d.p)}<div class="small muted">${esc(d.tipo)}</div></td><td><span class="tag v-${d.r}">${d.r}</span></td></tr><tr class="det hidden" data-d="${i}"><td colspan="5">${esc(d.disp)} <a href="${esc(d.u)}" target="_blank" rel="noopener">Inteiro teor</a></td></tr>`;});
+ const tb=document.getElementById("tabDec");tb.innerHTML=h;tb.querySelectorAll("tr.row").forEach(x=>x.onclick=()=>tb.querySelector(`tr[data-d="${x.dataset.i}"]`).classList.toggle("hidden"));}
+["fT","fR"].forEach(id=>document.getElementById(id).onchange=draw);document.getElementById("fQ").oninput=draw;draw();
+</script>
+</body>
+</html>
